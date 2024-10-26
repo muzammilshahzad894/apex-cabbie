@@ -43,7 +43,6 @@ class CarsController extends Controller
     public function index()
     {
         try {
-            
             $redirectionResponse = $this->redirection();
             if ($redirectionResponse) {
                 return $redirectionResponse;

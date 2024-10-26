@@ -1,63 +1,83 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
+  <!-- Mirrored from html.kodesolution.com/2024/citycar-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Oct 2024 18:23:43 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <title>APEX CABBIE</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<title>BRISTOL CABWISE</title>
-	<link rel="shortcut icon" href="{{ asset('frontend-assets/img/favicon.ico') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
-	<link rel="stylesheet" href="{{ asset('frontend-assets/css/plugins.css') }}" />
-	<link rel="stylesheet" href="{{ asset('frontend-assets/css/style.css') }}" />
+    <link href="{{ asset('frontend-assets/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link
+      href="{{ asset('frontend-assets/plugins/revolution/css/settings.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{ asset('frontend-assets/plugins/revolution/css/layers.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{ asset('frontend-assets/plugins/revolution/css/navigation.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="{{ asset('frontend-assets/css/style.css') }}" rel="stylesheet" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
 	<script src="https://js.stripe.com/v3/"></script>
-</head>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- <div class="preloader"><h1 data-text="Citycar">Citycar</h1></div> -->
 
-<body>
-	<!-- Preloader -->
-	<div class="preloader-bg"></div>
-	<div id="preloader">
-		<div id="preloader-status">
-			<div class="preloader-position loader"> <span></span> </div>
-		</div>
-	</div>
-	<!-- Progress scroll totop -->
-	<div class="progress-wrap cursor-pointer">
-		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-		</svg>
-	</div>
-	<!-- Navbar -->
-	@include('partials.frontend.navbar')
+      @include('partials.frontend.navbar')
 
-    <!-- Content -->
-    @yield('content')
+      @yield('content')
+	  
+	  @include('partials.frontend.footer')
+    </div>
 
-	<!-- Footer -->
-	@include('partials.frontend.footer')
-	<!-- jQuery -->
-	<script src="{{ asset('frontend-assets/js/jquery-3.7.1.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/jquery-migrate-3.4.1.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/modernizr-2.6.2.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/imagesloaded.pkgd.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/jquery.isotope.v3.0.2.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/popper.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/scrollIt.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/jquery.waypoints.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/owl.carousel.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/jquery.stellar.min.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/jquery.magnific-popup.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/select2.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/datepicker.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/YouTubePopUp.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/custom.js') }}"></script>
-    <script src="https://js.stripe.com/v3/"></script>
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <span class="fa fa-angle-up"></span>
+    </div>
+    <script src="{{ asset('frontend-assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/popper.min.js') }}"></script>
+
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/plugins/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/main-slider-script.js') }}"></script>
+
+    <script src="{{ asset('frontend-assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/wow.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/appear.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/gsap.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/ScrollTrigger.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/SplitText.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/splitType.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/bundled-lenis.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/select2.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/aos.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/odometer.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/owl.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/script-gsap.js') }}"></script>
+	<script src="{{ asset('frontend-assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('frontend-assets/js/script.js') }}"></script>
 	
-    <script>
-        var logoLightUrl = "{{ asset('frontend-assets/img/logo-light.png') }}";
-    </script>
-	@yield('scripts')
-</body>
-
+  </body>
 </html>

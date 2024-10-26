@@ -1,119 +1,156 @@
-<style>
-    .custom_icon_list li{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .custom_icon_list{
-        display: flex;
-    }
-</style>
+<footer class="main-footer footer-style-two">
+    <div class="bg bg-pattern-4"></div>
 
-<footer class="footer clearfix">
-    <div class="container">
-        <!-- first footer -->
-        <div class="first-footer">
+    <div class="footer-top">
+        <div class="auto-container pt-5">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="links dark footer-contact-links">
-                        <div class="footer-contact-links-wrapper">
-                            <div class="footer-contact-link-wrapper">
-                                <div class="image-wrapper footer-contact-link-icon">
-                                    <a  href="tel:01173322782">   <div class="icon-footer">  <i class="flaticon-phone-call"></i> </div></a>
+                <div class="col-md-4">
+                    <a href="tel:01173322782" class="help-section d-flex">
+                        <div class="icon">
+                            <i class="icon lnr-icon-phone-handset"></i>
+                        </div>
+                        <div class="text">
+                            <p class="m-0 p-0">Call us?</p>
+                            <h5 class="m-0 p-0">01173322782</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="mailto:info@bristolcabwise.com" class="help-section d-flex">
+                        <div class="icon">
+                            <i class="icon lnr-icon-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <p class="m-0 p-0">Write to us?</p>
+                            <h5 class="m-0 p-0">info@bristolcabwise.com</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="help-section d-flex">
+                        <div class="icon">
+                            <i class="icon lnr-icon-map-marker"></i>
+                        </div>
+                        <div class="text">
+                            <p class="m-0 p-0">Address?</p>
+                            <h5 class="m-0 p-0">81 Blackberry Hill Bristol Bs161df</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="widgets-section">
+        <div class="auto-container">
+            <div class="row">
+                <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                    <div class="footer-widget about-widget">
+                        <h5 class="widget-title">APEX CABBIE</h5>
+                        <div class="widget-content">
+                            <div class="text">
+                                Book a service with us to ensure smooth and comfortable travel.
+                            </div>
+                            <div class="btn-box help-section d-flex gap-2">
+                                <div class="icon">
+                                    <a href="https://wa.me/447533225970" target="_blank">
+                                        <i class="icon fa-brands fa-whatsapp"></i>
+                                    </a>
                                 </div>
-                                <!-- <h5><a href="tel:01173322782">01173322782</a></h5> -->
-                                <div class="footer-contact-link-content">
-                                    <h6>Call us</h6>
-                                    <p><a href="tel:01173322782"> 01173322782 </a></p>
+                                <div class="icon">
+                                    <a href="#" target="_blank">
+                                        <i class="icon fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#" target="_blank">
+                                        <i class="icon fab fa-instagram"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="footer-contact-links-divider"></div>
-                            <div class="footer-contact-link-wrapper">
-                                <div class="image-wrapper footer-contact-link-icon">
-                                    <a href="mailto:info@bristolcabwise.com" ><div class="icon-footer"> <i class="omfi-envelope"></i> </div></a>
-                                </div>
-                                <div class="footer-contact-link-content">
-                                    <h6>Write to us</h6>
-                                    <p> <a href="mailto:info@bristolcabwise.com" >info@bristolcabwise.com</a></p>
-                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget links-widget">
+                        <h4 class="widget-title">Useful Links</h4>
+                        <div class="widget-content">
+                            <ul class="user-links two-column">
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">About</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Get a Cab</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Our Vehicles</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Reviews</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Our News</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Package</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                    <div class="footer-widget newsletter-widget">
+                        <h4 class="widget-title">Newsletter</h4>
+                        <div class="widget-content">
+                            <div class="text">
+                                Signup for our weekly newsletter or updates.
                             </div>
-                            <div class="footer-contact-links-divider"></div>
-                            <div class="footer-contact-link-wrapper">
-                                <div class="image-wrapper footer-contact-link-icon">
-                                    <div class="icon-footer"> <i class="omfi-location"></i> </div>
-                                </div>
-                                <div class="footer-contact-link-content">
-                                    <h6>Address</h6>
-                                    <p>81 Blackberry Hill
-                                        Bristol
-                                        Bs161df</p>
-                                </div>
+                            <div class="newsletter-form">
+                                <form method="post" action="#">
+                                    <div class="form-group">
+                                        <div class="input-outer">
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Enter Your email."
+                                                required />
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="theme-btn btn-style-one dark-line-two hover-light">
+                                            <span class="btn-title">Subscribe</span>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- second footer -->
-        <div class="second-footer">
-            <div class="row">
-                <!-- about & social icons -->
-                <div class="col-md-4 widget-area">
-                    <div class="widget clearfix">
-                        <div class="footer-logo">
-                            <h2>Bristol  <span style="margin-left: 5px;"> Cabwise</span>
-                            </h2>
-                        </div>
+    </div>
 
-                        <!-- <div class="footer-logo"><h2>CARE<span>X</span></h2></div> -->
-                        <div class="widget-text">
-                            <p>Book a service with us to ensure smooth and comfortable travel.</p>
-                            <div class="social-icons">
-                                <ul class="list-inline custom_icon_list">
-                                    <li><a href="https://wa.me/447533225970" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- quick links -->
-                <div class="col-md-3 offset-md-1 widget-area">
-                    <div class="widget clearfix usful-links">
-                        <h3 class="widget-title">Quick Links</h3>
-                        <ul>
-                            <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                            <li><a href="{{ route('frontend.about') }}">About</a></li>
-                            <li><a href="{{ route('frontend.services') }}">Services</a></li>
-                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                            <li><a class="nav-link"  href="{{ route('frontend.trustVoilet') }}">Reviews</a></li>
-                            <li><a href="{{ route('frontend.faqs') }}">FAQs</a></li>
-                            <li><a href="{{ route('frontend.termCondition') }}">Term and Condition</a></li>
-                            <!-- <li><a href="{{ route('frontend.services') }}" class="booking_online_btn">Book Now</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-                <!-- subscribe -->
-                <div class="col-md-4 widget-area">
-                    <div class="widget clearfix">
-                        <h3 class="widget-title">Subscribe</h3>
-                        <p>Want to be notified about our services. Just sign up and we'll send you a notification by email.</p>
-                        <div class="widget-newsletter">
-                            <form action="#">
-                                <input type="email" placeholder="Email Address" required>
-                                <button type="submit"><i class="ti-arrow-top-right"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- bottom footer -->
-        <div class="bottom-footer-text">
-            <div class="row copyright">
-                <div class="col-md-12">
-                    <p class="mb-0">&copy;2024 <a href="#">Bristol cabwise</a>. All rights reserved.</p>
+    <div class="footer-bottom">
+        <div class="auto-container">
+            <div class="inner-container">
+                <div class="copyright-text">
+                    © 2024 Apex Cabbie. All rights reserved.
                 </div>
             </div>
         </div>

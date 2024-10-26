@@ -2,249 +2,461 @@
 
 @section('content')
 
-    <style>
-        .new_forms {
-            max-width: 400px;
-            background-color: rgb(255 255 255 / 20%);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+<style>
+    .new_forms {
+        max-width: 400px;
+        background-color: rgb(255 255 255 / 20%);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        .modal-body {
-            padding: 20px;
-        }
+    .modal-body {
+        padding: 20px;
+    }
 
-        .modal-header {
-            background: orange;
-            color: white;
-        }
+    .modal-header {
+        background: orange;
+        color: white;
+    }
 
-        .modal-body {
-            background: black;
-        }
+    .modal-body {
+        background: black;
+    }
 
-        #countdown {
-            margin-bottom: 20px;
-        }
+    #countdown {
+        margin-bottom: 20px;
+    }
 
-        .coupon-code {
-            margin-bottom: 20px;
-        }
+    .coupon-code {
+        margin-bottom: 20px;
+    }
 
-        .coupon-heading {
-            font-size: 18px;
-            color: white;
-            margin-bottom: 10px;
-        }
+    .coupon-heading {
+        font-size: 18px;
+        color: white;
+        margin-bottom: 10px;
+    }
 
-        .coupon {
-            font-size: 36px;
-            color: #f00;
-            /* Red color for emphasis */
-        }
+    .coupon {
+        font-size: 36px;
+        color: #f00;
+        /* Red color for emphasis */
+    }
 
-        .modal-footer {
-            /* justify-content: center; */
-            display: none;
-            padding: 20px;
-        }
+    .modal-footer {
+        /* justify-content: center; */
+        display: none;
+        padding: 20px;
+    }
 
 
-        .cutom_button {
-            width: 100%;
-        }
+    .cutom_button {
+        width: 100%;
+    }
 
-        label {
-            display: block;
-            color: white;
-            font-family: emoji;
-            font-size: 21px;
-            /* margin-bottom: 5px; */
-            margin-top: 5px;
-        }
+    label {
+        display: block;
+        color: white;
+        font-family: emoji;
+        font-size: 21px;
+        /* margin-bottom: 5px; */
+        margin-top: 5px;
+    }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: white;
-        }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: white;
+    }
 
-        .cutom_button {
-            background-color: #f5b754;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 40px !important;
-            margin-left: 10px;
-        }
+    .cutom_button {
+        background-color: #f5b754;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 40px !important;
+        margin-left: 10px;
+    }
 
-        #countdown h4 {
-            color: white !important;
-        }
+    #countdown h4 {
+        color: white !important;
+    }
 
-        .cutom_button:hover {
-            background-color: #f5b754;
-        }
+    .cutom_button:hover {
+        background-color: #f5b754;
+    }
 
+    .header {
+        height: 700px !important;
+    }
+
+    .modal {
+        background: rgb(0 0 0 / 75%);
+    }
+
+    .view_details {
+        color: white;
+        background: #ff8120;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 10px;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .view_details:hover {
+        background: #ff8120;
+        color: wheat;
+        cursor: pointer;
+    }
+
+    .section-padding {
+        padding: 70px 0px 0px 0px;
+    }
+
+    .cars_details_view {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 10px;
+        background: #222222;
+        margin-top: 20px;
+    }
+
+    .cars_details_view div img {
+        height: 200px;
+    }
+
+
+    .special_rate {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
+        padding: 25px;
+        border-radius: 10px;
+        background: #222222;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .special_rate h4 {
+        color: white;
+    }
+
+    .icon_bg i {
+        background: #ff8120;
+        margin: 5px;
+        border-radius: 10px;
+        font-size: 25px;
+        color: white;
+        height: 50px;
+        width: 50px;
+        padding-top: 10px;
+    }
+
+    .truncate {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+
+    .right_border {
+        border-right: 1px solid rgb(237, 235, 235);
+        height: 40px;
+        padding-right: 30px;
+    }
+
+    .video-fullscreen-wrap video {
+        object-fit: cover !important;
+    }
+
+    .home_p {
+        font-size: 17px !important;
+    }
+
+    @media (max-width: 768px) {
         .header {
+            height: 100% !important;
+        }
+
+        .video-fullscreen-video {
             height: 700px !important;
         }
 
-        .modal {
-            background: rgb(0 0 0 / 75%);
-        }
-
-        .view_details {
-            color: white;
-            background: #ff8120;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 10px;
-            width: 100%;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .view_details:hover {
-            background: #ff8120;
-            color: wheat;
-            cursor: pointer;
-        }
-
-        .section-padding {
-            padding: 70px 0px 0px 0px;
-        }
-
-        .cars_details_view {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            border-radius: 10px;
-            background: #222222;
-            margin-top: 20px;
+        .home_heading {
+            font-size: 47px !important;
         }
 
         .cars_details_view div img {
-            height: 200px;
+            height: 300px;
+            object-fit: cover;
         }
 
-
-        .special_rate {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
-            padding: 25px;
-            border-radius: 10px;
-            background: #222222;
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
+        .button-2 {
+            padding: 10px 32px !important;
         }
 
-        .special_rate h4 {
-            color: white;
+        .button-1 {
+            padding: 10px 32px !important;
         }
 
-        .icon_bg i {
-            background: #ff8120;
-            margin: 5px;
-            border-radius: 10px;
-            font-size: 25px;
-            color: white;
-            height: 50px;
-            width: 50px;
-            padding-top: 10px;
+        .lets-talk[data-overlay-dark] h5,
+        .lets-talk h5 {
+            font-size: 32px !important;
         }
 
-        .truncate {
+        .video-fullscreen-wrap {
+            height: 100% !important;
             overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            /* Number of lines to show */
-            -webkit-box-orient: vertical;
-            text-overflow: ellipsis;
         }
 
-        .right_border {
-            border-right: 1px solid rgb(237, 235, 235);
-            height: 40px;
-            padding-right: 30px;
+        .section-padding {
+            padding: 40px 0 !important;
         }
 
-        .video-fullscreen-wrap video {
-            object-fit: cover !important;
+        .section-title {
+            font-size: 30px !important;
         }
 
-        .home_p {
-            font-size: 17px !important;
+        .v-middle {
+            margin-top: 70px !important;
         }
 
-        @media (max-width: 768px) {
-            .header {
-                height: 100% !important;
-            }
-
-            .video-fullscreen-video {
-                height: 700px !important;
-            }
-
-            .home_heading {
-                font-size: 47px !important;
-            }
-
-            .cars_details_view div img {
-                height: 300px;
-                object-fit: cover;
-            }
-
-            .button-2 {
-                padding: 10px 32px !important;
-            }
-
-            .button-1 {
-                padding: 10px 32px !important;
-            }
-
-            .lets-talk[data-overlay-dark] h5,
-            .lets-talk h5 {
-                font-size: 32px !important;
-            }
-
-            .video-fullscreen-wrap {
-                height: 100% !important;
-                overflow: hidden;
-            }
-
-            .section-padding {
-                padding: 40px 0 !important;
-            }
-
-            .section-title {
-                font-size: 30px !important;
-            }
-
-            .v-middle {
-                margin-top: 70px !important;
-            }
-
-            .video-fullscreen-video {
-                height: 100%;
-            }
+        .video-fullscreen-video {
+            height: 100%;
         }
+    }
 
-        [data-overlay-dark]::before {
-            background: url('https://testing.bristolcabwise.com/frontend-assets/img/homevideo.mp4') no-repeat center center !important;
-        }
+    [data-overlay-dark]::before {
+        background: url('https://testing.bristolcabwise.com/frontend-assets/img/homevideo.mp4') no-repeat center center !important;
+    }
+</style>
+<section class="banner-section">
+    <div class="banner-carousel owl-carousel owl-theme">
+        <div class="slide-item">
+            <div
+                class="bg bg-image"
+                style="background-image: url('frontend-assets/img/banner/bg1.jpg')"></div>
+            <div class="banner-shape-curve1 animate-1"></div>
+            <div class="banner-shape-curve2 animate-1"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1 class="title animate-1">
+                        Reserve your taxi <br />From Any location!
+                    </h1>
+                    <div class="text animate-2">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit cum
+                        duis phasellus in <br />cras augue consequat nunc fermentum
+                        nisi eu.
+                    </div>
+                    <a
+                        href="page-taxi.html"
+                        class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
+                </div>
+            </div>
+            <div class="banner-shape-1 bounce-y"></div>
+        </div>
+        <div class="slide-item">
+            <div
+                class="bg bg-image"
+                style="background-image: url(frontend-assets/img/banner/bg1.jpg)"></div>
+            <div class="banner-shape-curve1 animate-1"></div>
+            <div class="banner-shape-curve2 animate-1"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1 class="title animate-1">
+                        Reserve your taxi <br />From Any location!
+                    </h1>
+                    <div class="text animate-2">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit cum
+                        duis phasellus in <br />cras augue consequat nunc fermentum
+                        nisi eu.
+                    </div>
+                    <a
+                        href="page-taxi.html"
+                        class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
+                </div>
+            </div>
+            <div class="banner-shape-1 bounce-y"></div>
+        </div>
+    </div>
+</section>
 
-    </style>
-    <header class="header">
+<section class="pricing-section-four mt-5">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <!-- <span class="sub-title">Select a plan that shouts</span> -->
+            <h2 class="letters-slide-up text-split">
+                Our Services
+            </h2>
+        </div>
+        <div class="outer-box" data-aos="fade-left">
+            <div class="pricing-carousel owl-carousel owl-theme default-dots">
+                @if ($services->count() > 0)
+                @foreach ($services as $service)
+                <div class="pricing-block-four">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image">
+                                <img src="{{ asset('uploads/services/' . $service->image) }}" alt="Image" />
+                            </figure>
+                        </div>
+                        <div class="content">
+                            <div class="car-detail">
+                                <h4 class="car-name">{{ $service->name }}</h4>
+                                <div class="city">{{ $service->tag }}</div>
+                                <div class="truncate city short_description">
+                                    {{ $service->short_description }}
+                                </div>
+                            </div>
+                            <div class="btn-box d-flex gap-2">
+                                <a href="{{ route('frontend.carDetails', $service->id) }}" class="theme-btn btn-style-two hover-light">
+                                    <span class="btn-title">View Details</span>
+                                </a>
+                                <a href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}" class="theme-btn btn-style-two hover-light">
+                                    <span class="btn-title">Book Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+
+@if ($fleets->count() > 0)
+<section class="team-section-two pt-0 mt-5">
+    <div class="auto-container">
+        <div class="outer-box">
+            <div class="sec-title text-center">
+                <h2 class="letters-slide-up text-split">Our Fleets</h2>
+            </div>
+            <div class="carousel-outer">
+                <div class="swiper team-slider">
+                    <div class="swiper-wrapper">
+                        @foreach ($fleets as $fleet)
+                        <div class="swiper-slide">
+                            <div class="team-block-two">
+                                <div class="inner-box">
+                                    <figure class="image">
+                                        <img src="{{ asset('uploads/fleets/' . $fleet->image) }}" alt="Image">
+                                    </figure>
+                                    <div class="content">
+                                        <!-- <div class="designation">{{ $fleet->name }}</div> -->
+                                        <h4 class="name"><a href="page-team-details.html">{{ $fleet->name }}</a></h4>
+                                        <div class="info-box">
+                                            <a href="{{ route('frontend.fleetDetailsFrontend', $fleet->id) }}" class="info-btn">
+                                                <span class="icon"><i class="fa fa-info-circle"></i></span> <span class="text">View Details</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="swiper-button-prev"><i class="icon fa fa-angles-left"></i></div>
+            <div class="swiper-button-next"><i class="icon fa fa-angles-right"></i></div> -->
+        </div>
+    </div>
+</section>
+@endif
+
+<section class="work-section">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <h2 class="letters-slide-up text-split">Booking Process</h2>
+        </div>
+        <div class="row">
+
+            <div class="work-block col-lg-4 col-md-6" data-aos="fade-up">
+                <div class="inner-box">
+                    <i class="icon fa fa-calendar-alt"></i>
+                    <div class="content">
+                        <h4 class="title book_process_heading">Book Online or Get a Quote</h4>
+                        <div class="text">Make your booking online or request a quote through our user-friendly website, ensuring safe payments, date protections, and customer safety.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-block col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="inner-box">
+                    <i class="icon fa fa-car"></i>
+                    <div class="content">
+                        <h4 class="title book_process_heading">Choose a Service</h4>
+                        <div class="text">Explore Bristol Cabwise's diverse fleet and service options for a seamless and enjoyable ride.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-block col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="inner-box">
+                    <i class="icon far fa-smile"></i>
+                    <div class="content">
+                        <h4 class="title book_process_heading">Enjoy Your Ride</h4>
+                        <div class="text">Experience each journey with Bristol Cabwise, where our skilled drivers guarantee a smooth and secure ride.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section-two pt-0 mt-5">
+    <div class="auto-container">
+        <div class="outer-box">
+            <div class="sec-title text-center">
+                <h2 class="letters-slide-up text-split">What Clients Say</h2>
+            </div>
+            <div class="carousel-outer">
+                <div class="swiper team-slider">
+                    <div class="swiper-wrapper">
+                        @for ($i = 0; $i < 5; $i++)
+                        <div class="swiper-slide">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <img src="https://via.placeholder.com/80" alt="Client" class="rounded-circle mb-3">
+                                    <h5 class="card-title font-weight-bold">John Doe</h5>
+                                    <p class="text-muted">"Bristol Cabwise offers fantastic service! The booking process was easy, and the ride was smooth and comfortable. Highly recommended!"</p>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- <header class="header">
         <div class="video-fullscreen-wrap">
-            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
             <div class="video-fullscreen-video" data-overlay-dark="2" style="height: 800px;">
 
                 <video preload="auto" autoplay muted playsinline loop alt="Senior Adult, People, Lifestyles, Lu"
@@ -273,10 +485,10 @@
                 </div>
             </div>
         </div>
-    </header>
-    {{-- Additional Section  --}}
+    </header> -->
+{{-- Additional Section  --}}
 
-    <section class="about section-padding">
+<!-- <section class="about section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 mb-30">
@@ -297,9 +509,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="testimonials section-padding mt-15">
+<!-- <section class="testimonials section-padding mt-15">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center mb-30">
@@ -336,10 +548,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Car Category -->
-    <section class="car-types1 section-padding">
+<!-- Car Category -->
+<!-- <section class="car-types1 section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center mb-30">
@@ -384,10 +596,10 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- divider line -->
-    <!-- Process -->
-    <section class="process section-padding">
+    </section> -->
+<!-- divider line -->
+<!-- Process -->
+<!-- <section class="process section-padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 text-center mb-30">
@@ -488,11 +700,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    {{-- second addtional section  --}}
+{{-- second addtional section  --}}
 
-    <section class="process d-none">
+<!-- <section class="process d-none">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -542,10 +754,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Testimonials -->
-    <section class="testimonials section-padding mt-15">
+<!-- Testimonials -->
+<!-- <section class="testimonials section-padding mt-15">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center mb-30">
@@ -728,11 +940,11 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- divider line -->
+    </section> -->
+<!-- divider line -->
 
-    <!-- Lets Talk -->
-    <section class="lets-talk bg-img bg-fixed section-padding" data-overlay-dark="5"
+<!-- Lets Talk -->
+<!-- <section class="lets-talk bg-img bg-fixed section-padding" data-overlay-dark="5"
         data-background="{{ asset('frontend-assets/img/slider/3.jpg') }}">
         <div class="container">
             <div class="row">
@@ -746,9 +958,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    @if ($coupon)
+<!-- @if ($coupon)
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -840,5 +1052,5 @@
                 console.error('Failed to copy: ', err);
             });
         }
-    </script>
+    </script> -->
 @endsection

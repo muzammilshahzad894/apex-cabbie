@@ -1,152 +1,154 @@
-<style>
-    .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; /* Adjusts the dropdown position */
-}
-
-/* Make the dropdown-toggle work on hover */
-.nav-item.dropdown:hover .nav-link.dropdown-toggle::after {
-    display: inline-block;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-}
-.navbar-right_mobile{
-    display: none !important;
-}
-@media (max-width: 767px) {
-.navbar-right_mobile{
-    display: block !important;
-    margin: 10px 0px;
-}
-.navbar .navbar-right .wrap{
-    margin-left: 0px !important;
-}
-}
-</style>
-
-
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <!-- Logo -->
-        <div class="logo-wrapper">
-            <!-- <a class="logo" href="index-2.html"> <img src="img/logo-light.png" class="logo-img" alt=""> </a> -->
-            <!-- <a class="logo" href="index.html"><h2>Renta<span>x</span></h2></a> -->
-            <a class="logo" href="{{ route('frontend.index') }}">
-                <img src="{{ asset('frontend-assets/img/logo-light.png') }}" class="logo-img" alt="" />
-            </a>
-            <!-- <div class="footer-logo">
-                <h2>Bristol
-                    <span> Cabwise</span>
-                </h2>
-            </div> -->
-
-
-        </div>
-        <!-- Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span> </button>
-        <!-- Menu -->
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('frontend.index') ? 'active' : '' }}" href="{{ route('frontend.index') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('frontend.about') ? 'active' : '' }}" href="{{ route('frontend.about') }}">About</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('frontend.services') ? 'active' : '' }}" href="{{ route('frontend.services') }}">Services</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('frontend.contact') ? 'active' : '' }}" href="{{ route('frontend.contact') }}">Contact</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('frontend.faqs') ? 'active' : '' }}" href="{{ route('frontend.faqs') }}">FAQs</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->routeIs('frontend.trustVoilet') ? 'active' : '' }}" href="{{ route('frontend.trustVoilet') }}">Reviews</a></li>
-               
-
-
-                @guest
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('frontend.login') ||  request()->routeIs('frontend.signup') ? 'active' : '' }}" href="/login">Login</a></li>
-                @endguest
-
-
-
-
-
-
-                @auth
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-    
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('frontend.userHistory') }}">
-                            {{ __('My Bookings') }}
+<header class="main-header header-style-one">
+    <div class="header-lower">
+        <div class="auto-container">
+            <div class="main-box">
+                <div class="logo-box">
+                    <div class="logo">
+                        <a href="{{ route('frontend.index') }}">
+                            <img class="site-logo" src="{{ asset('frontend-assets/img/logo-light.png') }}" alt="Logo" />
                         </a>
-                        <a class="dropdown-item" href="{{ route('frontend.refund') }}">
-                            {{ __('Refund') }}
-                        </a>
-
-                        {{-- <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a> --}}
-    
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
-                            @csrf
-                            <button type="submit" class="dropdown-item">Logout</button>
-                        </form>
-                    </div>
-                </li>
-            @endauth
-
-
-
-
-
-
-            <li class="nav-item">
-                        
-                <div class="navbar-right navbar-right_mobile">
-                    <div class="wrap">
-                        <div class="icon"><a href="tel:01173322782"> <i class="flaticon-phone-call"></i></a> </div>
-                        <div class="text">
-                            <p>Need help?</p>
-                            <h5><a href="tel:01173322782">01173322782</a></h5>
-                        </div>
-    
                     </div>
                 </div>
-                        </li>
 
+                <div class="nav-outer">
+                    <nav class="nav main-menu">
+                        <ul class="navigation d-flex align-items-center">
+                            <li class="{{ request()->routeIs('frontend.index') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.index') }}">Home</a>
+                            </li>
+                            <li class="{{ request()->routeIs('frontend.about') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.about') }}">About</a>
+                            </li>
+                            <li class="{{ request()->routeIs('frontend.services') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.services') }}">Services</a>
+                            </li>
+                            <li class="{{ request()->routeIs('frontend.contact') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.contact') }}">Contact</a>
+                            </li>
+                            <li class="{{ request()->routeIs('frontend.faqs') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.faqs') }}">FAQs</a>
+                            </li>
+                            <li class="{{ request()->routeIs('frontend.trustVoilet') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.trustVoilet') }}">Reviews</a>
+                            </li>
+                            @guest
+                                <li class="{{ request()->routeIs('frontend.login') ||  request()->routeIs('frontend.signup') ? 'current' : '' }}">
+                                    <a href="/login">Login</a>
+                                </li>
+                            @endguest
 
-                {{-- @if (Auth::check())
-                <li class="nav-item"><a class="nav-link" href="{{ route('frontend.logout') }}">Logout</a></li>
-                @else --}}
-                <li class="nav-item">
-                    <a href="{{ route('frontend.book-online') }}" class="booking_online_btn">Book Now</a></li>
+                            @auth
+                            <li class="dropdown">
+                                <a href="#">{{ Auth::user()->name }}</a>
+                                <ul>
+                                    <li><a href="{{ route('frontend.userHistory') }}">{{ __('My Bookings') }}</a></li>
+                                    <li><a href="{{ route('frontend.refund') }}">{{ __('Refund') }}</a></li>
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item navbar-logout">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            @endauth
+                            <li class="{{ request()->routeIs('frontend.faqs') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.faqs') }}">FAQs</a>
+                            </li>
+                            <li class="remvoe_line">
+                                <div class="btn-box">
+                                    <a 
+                                        href="{{ route('frontend.book-online') }}"
+                                        class="theme-btn btn-style-one dark-line-two hover-light"
+                                    >
+                                            <span class="btn-title">Book Now</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="tel:01173322782" class="help-section d-flex">
+                                    <div class="icon">
+                                        <i class="icon lnr-icon-phone-handset"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p class="m-0 p-0">Need help?</p>
+                                        <h5 class="m-0 p-0">01173322782</h5>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 
-                    <li class="nav-item">
-                        
-            <div class="navbar-right">
-                <div class="wrap">
-                    <div class="icon"><a href="tel:01173322782"> <i class="flaticon-phone-call"></i></a> </div>
-                    <div class="text">
-                        <p>Need help?</p>
-                        <h5><a href="tel:01173322782">01173322782</a></h5>
+                <div class="outer-box">
+                    <div class="mobile-nav-toggler light">
+                        <span class="icon lnr-icon-bars"></span>
                     </div>
-
                 </div>
             </div>
-                    </li>
-            </ul>
-            {{-- <div class="navbar-right">
-                <div class="wrap">
-                    <div class="icon"><a href="tel:01173322782"> <i class="flaticon-phone-call"></i></a> </div>
-                    <div class="text">
-                        <p>Need help?</p>
-                        <h5><a href="tel:01173322782">01173322782</a></h5>
-                    </div>
-
-                </div>
-            </div> --}}
         </div>
     </div>
-</nav>
+
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+
+        <nav class="menu-box">
+            <div class="upper-box">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="images/logo-2.png" alt title /></a>
+                </div>
+                <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+            <ul class="navigation clearfix"></ul>
+        </nav>
+    </div>
+
+    <!-- <div class="search-popup">
+        <span class="search-back-drop"></span>
+        <button class="close-search">
+            <span class="fa fa-times"></span>
+        </button>
+        <div class="search-inner">
+            <form
+                method="post"
+                action="https://html.kodesolution.com/2024/citycar-html/blog-showcase.html">
+                <div class="form-group">
+                    <input
+                        type="search"
+                        name="search-field"
+                        value
+                        placeholder="Search..."
+                        required />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+    </div> -->
+
+    <div class="sticky-header">
+        <div class="auto-container">
+            <div class="inner-container">
+                <!-- <div class="logo">
+                    <a href="index.html" title><img src="images/logo.png" alt title /></a>
+                </div> -->
+                <div class="logo">
+                    <a href="{{ route('frontend.index') }}">
+                        <img class="site-logo" src="{{ asset('frontend-assets/img/logo-light.png') }}" alt="Logo" />
+                    </a>
+                </div>
+
+                <div class="nav-outer">
+                    <nav class="main-menu">
+                        <div class="navbar-collapse show collapse clearfix">
+                            <ul class="navigation clearfix d-flex align-items-center"></ul>
+                        </div>
+                    </nav>
+
+                    <div class="mobile-nav-toggler">
+                        <span class="icon lnr-icon-bars"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
