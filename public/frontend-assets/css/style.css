@@ -16,9 +16,9 @@
   --theme-color2-rgb: 0, 0, 0;
   --theme-color-light-rgb: 255, 255, 255;
   --theme-color-dark-rgb: 0, 0, 0;
-  --theme-color1: #ffee02;
+  --theme-color1: #E1CB83;
   --theme-color2: #000000;
-  --review-color: #fdc009;
+  --review-color: #E1CB83;
   --theme-color-light: #FFFFFF;
   --theme-color-dark: #000000;
   --bg-theme-color1: var(--theme-color1);
@@ -63,7 +63,7 @@
   --theme-light-background: #f8f6f1;
   --theme-light-background-text-color: var(--headings-color);
   --theme-black: #131313;
-  --container-width: 1200px;
+  --container-width: 1350px;
   --small-container-width: 1050px;
   --large-container-width: 1800px;
   --container-pt: 120px;
@@ -2486,6 +2486,9 @@ Main Header
   transition: all 300ms ease;
   z-index: 3;
 }
+.main-menu .navigation > li.remvoe_line:before {
+  display: none;
+}
 .main-menu .navigation > li:hover:before, .main-menu .navigation > li.current:before {
   left: 0;
   width: 100%;
@@ -2868,7 +2871,7 @@ Main Header
 .header-style-one .header-lower .main-box .nav-outer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+          justify-content: right;
 }
 .header-style-one .header-lower .main-box .outer-box {
   position: relative;
@@ -19916,15 +19919,12 @@ Sidebar
 
 /* Custom Style */
 .site-logo {
-  width: 130px;
-  height: 90px;
+  width: 245px;
+  height: 96px !important;
 }
 
 .navbar-logout {
   padding-left: 29px !important;
-}
-.remvoe_line:before {
-  background-color: none !important;
 }
 .help-section .icon {
   height: 50px;

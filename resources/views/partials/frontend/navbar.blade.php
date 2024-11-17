@@ -5,7 +5,7 @@
                 <div class="logo-box">
                     <div class="logo">
                         <a href="{{ route('frontend.index') }}">
-                            <img class="site-logo" src="{{ asset('frontend-assets/img/logo-light.png') }}" alt="Logo" />
+                            <img class="site-logo" src="{{ asset('frontend-assets/img/apex-logo.png') }}" alt="Logo" />
                         </a>
                     </div>
                 </div>
@@ -61,11 +61,11 @@
                                         href="{{ route('frontend.book-online') }}"
                                         class="theme-btn btn-style-one dark-line-two hover-light"
                                     >
-                                            <span class="btn-title">Book Now</span>
+                                        <span class="btn-title">Book Now</span>
                                     </a>
                                 </div>
                             </li>
-                            <li>
+                            <li class="remvoe_line">
                                 <a href="tel:01173322782" class="help-section d-flex">
                                     <div class="icon">
                                         <i class="icon lnr-icon-phone-handset"></i>
@@ -133,7 +133,7 @@
                 </div> -->
                 <div class="logo">
                     <a href="{{ route('frontend.index') }}">
-                        <img class="site-logo" src="{{ asset('frontend-assets/img/logo-light.png') }}" alt="Logo" />
+                        <img class="site-logo" src="{{ asset('frontend-assets/img/apex-logo.png') }}" alt="Logo" />
                     </a>
                 </div>
 

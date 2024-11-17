@@ -246,7 +246,7 @@
         <div class="slide-item">
             <div
                 class="bg bg-image"
-                style="background-image: url('frontend-assets/img/banner/bg1.jpg')"></div>
+                style="background-image: url('frontend-assets/img/banner/new-bg1.jpg')"></div>
             <div class="banner-shape-curve1 animate-1"></div>
             <div class="banner-shape-curve2 animate-1"></div>
             <div class="auto-container">
@@ -264,12 +264,12 @@
                         class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
                 </div>
             </div>
-            <div class="banner-shape-1 bounce-y"></div>
+            <!-- <div class="banner-shape-1 bounce-y"></div> -->
         </div>
         <div class="slide-item">
             <div
                 class="bg bg-image"
-                style="background-image: url(frontend-assets/img/banner/bg1.jpg)"></div>
+                style="background-image: url(frontend-assets/img/banner/new-bg1.jpg)"></div>
             <div class="banner-shape-curve1 animate-1"></div>
             <div class="banner-shape-curve2 animate-1"></div>
             <div class="auto-container">
@@ -287,7 +287,7 @@
                         class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
                 </div>
             </div>
-            <div class="banner-shape-1 bounce-y"></div>
+            <!-- <div class="banner-shape-1 bounce-y"></div> -->
         </div>
     </div>
 </section>
