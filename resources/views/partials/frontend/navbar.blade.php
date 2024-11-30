@@ -59,7 +59,7 @@
                                 <div class="btn-box">
                                     <a 
                                         href="{{ route('frontend.book-online') }}"
-                                        class="theme-btn btn-style-one dark-line-two hover-light"
+                                        class="custom-btn"
                                     >
                                         <span class="btn-title">Book Now</span>
                                     </a>
@@ -103,34 +103,9 @@
         </nav>
     </div>
 
-    <!-- <div class="search-popup">
-        <span class="search-back-drop"></span>
-        <button class="close-search">
-            <span class="fa fa-times"></span>
-        </button>
-        <div class="search-inner">
-            <form
-                method="post"
-                action="https://html.kodesolution.com/2024/citycar-html/blog-showcase.html">
-                <div class="form-group">
-                    <input
-                        type="search"
-                        name="search-field"
-                        value
-                        placeholder="Search..."
-                        required />
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </div>
-            </form>
-        </div>
-    </div> -->
-
     <div class="sticky-header">
         <div class="auto-container">
             <div class="inner-container">
-                <!-- <div class="logo">
-                    <a href="index.html" title><img src="images/logo.png" alt title /></a>
-                </div> -->
                 <div class="logo">
                     <a href="{{ route('frontend.index') }}">
                         <img class="site-logo" src="{{ asset('frontend-assets/img/apex-logo.png') }}" alt="Logo" />
