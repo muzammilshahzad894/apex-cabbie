@@ -4199,209 +4199,89 @@ Main Header
 ***/
 .banner-section {
   position: relative;
+  height: 100vh;
+  background: url('/frontend-assets/img/banner/new-bg1.jpg') no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
-.banner-section .image-box {
+
+.overlay {
   position: absolute;
   top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-}
-@media (max-width: 1399.98px) {
-  .banner-section .image-box {
-    top: 50%;
-    bottom: auto;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-  }
-}
-.banner-section .image-box:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -3px;
-  width: 160px;
-  height: 100%;
-  background-color: var(--theme-color1);
-  -webkit-transform: skewX(-23deg);
-          transform: skewX(-23deg);
-}
-@media (max-width: 1399.98px) {
-  .banner-section .image-box:before {
-    display: none;
-  }
-}
-.banner-section .image-box .image {
-  position: relative;
-  display: block;
-  clip-path: polygon(42% 0, 100% 0, 100% 100%, 0% 100%);
-  margin-bottom: 0;
-  z-index: 9;
-}
-@media (max-width: 1399.98px) {
-  .banner-section .image-box .image {
-    clip-path: none;
-    width: 600px;
-  }
-}
-@media (max-width: 1199.98px) {
-  .banner-section .image-box .image {
-    display: none;
-  }
-}
-.banner-section .content-box {
-  position: relative;
-  padding: 137px 0 320px;
-}
-@media (max-width: 1199.98px) {
-  .banner-section .content-box {
-    padding: 105px 0 120px;
-    text-align: center;
-  }
-}
-.banner-section .content-box .title {
-  position: relative;
-  font-size: 74px;
-  font-weight: 600;
-  line-height: 1.2em;
-  color: var(--theme-color-light);
-  margin-bottom: 25px;
-  text-transform: capitalize;
-  z-index: 1;
-}
-@media (max-width: 1199.98px) {
-  .banner-section .content-box .title {
-    line-height: 1em;
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 991.98px) {
-  .banner-section .content-box .title {
-    font-size: 60px;
-  }
-}
-@media (max-width: 767.98px) {
-  .banner-section .content-box .title {
-    font-size: 46px;
-  }
-  .banner-section .content-box .title br {
-    display: none;
-  }
-}
-@media (max-width: 575.98px) {
-  .banner-section .content-box .title {
-    font-size: 40px;
-  }
-}
-.banner-section .content-box .text {
-  position: relative;
-  color: var(--theme-color-light);
-  margin-bottom: 42px;
-}
-@media (max-width: 767.98px) {
-  .banner-section .content-box .text br {
-    display: none;
-  }
-}
-.banner-section .content-box .theme-btn {
-  padding: 22px 92px 22px 52px;
-}
-.banner-section .slide-item .bg-image {
-  position: absolute;
   left: 0;
-  top: 0;
-  height: 100%;
   width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  pointer-events: none;
-}
-.banner-section .slide-item .banner-shape-1 {
-  background-image: url(../img/banner/banner-shape-1.png);
-  width: 295px;
-  height: 170px;
-  position: absolute;
-  top: 79px;
-  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black transparent overlay */
   z-index: 1;
-  pointer-events: none;
 }
-@media (max-width: 1399.98px) {
-  .banner-section .slide-item .banner-shape-1 {
-    display: none;
-  }
-}
-.banner-section .slide-item .banner-shape-curve1 {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 193px;
-  height: 100px;
-  background-color: var(--theme-color1);
-  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 18% 100%);
-  pointer-events: none;
-}
-@media (max-width: 1399.98px) {
-  .banner-section .slide-item .banner-shape-curve1 {
-    display: none;
-  }
-}
-.banner-section .slide-item .banner-shape-curve2 {
-  position: absolute;
-  right: 0;
-  bottom: 100px;
-  width: 136px;
-  height: 100px;
-  background-color: var(--theme-color-light);
-  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 18% 100%);
-  pointer-events: none;
-}
-@media (max-width: 1399.98px) {
-  .banner-section .slide-item .banner-shape-curve2 {
-    display: none;
-  }
-}
-.banner-section .banner-carousel .owl-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  position: absolute;
-  top: calc(50% - 172px);
-  left: 0;
-  right: 0;
-  padding: 0 20px;
-}
-.banner-section .banner-carousel .owl-nav .owl-next,
-.banner-section .banner-carousel .owl-nav .owl-prev {
-  background-color: rgba(var(--theme-color-light-rgb), 1);
-  border: none;
-  border-radius: 0;
-  color: var(--theme-color-dark);
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  margin-bottom: 10px;
-  margin-right: 0;
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  opacity: 0.3;
+  color: #fff;
+  padding: 20px;
 }
-.banner-section .banner-carousel .owl-nav .owl-next:hover,
-.banner-section .banner-carousel .owl-nav .owl-prev:hover {
-  background-color: var(--theme-color-light);
-  opacity: 1;
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
+
+.text {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff6600;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e55a00;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.carousel-prev {
+  left: 20px;
+}
+
+.carousel-next {
+  right: 20px;
+}
+
 
 /*** 
 

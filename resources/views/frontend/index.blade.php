@@ -242,55 +242,21 @@
     }
 </style>
 <section class="banner-section">
-    <div class="banner-carousel owl-carousel owl-theme">
-        <div class="slide-item">
-            <div
-                class="bg bg-image"
-                style="background-image: url('frontend-assets/img/banner/new-bg1.jpg')"></div>
-            <div class="banner-shape-curve1 animate-1"></div>
-            <div class="banner-shape-curve2 animate-1"></div>
-            <div class="auto-container">
-                <div class="content-box">
-                    <h1 class="title animate-1">
-                        Reserve your taxi <br />From Any location!
-                    </h1>
-                    <div class="text animate-2">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit cum
-                        duis phasellus in <br />cras augue consequat nunc fermentum
-                        nisi eu.
-                    </div>
-                    <a
-                        href="page-taxi.html"
-                        class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
-                </div>
-            </div>
-            <!-- <div class="banner-shape-1 bounce-y"></div> -->
-        </div>
-        <div class="slide-item">
-            <div
-                class="bg bg-image"
-                style="background-image: url(frontend-assets/img/banner/new-bg1.jpg)"></div>
-            <div class="banner-shape-curve1 animate-1"></div>
-            <div class="banner-shape-curve2 animate-1"></div>
-            <div class="auto-container">
-                <div class="content-box">
-                    <h1 class="title animate-1">
-                        Reserve your taxi <br />From Any location!
-                    </h1>
-                    <div class="text animate-2">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit cum
-                        duis phasellus in <br />cras augue consequat nunc fermentum
-                        nisi eu.
-                    </div>
-                    <a
-                        href="page-taxi.html"
-                        class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
-                </div>
-            </div>
-            <!-- <div class="banner-shape-1 bounce-y"></div> -->
-        </div>
+    <div class="overlay"></div>
+    <div class="content-wrapper">
+        <h1 class="title">Reserve your taxi<br>From Any Location!</h1>
+        <p class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum duis
+            phasellus in cras augue consequat nunc fermentum nisi eu.
+        </p>
+        <a
+            href="page-taxi.html"
+            class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
     </div>
+    <button class="carousel-btn carousel-prev">‹</button>
+    <button class="carousel-btn carousel-next">›</button>
 </section>
+
 
 <section class="pricing-section-four mt-5">
     <div class="auto-container">
@@ -428,7 +394,7 @@
                 <div class="swiper team-slider">
                     <div class="swiper-wrapper">
                         @for ($i = 0; $i < 5; $i++)
-                        <div class="swiper-slide">
+                            <div class="swiper-slide">
                             <div class="card h-100">
                                 <div class="card-body text-center">
                                     <img src="https://via.placeholder.com/80" alt="Client" class="rounded-circle mb-3">
@@ -443,12 +409,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        @endfor
                     </div>
+                    @endfor
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
