@@ -19806,31 +19806,173 @@ Sidebar
 .navbar-logout {
   padding-left: 29px !important;
 }
+
+
+
+.help-section {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .help-section .icon {
+  width: 50px;  /* Increased size for better visibility */
   height: 50px;
-  width: 50px;
-  border: 1px solid var(--theme-color1);
+  border: 1px solid #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  transition: transform 0.3s ease;
 }
+
+.help-section .icon:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
 .help-section .icon i {
-  color: #fff !important;
+  color: #fff;
+  font-size: 24px; /* Larger icon for better visibility */
 }
-.help-section .text {
-  margin-left: 10px;
-  text-align: left;
+
+.help-section .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 55px; /* Position below the icon */
+  left: -140px; /* Offsetting to the left by 116px */
+  background-color: var(--theme-color1);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  z-index: 10;
 }
-.help-section .text p {
-  font-size: 12px;
+
+.help-section .dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* Smooth dropdown animation */
 }
-.help-section .text h5 {
-  font-size: 13px;
+
+.help-section .dropdown-content {
+  color: #fff;
+  padding-bottom: 10px;
+  text-align: center;
 }
-.help-section .text p, .help-section .text h5 {
-  color: #fff !important;
+
+.help-section .dropdown-content p {
+  font-size: 14px;
+  margin-bottom: 5px;
 }
+
+.help-section .dropdown-content h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.help-section .dropdown-option {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.help-section .dropdown-option:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+}
+
+#show-number {
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  padding: 10px;
+}
+
+#show-number:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+}
+
+.help-section {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.icon {
+  width: 50px;  /* Increased size for better visibility */
+  height: 50px;
+  background-color: var(--theme-color-dark);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.icon i {
+  color: #fff;
+  font-size: 24px; /* Larger icon for better visibility */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: -140px;
+  background-color: var(--theme-color1);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  z-index: 10;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* Smooth dropdown animation */
+}
+
+.dropdown-content {
+  color: #fff;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.dropdown-content p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.dropdown-content h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.call-now-btn {
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
 .theme-color {
   color: var(--theme-color1);
 }

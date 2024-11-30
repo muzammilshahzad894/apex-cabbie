@@ -66,7 +66,22 @@
                                 </div>
                             </li>
                             <li class="remvoe_line">
-                                <a href="tel:01173322782" class="help-section d-flex">
+                                <div class="help-section">
+                                    <div class="icon" onclick="toggleDropdown(event)">
+                                        <i class="lnr-icon-phone-handset"></i>
+                                    </div>
+                                    <div class="dropdown-menu" id="dropdown-menu">
+                                        <div class="dropdown-content">
+                                            <p class="m-0 p-0">Need help?</p>
+                                            <h5 class="m-0 p-0">01173322782</h5>
+                                        </div>
+                                        <a href="tel:01173322782" class="call-now-btn">Call Now</a>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- <a href="tel:01173322782" class="help-section d-flex">
                                     <div class="icon">
                                         <i class="icon lnr-icon-phone-handset"></i>
                                     </div>
@@ -74,7 +89,7 @@
                                         <p class="m-0 p-0">Need help?</p>
                                         <h5 class="m-0 p-0">01173322782</h5>
                                     </div>
-                                </a>
+                                </a> -->
                             </li>
                         </ul>
                     </nav>
@@ -127,3 +142,32 @@
         </div>
     </div>
 </header>
+
+<script>
+function toggleDropdown(event) {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.classList.toggle('show');
+    
+    const showNumberOption = document.getElementById('show-number');
+    
+    // Toggle visibility of the number when clicked
+    showNumberOption.addEventListener('click', () => {
+        alert('Phone number: 01173322782');
+    });
+
+    // Prevent event propagation to document click
+    event.stopPropagation();
+}
+
+// Close the dropdown if clicked outside
+document.addEventListener('click', function(event) {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const icon = document.querySelector('.icon');
+    
+    // Check if the clicked area is outside the icon or dropdown menu
+    if (!icon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove('show');
+    }
+});
+
+</script>
