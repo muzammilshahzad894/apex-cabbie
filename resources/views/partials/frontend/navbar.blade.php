@@ -78,18 +78,6 @@
                                         <a href="tel:01173322782" class="call-now-btn">Call Now</a>
                                     </div>
                                 </div>
-
-
-
-                                <!-- <a href="tel:01173322782" class="help-section d-flex">
-                                    <div class="icon">
-                                        <i class="icon lnr-icon-phone-handset"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p class="m-0 p-0">Need help?</p>
-                                        <h5 class="m-0 p-0">01173322782</h5>
-                                    </div>
-                                </a> -->
                             </li>
                         </ul>
                     </nav>

@@ -5,35 +5,35 @@
         <div class="auto-container pt-5">
             <div class="row">
                 <div class="col-md-4">
-                    <a href="tel:01173322782" class="help-section d-flex">
+                    <a href="tel:01173322782" class="help-section-footer d-flex">
                         <div class="icon">
                             <i class="icon lnr-icon-phone-handset"></i>
                         </div>
                         <div class="text">
                             <p class="m-0 p-0">Call us?</p>
-                            <h5 class="m-0 p-0">01173322782</h5>
+                            <p class="m-0 p-0">01173322782</p>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="mailto:info@bristolcabwise.com" class="help-section d-flex">
+                    <a href="mailto:info@bristolcabwise.com" class="help-section-footer d-flex">
                         <div class="icon">
                             <i class="icon lnr-icon-envelope"></i>
                         </div>
                         <div class="text">
                             <p class="m-0 p-0">Write to us?</p>
-                            <h5 class="m-0 p-0">info@bristolcabwise.com</h5>
+                            <p class="m-0 p-0">info@bristolcabwise.com</p>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#" class="help-section d-flex">
+                    <a href="#" class="help-section-footer d-flex">
                         <div class="icon">
                             <i class="icon lnr-icon-map-marker"></i>
                         </div>
                         <div class="text">
                             <p class="m-0 p-0">Address?</p>
-                            <h5 class="m-0 p-0">81 Blackberry Hill Bristol Bs161df</h5>
+                            <p class="m-0 p-0">81 Blackberry Hill Bristol Bs161df</p>
                         </div>
                     </a>
                 </div>
@@ -79,19 +79,11 @@
                             <ul class="user-links two-column">
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
                                     <a href="#">About</a>
-                                </li>
-                                <li>
-                                    <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Get a Cab</a>
-                                </li>
-                                <li>
-                                    <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Our Vehicles</a>
-                                </li>
-                                <li>
-                                    <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Reviews</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
@@ -99,15 +91,19 @@
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Our News</a>
+                                    <a href="#">Contact</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Package</a>
+                                    <a href="#">Reviews</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Login</a>
+                                    <a href="#">FAQ's</a>
+                                </li>
+                                <li>
+                                    <i class="icon fa fa-angle-double-right"></i>
+                                    <a href="#">Term and Condition</a>
                                 </li>
                             </ul>
                         </div>

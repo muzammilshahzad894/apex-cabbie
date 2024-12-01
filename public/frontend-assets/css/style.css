@@ -4255,7 +4255,7 @@ Main Header
 }
 
 /* Text styles */
-.text {
+.banner-section .text {
   font-size: 20px;
   margin-bottom: 30px;
   line-height: 1.6;
@@ -5697,7 +5697,7 @@ Main Header
   position: relative;
   z-index: 2;
 }
-.pricing-block-four .inner-box .image-box:before {
+/* .pricing-block-four .inner-box .image-box:before {
   content: "";
   position: absolute;
   left: 17px;
@@ -5708,17 +5708,18 @@ Main Header
   clip-path: polygon(0 27.5%, 100% 0, 100% 74%, 0 99%);
   -webkit-transform: rotate(1deg);
           transform: rotate(1deg);
-}
+} */
 .pricing-block-four .inner-box .image-box .image {
   position: relative;
   margin-bottom: 0;
   display: block;
   overflow: hidden;
-  clip-path: polygon(0 27.5%, 100% 0, 100% 74%, 0 99%);
+  /* clip-path: polygon(0 27.5%, 100% 0, 100% 74%, 0 99%); */
 }
 .pricing-block-four .inner-box .image-box .image img {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
+  height: 200px;
 }
 .pricing-block-four .inner-box .content {
   position: relative;
@@ -19883,8 +19884,6 @@ Sidebar
   padding-left: 29px !important;
 }
 
-
-
 .help-section {
   position: relative;
   display: inline-block;
@@ -19962,6 +19961,33 @@ Sidebar
   background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
 }
 
+.help-section-footer {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+}
+
+.help-section-footer .text {
+  margin-left: 10px;
+}
+
+.help-section-footer .text p {
+  color: #fff;
+}
+
+.help-section-footer .icon {
+  width: 50px;  /* Increased size for better visibility */
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+
 #show-number {
   cursor: pointer;
   font-weight: bold;
@@ -19981,7 +20007,7 @@ Sidebar
   cursor: pointer;
 }
 
-.icon {
+.help-section .icon {
   width: 50px;  /* Increased size for better visibility */
   height: 50px;
   background-color: var(--theme-color-dark);
@@ -19992,16 +20018,16 @@ Sidebar
   transition: transform 0.3s ease;
 }
 
-.icon:hover {
+.help-section .icon:hover {
   transform: scale(1.1); /* Slight scale effect on hover */
 }
 
-.icon i {
+.help-section .icon i {
   color: #fff;
   font-size: 24px; /* Larger icon for better visibility */
 }
 
-.dropdown-menu {
+.help-section .dropdown-menu {
   display: none;
   position: absolute;
   top: 55px;
@@ -20017,29 +20043,29 @@ Sidebar
   z-index: 10;
 }
 
-.dropdown-menu.show {
+.help-section .dropdown-menu.show {
   display: block;
   opacity: 1;
   transform: translateY(0); /* Smooth dropdown animation */
 }
 
-.dropdown-content {
+.help-section .dropdown-content {
   color: #fff;
   padding-bottom: 10px;
   text-align: center;
 }
 
-.dropdown-content p {
+.help-section .dropdown-content p {
   font-size: 14px;
   margin-bottom: 5px;
 }
 
-.dropdown-content h5 {
+.help-section .dropdown-content h5 {
   font-size: 16px;
   font-weight: bold;
 }
 
-.call-now-btn {
+.help-section .call-now-btn {
   text-decoration: none;
   font-size: 14px;
   display: block;
