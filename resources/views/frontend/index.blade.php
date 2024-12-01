@@ -243,19 +243,28 @@
 </style>
 <section class="banner-section">
     <div class="overlay"></div>
-    <div class="content-wrapper">
-        <h1 class="title">Reserve your taxi<br>From Any Location!</h1>
+    <div class="content-wrapper bottom-align">
+        <h1 class="title">
+            <span class="highlight">Reserve your car</span>
+        </h1>
         <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum duis
-            phasellus in cras augue consequat nunc fermentum nisi eu.
+            Convenient, reliable, and fast car service<br>
+            Ready to drive you to your destination.
         </p>
-        <a
-            href="page-taxi.html"
-            class="theme-btn btn-style-one dark-line-two hover-light animate-3"><span class="btn-title">Discover More</span></a>
+        <div>
+            <a href="page-taxi.html" class="custom-btn-outline">
+                <span class="btn-title">Get A Quote</span>
+            </a>
+            <a href="page-taxi.html" class="custom-btn-outline">
+                <span class="btn-title">Book Online</span>
+            </a>
+        </div>
     </div>
-    <button class="carousel-btn carousel-prev">‹</button>
-    <button class="carousel-btn carousel-next">›</button>
+    <!-- <button class="carousel-btn carousel-prev">‹</button>
+    <button class="carousel-btn carousel-next">›</button> -->
 </section>
+
+
 
 
 <section class="pricing-section-four mt-5">
