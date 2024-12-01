@@ -70,7 +70,7 @@
                                     <div class="icon" onclick="toggleDropdown(event)">
                                         <i class="lnr-icon-phone-handset"></i>
                                     </div>
-                                    <div class="dropdown-menu" id="dropdown-menu">
+                                    <div class="dropdown-menu" id="help-dropdown-menu">
                                         <div class="dropdown-content">
                                             <p class="m-0 p-0">Need help?</p>
                                             <h5 class="m-0 p-0">01173322782</h5>
@@ -145,15 +145,8 @@
 
 <script>
 function toggleDropdown(event) {
-    const dropdownMenu = document.getElementById('dropdown-menu');
+    const dropdownMenu = document.getElementById('help-dropdown-menu');
     dropdownMenu.classList.toggle('show');
-    
-    const showNumberOption = document.getElementById('show-number');
-    
-    // Toggle visibility of the number when clicked
-    showNumberOption.addEventListener('click', () => {
-        alert('Phone number: 01173322782');
-    });
 
     // Prevent event propagation to document click
     event.stopPropagation();
@@ -161,7 +154,7 @@ function toggleDropdown(event) {
 
 // Close the dropdown if clicked outside
 document.addEventListener('click', function(event) {
-    const dropdownMenu = document.getElementById('dropdown-menu');
+    const dropdownMenu = document.getElementById('help-dropdown-menu');
     const icon = document.querySelector('.icon');
     
     // Check if the clicked area is outside the icon or dropdown menu
