@@ -8,38 +8,28 @@
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="{{ request()->routeIs('admin.services.index') || request()->routeIs('admin.services.create') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.services.index') }}" class="" aria-expanded="false">
-                        <i class="flaticon-381-networking"></i>
-                        <span class="nav-text">Services</span>
+                <li>
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-sliders"></i>
+                        <span class="nav-text">Setup</span>
                     </a>
-                </li>
-                <li class="{{ request()->routeIs('admin.fleets.index') || request()->routeIs('admin.fleets.create') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.fleets.index') }}" class="" aria-expanded="false">
-                        <i class="fa fa-list-ul"></i>
-                        <span class="nav-text">Fleets</span>
-                    </a>
-                </li>
-                <li class="{{ request()->routeIs('admin.drivers.index') || request()->routeIs('admin.drivers.create') ? 'mm-active' : '' }} || request()->routeIs('admin.drivers.edit')">
-                    <a href="{{ route('admin.drivers.index') }}" class="" aria-expanded="false">
-                        <i class="fa fa-taxi"></i>
-                        <span class="nav-text">Drivers</span>
-                    </a>
-                </li>
-                <li class="{{ request()->routeIs('admin.block-dates.index') || request()->routeIs('admin.block-dates.index') ? 'mm-active' : '' }} || request()->routeIs('admin.block-dates.edit')">
-                    <a href="{{ route('admin.block-dates.index') }}" class="" aria-expanded="false">
-                    
-                        <i class="fa fa-calendar">
-                            
-                        </i>
-                        <span class="nav-text">Block Dates</span>
-                    </a>
-                </li>
-                <li class="{{ request()->routeIs('admin.coupons.index') || request()->routeIs('admin.coupons.create') ? 'mm-active' : '' }} || request()->routeIs('admin.coupons.edit')">
-                    <a href="{{ route('admin.coupons.index') }}" class="" aria-expanded="false">
-                        <i class="fa fa-list-ul"></i>
-                        <span class="nav-text">Coupon</span>
-                    </a>
+                    <ul aria-expanded="false">
+                        <li class="{{ request()->routeIs('admin.services.index') || request()->routeIs('admin.services.create') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.services.index') }}">Services</a>
+                        </li>
+                        <li class="{{ request()->routeIs('admin.fleets.index') || request()->routeIs('admin.fleets.create') ? 'mm-active' : '' }}">
+                            <a href="{{ route('admin.fleets.index') }}">Fleets</a>
+                        </li>
+                        <li class="{{ request()->routeIs('admin.drivers.index') || request()->routeIs('admin.drivers.create') ? 'mm-active' : '' }} || request()->routeIs('admin.drivers.edit')">
+                            <a href="{{ route('admin.drivers.index') }}">Drivers</a>
+                        </li>
+                        <li class="{{ request()->routeIs('admin.block-dates.index') || request()->routeIs('admin.block-dates.index') ? 'mm-active' : '' }} || request()->routeIs('admin.block-dates.edit')">
+                            <a href="{{ route('admin.block-dates.index') }}">Block Dates</a>
+                        </li>
+                        <li class="{{ request()->routeIs('admin.coupons.index') || request()->routeIs('admin.coupons.create') ? 'mm-active' : '' }} || request()->routeIs('admin.coupons.edit')">
+                            <a href="{{ route('admin.coupons.index') }}">Coupon</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="{{ request()->routeIs('admin.booking') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.booking') }}" class="" aria-expanded="false">

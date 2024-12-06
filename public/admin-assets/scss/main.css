@@ -74,7 +74,7 @@
 @import url(./../vendor/perfect-scrollbar/css/perfect-scrollbar.css);
 @import url(./../vendor/metismenu/css/metisMenu.min.css);
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -250,7 +250,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-primary: #F93A0B;
+  --bs-primary: #E1CB83;
   --bs-secondary: #145650;
   --bs-success: #68e365;
   --bs-info: #D653C1;
@@ -396,7 +396,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: #F93A0B;
+  color: #E1CB83;
   text-decoration: underline; }
   a:hover {
     color: #c72e09; }
@@ -2141,15 +2141,15 @@ textarea.form-control-lg {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(249, 58, 11, 0.25); }
   .form-check-input:checked {
-    background-color: #F93A0B;
-    border-color: #F93A0B; }
+    background-color: #E1CB83;
+    border-color: #E1CB83; }
     .form-check-input:checked[type="checkbox"] {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e"); }
     .form-check-input:checked[type="radio"] {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e"); }
   .form-check-input[type="checkbox"]:indeterminate {
-    background-color: #F93A0B;
-    border-color: #F93A0B;
+    background-color: #E1CB83;
+    border-color: #E1CB83;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e"); }
   .form-check-input:disabled {
     pointer-events: none;
@@ -2207,7 +2207,7 @@ textarea.form-control-lg {
     width: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
-    background-color: #F93A0B;
+    background-color: #E1CB83;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2228,7 +2228,7 @@ textarea.form-control-lg {
   .form-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: #F93A0B;
+    background-color: #E1CB83;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2516,8 +2516,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #000;
-  background-color: #F93A0B;
-  border-color: #F93A0B; }
+  background-color: #E1CB83;
+  border-color: #E1CB83; }
   .btn-primary:hover {
     color: #000;
     background-color: #fa5830;
@@ -2535,8 +2535,8 @@ textarea.form-control-lg {
       box-shadow: 0 0 0 0.25rem rgba(212, 49, 9, 0.5); }
   .btn-primary:disabled, .btn-primary.disabled {
     color: #000;
-    background-color: #F93A0B;
-    border-color: #F93A0B; }
+    background-color: #E1CB83;
+    border-color: #E1CB83; }
 
 .btn-secondary {
   color: #fff;
@@ -2707,22 +2707,22 @@ textarea.form-control-lg {
     border-color: #6e6e6e; }
 
 .btn-outline-primary {
-  color: #F93A0B;
-  border-color: #F93A0B; }
+  color: #E1CB83;
+  border-color: #E1CB83; }
   .btn-outline-primary:hover {
     color: #000;
-    background-color: #F93A0B;
-    border-color: #F93A0B; }
+    background-color: #E1CB83;
+    border-color: #E1CB83; }
   .btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
     box-shadow: 0 0 0 0.25rem rgba(249, 58, 11, 0.5); }
   .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
     color: #000;
-    background-color: #F93A0B;
-    border-color: #F93A0B; }
+    background-color: #E1CB83;
+    border-color: #E1CB83; }
     .btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
       box-shadow: 0 0 0 0.25rem rgba(249, 58, 11, 0.5); }
   .btn-outline-primary:disabled, .btn-outline-primary.disabled {
-    color: #F93A0B;
+    color: #E1CB83;
     background-color: transparent; }
 
 .btn-outline-secondary {
@@ -2860,7 +2860,7 @@ textarea.form-control-lg {
 
 .btn-link {
   font-weight: 400;
-  color: #F93A0B;
+  color: #E1CB83;
   text-decoration: underline; }
   .btn-link:hover {
     color: #c72e09; }
@@ -3098,7 +3098,7 @@ textarea.form-control-lg {
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #F93A0B; }
+    background-color: #E1CB83; }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #adb5bd;
     pointer-events: none;
@@ -3131,7 +3131,7 @@ textarea.form-control-lg {
       background-color: rgba(255, 255, 255, 0.15); }
     .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
       color: #fff;
-      background-color: #F93A0B; }
+      background-color: #E1CB83; }
     .dropdown-menu-dark .dropdown-item.disabled, .dropdown-menu-dark .dropdown-item:disabled {
       color: #adb5bd; }
   .dropdown-menu-dark .dropdown-divider {
@@ -3271,7 +3271,7 @@ textarea.form-control-lg {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #F93A0B; }
+  background-color: #E1CB83; }
 
 .nav-fill > .nav-link,
 .nav-fill .nav-item {
@@ -3765,7 +3765,7 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: #F93A0B;
+  color: #E1CB83;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #dee2e6;
@@ -3790,8 +3790,8 @@ textarea.form-control-lg {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #F93A0B;
-  border-color: #F93A0B; }
+  background-color: #E1CB83;
+  border-color: #E1CB83; }
 .page-item.disabled .page-link {
   color: #6c757d;
   pointer-events: none;
@@ -3943,7 +3943,7 @@ textarea.form-control-lg {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #F93A0B;
+  background-color: #E1CB83;
   transition: width 0.6s ease; }
   @media (prefers-reduced-motion: reduce) {
     .progress-bar {
@@ -3999,8 +3999,8 @@ textarea.form-control-lg {
   .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #F93A0B;
-    border-color: #F93A0B; }
+    background-color: #E1CB83;
+    border-color: #E1CB83; }
   .list-group-item + .list-group-item {
     border-top-width: 0; }
     .list-group-item + .list-group-item.active {
@@ -4915,7 +4915,7 @@ textarea.form-control-lg {
   content: ""; }
 
 .link-primary {
-  color: #F93A0B; }
+  color: #E1CB83; }
   .link-primary:hover, .link-primary:focus {
     color: #fa613c; }
 
@@ -5222,7 +5222,7 @@ textarea.form-control-lg {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #F93A0B !important; }
+  border-color: #E1CB83 !important; }
 
 .border-secondary {
   border-color: #145650 !important; }
@@ -5818,7 +5818,7 @@ textarea.form-control-lg {
   text-align: center !important; }
 
 .text-primary {
-  color: #F93A0B !important; }
+  color: #E1CB83 !important; }
 
 .text-secondary {
   color: #145650 !important; }
@@ -5872,7 +5872,7 @@ textarea.form-control-lg {
   line-height: 2 !important; }
 
 .bg-primary {
-  background-color: #F93A0B !important; }
+  background-color: #E1CB83 !important; }
 
 .bg-secondary {
   background-color: #145650 !important; }
@@ -9989,7 +9989,7 @@ svg.pulse-svg {
   padding: 0.9375rem 0;
   min-width: 12.5rem; }
   .header-profile .dropdown-menu a:hover, .header-profile .dropdown-menu a:focus, .header-profile .dropdown-menu a.active {
-    color: #F93A0B; }
+    color: #E1CB83; }
 .header-profile img {
   width: 3.5rem;
   height: 3.5rem;
@@ -10004,7 +10004,7 @@ svg.pulse-svg {
   .header-profile .dropdown-toggle span {
     display: none; } }
 .header-profile .profile_title {
-  background: #F93A0B;
+  background: #E1CB83;
   color: #fff;
   padding: 0.625rem 1.25rem; }
   .header-profile .profile_title h5, .header-profile .profile_title .h5 {
@@ -11976,7 +11976,7 @@ svg.pulse-svg {
       margin-right: 10px; }
     [direction="rtl"] .widget-timeline-icon li {
       border-left: 0;
-      border-right: 6px solid #F93A0B; }
+      border-right: 6px solid #E1CB83; }
       [direction="rtl"] .widget-timeline-icon li a {
         padding: 0 30px 30px 0; }
       [direction="rtl"] .widget-timeline-icon li .icon {
@@ -12399,7 +12399,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
         font-size: 1rem;
         color: #737B8B; }
         .dlabnav .metismenu > li > a i {
-          color: #96A0AF; }
+          color: #E1CB83; }
         .dlabnav .metismenu > li > a svg {
           max-width: 1.5rem;
           max-height: 1.5rem;
@@ -12755,7 +12755,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   width: 50vw; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -12961,7 +12961,7 @@ The smaller device rules always should write below the bigger device rules
 Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Component
 */
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -13194,7 +13194,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [data-sidebar-style="mini"] .dlabnav li a.has-arrow::after {
     transform: rotate(-45deg) translateY(-50%); } }
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -14060,7 +14060,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   z-index: 9;
   top: 14.75rem;
   right: 100%;
-  background-color: #F93A0B;
+  background-color: #E1CB83;
   color: #fff;
   display: inline-block;
   height: 3rem;
@@ -14208,7 +14208,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   .sidebar-right #header_color_3 + label,
   .sidebar-right #sidebar_color_3 + label,
   .sidebar-right #primary_color_3 + label {
-    background-color: #F93A0B; }
+    background-color: #E1CB83; }
   .sidebar-right #nav_header_color_4 + label,
   .sidebar-right #header_color_4 + label,
   .sidebar-right #sidebar_color_4 + label,
@@ -14768,7 +14768,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 [data-nav-headerbg="color_3"][data-theme-version="dark"],
 [data-nav-headerbg="color_3"] {
-  --nav-headbg: #F93A0B; }
+  --nav-headbg: #E1CB83; }
   [data-nav-headerbg="color_3"][data-theme-version="dark"] .nav-header .brand-logo .brand-title path,
   [data-nav-headerbg="color_3"] .nav-header .brand-logo .brand-title path {
     fill: #fff; }
@@ -15204,7 +15204,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 [data-sibebarbg="color_3"][data-theme-version="dark"],
 [data-sibebarbg="color_3"] {
-  --sidebar-bg: #F93A0B;
+  --sidebar-bg: #E1CB83;
   /* .hamburger .line{
   	background:$white;
   } */
@@ -15216,7 +15216,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   } */ }
   [data-sibebarbg="color_3"][data-theme-version="dark"] .menu-toggle .dlabnav .metismenu li > ul,
   [data-sibebarbg="color_3"] .menu-toggle .dlabnav .metismenu li > ul {
-    background: #F93A0B !important; }
+    background: #E1CB83 !important; }
   [data-sibebarbg="color_3"][data-theme-version="dark"] .dlabnav .metismenu ul a:before,
   [data-sibebarbg="color_3"] .dlabnav .metismenu ul a:before {
     background: rgba(255, 255, 255, 0.5); }
@@ -17218,7 +17218,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 [data-headerbg="color_3"][data-theme-version="dark"],
 [data-headerbg="color_3"] {
-  --headerbg: #F93A0B; }
+  --headerbg: #E1CB83; }
   [data-headerbg="color_3"][data-theme-version="dark"] .search-area .input-group-text,
   [data-headerbg="color_3"][data-theme-version="dark"] .search-area .form-control, [data-headerbg="color_3"][data-theme-version="dark"] .search-area .form-control::placeholder,
   [data-headerbg="color_3"] .search-area .input-group-text,
@@ -18159,7 +18159,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   --rgba-primary-9: rgba(102, 16, 242, 0.9); }
 
 [data-primary="color_3"] {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -18369,7 +18369,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   font-family: 'HelveticaNeue'; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -18445,7 +18445,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   color: #fff; }
   [data-theme-version="transparent"] .header-left input:focus {
     box-shadow: none;
-    border-color: #F93A0B; }
+    border-color: #E1CB83; }
   [data-theme-version="transparent"] .header-left input::placeholder {
     color: #fff; }
 [data-theme-version="transparent"] .header-right .dropdown .nav-link:hover {
@@ -18496,7 +18496,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     border-color: transparent transparent rgba(0, 0, 0, 0.15) transparent; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -20473,7 +20473,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   height: auto; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -20949,7 +20949,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   color: #393939; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -21198,7 +21198,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   border-bottom-right-radius: 0; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -21222,7 +21222,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     color: #fff; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -21262,7 +21262,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     margin-bottom: .5rem; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -21315,7 +21315,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   font-size: 2rem; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
@@ -26354,7 +26354,7 @@ table.dataTable tbody th, table.dataTable tbody td {
   background: #3772EA !important; }
 
 .orange {
-  color: #F93A0B; }
+  color: #E1CB83; }
 
 .location {
   margin-top: 2rem; }
@@ -28824,7 +28824,7 @@ table.dataTable tbody th, table.dataTable tbody td {
       margin-right: 10px; }
     [direction="rtl"] .widget-timeline-icon li {
       border-left: 0;
-      border-right: 6px solid #F93A0B; }
+      border-right: 6px solid #E1CB83; }
       [direction="rtl"] .widget-timeline-icon li a {
         padding: 0 30px 30px 0; }
       [direction="rtl"] .widget-timeline-icon li .icon {
@@ -28981,7 +28981,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   padding-right: 9.375rem; }
 
 :root {
-  --primary: #F93A0B;
+  --primary: #E1CB83;
   --secondary: #145650;
   --primary-hover: #cc2c05;
   --primary-dark: #681703;
