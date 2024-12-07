@@ -1,405 +1,193 @@
 @extends('layouts.frontend.app')
 
-@section('content')
-
 <style>
-    .item .text{
-        min-height: auto !important;
+    section .container {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
     }
-    .text p {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Change this to 4 if you want to show 4 lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+    /* Section Style */
+    .testimonials-section {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+    }
 
+    /* Title Style */
+    .testimonials-title {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: #333;
+        margin-bottom: 60px;
+    }
 
+    /* Testimonials Grid */
+    .testimonials-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 40px;
+    }
+
+    /* Card Style */
+    .testimonial-card {
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-card::before {
+        content: '\201C'; /* Opening quote mark */
+        font-size: 100px;
+        color: #E1CB83;
+        position: absolute;
+        top: -40px;
+        left: -20px;
+        opacity: 0.1;
+    }
+
+    .testimonial-card::after {
+        content: '\201D'; /* Closing quote mark */
+        font-size: 100px;
+        color: #E1CB83;
+        position: absolute;
+        bottom: -40px;
+        right: -20px;
+        opacity: 0.1;
+    }
+
+    /* Testimonial Content */
+    .testimonial-content {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    /* Testimonial Author Style */
+    .testimonial-author {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .testimonial-author img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+        border: 3px solid #E1CB83;
+    }
+
+    .testimonial-author-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .testimonial-author-title {
+        font-size: 16px;
+        color: #777;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        padding: 12px 30px;
+        background: #E1CB83;
+        color: #fff;
+        border-radius: 30px;
+        font-size: 18px;
+        border: none;
+        transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background: #D3B26D;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .testimonial-card {
+            padding: 20px;
+        }
+
+        .testimonial-content {
+            font-size: 16px;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+        }
+    }
 </style>
-<section class="banner-header section-padding bg-img" data-overlay-dark="4"
-data-background="{{ asset('frontend-assets/img/slider/city_city.jpeg') }}" style="height: 84vh;">
-<div class="v-middle">
+
+@section('content')
+<section class="testimonials-section">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 mt-30">
-                <div class="post-wrapper">
-                    <a href="index-2.html">
-                        <!-- <div>Home</div> -->
-                    </a>
-                    <!-- <div class="divider"></div> -->
-                    <!-- <div class="text-white"><a href="#">Trust Piolet Reviews</a></div> -->
+        <h2 class="testimonials-title">What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <p class="testimonial-content">"This company provided exceptional service and went above and beyond our expectations. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <div>
+                        <div class="testimonial-author-name">John Doe</div>
+                        <div class="testimonial-author-title">CEO, Example Corp</div>
+                    </div>
                 </div>
-                <h1>Reviews</h1>
-                <p style="color: orange; font-size: 21px; font-weight: bold; line-height: 1.5;">
-                    Top-Rated On Trustpilot For Our <br> Punctual And Professional Cab Service.
-                </p>
             </div>
-            
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <p class="testimonial-content">"I was really impressed with the professionalism and results. They really know what they're doing!"</p>
+                <div class="testimonial-author">
+                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <div>
+                        <div class="testimonial-author-name">Jane Smith</div>
+                        <div class="testimonial-author-title">Marketing Director, Tech Solutions</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <p class="testimonial-content">"A game-changer! The results were immediate, and our team has never been more efficient."</p>
+                <div class="testimonial-author">
+                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <div>
+                        <div class="testimonial-author-name">Samuel Lee</div>
+                        <div class="testimonial-author-title">Founder, Innovate Inc.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+                <p class="testimonial-content">"Working with this team was a pleasure. They provided great value and helped us reach new heights!"</p>
+                <div class="testimonial-author">
+                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <div>
+                        <div class="testimonial-author-name">Olivia Brown</div>
+                        <div class="testimonial-author-title">Product Manager, Digital Works</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</section>
-<section class="testimonials section-padding mt-15">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center mb-30">
-                <div class="section-subtitle">Testimonials</div>
-                <div class="section-title">What Clients Say</div>
-            </div>
-           
-                    <div class="col-md-4 mb-4">
-                        <div class="item">
-                            <div class="stars"> <span class="rate">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
-                            <div class="shap-left-top">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                            <div class="shap-right-bottom">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                        </div> <i class="fa-solid fa-quote-left"></i>
-                        <div class="text">
-                            <p>I had a wonderful experience with Bristol Cabwise. The booking process was seamless, and the driver was courteous and helpful. Will definitely use this service again.</p>
-                        </div>
-                        <div class="info mt-30">
-                            <div class="img-curv">
-                                <div class="img"> <img src="{{ asset('frontend-assets/img/team/review.jpeg') }}"
-                                        alt=""> </div>
-                                <div class="shap-left-top">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                                <div class="shap-right-bottom">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-30">
-                                <h6>Dan Martin</h6>
-                                <p>Customer</p>
-                            </div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="item">
-                            <div class="stars"> <span class="rate">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
-                            <div class="shap-left-top">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                            <div class="shap-right-bottom">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                        </div> <i class="fa-solid fa-quote-left"></i>
-                        <div class="text">
-                            <p>Overall, a great service. The only reason I'm giving four stars is because the traffic was a bit heavy, but that's not their fault. The driver was very patient and friendly.</p>
-                        </div>
-                        <div class="info mt-30">
-                            <div class="img-curv">
-                                {{-- <div class="img"> <img src="img/team/4.jpg" alt=""> </div> --}}
-                                <div class="img"> <img src="{{ asset('frontend-assets/img/team/review.jpeg') }}"
-                                        alt=""> </div>
-                                <div class="shap-left-top">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                                <div class="shap-right-bottom">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-30">
-                                <h6>Olivia Brown</h6>
-                                <p>Customer</p>
-                            </div>
-                        </div>
-                        </div>
-                       
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="item">
-                            <div class="stars"> <span class="rate">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
-                            <div class="shap-left-top">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                            <div class="shap-right-bottom">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                        </div> <i class="fa-solid fa-quote-left"></i>
-                        <div class="text">
-                            <p>Bristol Cabwise exceeded my expectations. The driver arrived on time and the ride was smooth. The rates are also very reasonable. I’ll be booking with them again for sure.</p>
-                        </div>
-                        <div class="info mt-30">
-                            <div class="img-curv">
-                                <div class="img"> <img src="{{ asset('frontend-assets/img/team/review.jpeg') }}"
-                                        alt=""> </div>
-                                <div class="shap-left-top">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                                <div class="shap-right-bottom">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-30">
-                                <h6>Emily Martin</h6>
-                                <p>Customer</p>
-                            </div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="item">
-                            <div class="stars"> <span class="rate">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
-                            <div class="shap-left-top">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                            <div class="shap-right-bottom">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                        </div> <i class="fa-solid fa-quote-left"></i>
-                        <div class="text">
-                            <p>Good service with a professional touch. The car was neat and the driver knew the best routes to avoid traffic. Just wish they had more availability during peak hours.</p>
-                        </div>
-                        <div class="info mt-30">
-                            <div class="img-curv">
-                                <div class="img"> <img src="{{ asset('frontend-assets/img/team/review.jpeg') }}"
-                                        alt=""> </div>
-                                <div class="shap-left-top">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                                <div class="shap-right-bottom">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-30">
-                                <h6>Dan Martin</h6>
-                                <p>Customer</p>
-                            </div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="item">
-                            <div class="stars"> <span class="rate">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
-                            <div class="shap-left-top">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                            <div class="shap-right-bottom">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                        </div> <i class="fa-solid fa-quote-left"></i>
-                        <div class="text">
-                            <p>Highly recommend Bristol Cabwise! They offer excellent customer service and the drivers are always friendly and prompt. Made my trip to the airport stress-free.</p>
-                        </div>
-                        <div class="info mt-30">
-                            <div class="img-curv">
-                                {{-- <div class="img"> <img src="img/team/4.jpg" alt=""> </div> --}}
-                                <div class="img"> <img src="{{ asset('frontend-assets/img/team/review.jpeg') }}"
-                                        alt=""> </div>
-                                <div class="shap-left-top">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                                <div class="shap-right-bottom">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-30">
-                                <h6>Olivia Brown</h6>
-                                <p>Customer</p>
-                            </div>
-                        </div>
-                        </div>
-                       
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="item">
-                            <div class="stars"> <span class="rate">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </span>
-                            <div class="shap-left-top">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                            <div class="shap-right-bottom">
-                                <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="w-11 h-11">
-                                    <path
-                                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                        fill="#1b1b1b"></path>
-                                </svg>
-                            </div>
-                        </div> <i class="fa-solid fa-quote-left"></i>
-                        <div class="text">
-                            <p>Excellent service! The driver was punctual and very professional. The car was clean and comfortable. Highly recommend Bristol Cabwise for reliable transportation!.</p>
-                        </div>
-                        <div class="info mt-30">
-                            <div class="img-curv">
-                                <div class="img"> <img src="{{ asset('frontend-assets/img/team/review.jpeg') }}"
-                                        alt=""> </div>
-                                <div class="shap-left-top">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                                <div class="shap-right-bottom">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#1b1b1b"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="ml-30">
-                                <h6>Emily Martin</h6>
-                                <p>Customer</p>
-                            </div>
-                        </div>
-                        </div>
-                        
-                    </div>
-               
-            </div>
-    
     </div>
 </section>
 @endsection
