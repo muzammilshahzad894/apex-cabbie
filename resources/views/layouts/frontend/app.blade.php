@@ -76,8 +76,10 @@
     <script src="{{ asset('frontend-assets/js/odometer.js') }}"></script>
     <script src="{{ asset('frontend-assets/js/owl.js') }}"></script>
     <script src="{{ asset('frontend-assets/js/script-gsap.js') }}"></script>
-	<script src="{{ asset('frontend-assets/js/swiper.min.js') }}"></script>
+	  <script src="{{ asset('frontend-assets/js/swiper.min.js') }}"></script>
     <script src="{{ asset('frontend-assets/js/script.js') }}"></script>
+    
+    @yield('javascript')
 	
   </body>
 </html>

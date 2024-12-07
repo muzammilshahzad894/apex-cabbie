@@ -15268,7 +15268,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 :root {
   --nav-headbg: #182444;
-  --nav-headbg-height: 6rem;
+  --nav-headbg-height: 5rem;
   --sidebar-bg: #0F1A34;
   --headerbg: #FFFFFF; }
 

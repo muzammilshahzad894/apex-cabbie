@@ -1,75 +1,65 @@
 @extends('layouts.frontend.app')
 
 @section('content')
-<section class="banner-header section-padding bg-img" data-overlay-dark="6" data-background="{{ asset('frontend-assets/img/slider/11.jpg') }}">
-    <div class="v-middle">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    {{-- <h6>What We Do</h6> --}}
-                    <h1>Our <span>Services</span></h1>
-                </div>
-            </div>
+<!-- Header Banner -->
+<section class="banner-header" style="background-color: #f5f5f5;">
+    <div class="container d-flex align-items-center justify-content-between">
+        <!-- Left Side: About Text -->
+        <div class="text-left">
+            <h1 class="display-4 text-dark m-0">Services</h1>
+        </div>
+
+        <div class="text-right d-flex align-items-center">
+            <i class="fas fa-home me-2 primary-text"></i>
+            <span class="text-dark">Home</span>
         </div>
     </div>
 </section>
+
 <!-- divider line -->
 <div class="line-vr-section"></div>
 <!-- Services Box 2 -->
 
 
-<section class="testimonials section-padding mt-15">
+<section class="testimonials section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center mb-30">
                 <div class="section-subtitle"></div>
-                {{-- <h1 class="section-title">Other <span>Services</span></h1> --}}
+                <h2 class="section-title">OUR <span>SERVICES</span></h1>
 
             </div>
-            {{-- <div class="col-md-12">
-                <div class="owl-carousel owl-theme">
-                    @if($services->count() > 0)
-                        @foreach($services as $service)
-                            <div class="item" style="padding:10px;">
-                                <div class="cars_details_view">
-                                    <div>
-                                        <img src="{{ asset('uploads/services/'.$service->image) }}" alt="" />
-                                        <h4 class="text-white mb-0 pt-2" style="font-size:24px;">{{ $service->name }}</h4>
-                                        <p style="color: #f5b754">{{ $service->tag }}</p>
-                                        <p style="color: white;" class="truncate">
-                                            {{ $service->short_description }}
-                                        </p>
-                                        <div class="d-flex justify-content-between gap-4">
-                                            <a class="view_details" href="{{ route('frontend.carDetails', $service->id) }}">View Details</a>
-                                            <a class="view_details" href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}">
-                                                Book Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
-                </div>
-            </div> --}}
             <div class="row">
                 @if($services->count() > 0)
                     @foreach($services as $service)
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <div class="cars_details_view">
-                                <div>
-                                    <img src="{{ asset('uploads/services/'.$service->image) }}" alt="" class="img-fluid" />
-                                    <h4 class="text-white mb-0 pt-2" style="font-size:24px;">{{ $service->name }}</h4>
-                                    <p style="color: #f5b754">{{ $service->tag }}</p>
-                                    <p style="color: white;" class="truncate">
-                                        {{ $service->short_description }}
-                                    </p>
-                                    <div class="d-flex justify-content-between gap-4">
-                                        <a class="view_details" href="{{ route('frontend.carDetails', $service->id) }}">View Details</a>
-                                        <a class="view_details" href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}">Book Now</a>
+                    <div class="col-md-4">
+                        <div class="pricing-block-four">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <img src="{{ asset('uploads/services/' . $service->image) }}" alt="Image" width="100%" />
+                                    </figure>
+                                </div>
+                                <div class="content">
+                                    <div class="car-detail">
+                                        <h4 class="car-name">{{ $service->name }}</h4>
+                                        <div class="city">{{ $service->tag }}</div>
+                                        <div class="truncate city short_description">
+                                            {{ $service->short_description }}
+                                        </div>
+                                    </div>
+                                    <div class="btn-box d-flex gap-2">
+                                        <a href="{{ route('frontend.carDetails', $service->id) }}" class="theme-btn btn-style-two hover-light">
+                                            <span class="btn-title">View Details</span>
+                                        </a>
+                                        <a href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}" class="theme-btn btn-style-two hover-light">
+                                            <span class="btn-title">Book Now</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     @endforeach
                 @endif
             </div>
