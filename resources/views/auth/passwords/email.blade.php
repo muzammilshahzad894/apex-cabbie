@@ -1,86 +1,92 @@
 @extends('layouts.frontend.app')
 <style>
-    .card{
-        width: 600px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px !important;
-    padding: 20px 0px;
-    
+    .forgot-password-section {
+        height: 100vh;
+        background-color: #f5f5f5;
     }
-    .form-control:focus{
-        border-color:orange !important;
-        color: white !important;
-        background: black !important;
-        box-shadow: none !important;
-        border: 1px solid orange !important;
 
+    .forgot-password-container {
+        max-width: 500px;
+        width: 100%;
+        border-radius: 8px;
+        padding: 40px;
     }
-    .form-control{
-        color: white;
+
+    .form-label {
+        font-weight: 500;
     }
-    .booking-button:hover{
-        background: black !important;
-    color: white !important;
+
+    .form-control {
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 16px;
     }
-    .btn-link{
-        color: black !important;
-    
+
+    .message {
+        font-size: 14px;
     }
-    .booking-box .box-shadow{
-        display: flex;
-        justify-content: center;
+
+    .btn-primary {
+        padding: 12px;
+        border-radius: 8px;
+        background: #E1CB83 !important;
+        border: none !important;
     }
-    label{
-        color:black;
-        font-weight: bold;
-        font-size: 18px;
-        margin-left: 10px;
+
+    .btn-primary:hover {
+        background: #D3B26D !important;
+    }
+
+    .text-muted {
+        color: #6c757d !important;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 </style>
 @section('content')
-<div class="container">
-    <div class="row justify-content-center booking-box">
-        <div class="col-md-12 box-shadow">
-            <div class="card">
-                {{-- <div class="card-header">{{ __('Reset Password') }}</div> --}}
-                  <h4 class="text-center" style="color: orange">
-                    {{ __('Reset Password') }}
-                  </h4>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class=" col-form-label ">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-12">
-                                <input id="email" placeholder="Email Address" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-12">
-                                <button type="submit" class="booking-button mt-15">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<section class="forgot-password-section d-flex align-items-center justify-content-center py-5" style="background-color: #f5f5f5;">
+    <div class="forgot-password-container bg-white shadow-lg rounded p-5">
+        <h3 class="text-center mb-3">Forgot Your Password?</h3>
+        <p class="text-center mb-3 text-muted message">No worries! Just enter your email, and we'll send you a link to reset your password.</p>
+        @if (session('status'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('status') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @foreach ($errors->all() as $error)
+                    <div>{{ $error }}</div>
+                @endforeach
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        <form method="POST" action="{{ route('password.email') }}">
+            @csrf
+            <!-- Email Input -->
+            <div class="mb-4">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your registered email" required>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <!-- Send Reset Link Button -->
+            <button type="submit" class="btn btn-primary w-100">Send Reset Link</button>
+        </form>
+        <div class="text-center mt-3">
+            <p class="text-muted">Remembered your password? <a href="/login">Login</a></p>
         </div>
     </div>
-</div>
+</section>
 @endsection
