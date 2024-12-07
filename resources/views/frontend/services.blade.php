@@ -1,5 +1,12 @@
 @extends('layouts.frontend.app')
 
+<style>
+    section .container {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+</style>
+
 @section('content')
 <!-- Header Banner -->
 <section class="banner-header" style="background-color: #f5f5f5;">

@@ -14077,7 +14077,6 @@ Main Header
 ***/
 .map-section {
   position: relative;
-  min-height: 482px;
 }
 .map-section .map {
   position: absolute;
@@ -20166,11 +20165,6 @@ Sidebar
   color: var(--theme-color1) !important;
 }
 
-section .container {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
-
 .section-title {
   font-size: 1.8rem;
   font-weight: bold;
@@ -20197,6 +20191,7 @@ section .container {
   .banner-header .container {
       flex-direction: column;
       text-align: center;
+      align-items: start !important;
   }
 
   .banner-header .text-right {

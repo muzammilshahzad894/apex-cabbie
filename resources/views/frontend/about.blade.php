@@ -1,6 +1,10 @@
 @extends('layouts.frontend.app')
 
 <style>
+section .container {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
 .about-image {
     max-height: 400px;
     object-fit: cover;
@@ -111,7 +115,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- About Us Section -->
 <section class="about-us py-5">
