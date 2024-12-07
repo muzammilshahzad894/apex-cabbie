@@ -52,9 +52,6 @@
                                 </ul>
                             </li>
                             @endauth
-                            <li class="{{ request()->routeIs('frontend.faqs') ? 'current' : '' }}">
-                                <a href="{{ route('frontend.faqs') }}">FAQs</a>
-                            </li>
                             <li class="remvoe_line">
                                 <div class="btn-box">
                                     <a 
