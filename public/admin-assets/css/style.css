@@ -9553,7 +9553,7 @@ div, span, ol, ul {
     }
     @media only screen and (max-width: 87.5rem) {
       .nav-header .logo-abbr {
-        max-width: 2.8125rem; } }
+        max-width: 100%; } }
     @media only screen and (max-width: 35.9375rem) {
       .nav-header .logo-abbr {
         width: 2.1875rem;
