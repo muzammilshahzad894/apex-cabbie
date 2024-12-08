@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Mail\BookingConfirmationMail;
 use App\Mail\BookingConfirmationAdminMail;
 use App\Mail\BookingCancellationMail;
+use App\Mail\BookingCancellationAdminMail;
 use App\Mail\BookingReminderMail;
 use App\Mail\ThankYouFeedbackMail;
 use App\Mail\RefundMail;
@@ -21,6 +22,7 @@ use App\Mail\ContactEmailAdmin;
 use App\Mail\QuoteRequest;
 use App\Mail\QuoteRequestAdmin;
 use App\Models\EmailSetting;
+use App\Models\EmailContentSetting;
 use Illuminate\Support\Facades\Mail;
 
 class EmailService
@@ -33,7 +35,7 @@ class EmailService
         }
         $data = [
             'bookingId' => $bookingDetails->bookingId,
-            'userName' => $user->name,
+            'userName' => $bookingDetails->name,
             'serviceType' => $bookingDetails->serviceType,
             'pickupLocation' => $bookingDetails->pickupLocation,
             'via_locations' => $bookingDetails->via_locations,
@@ -57,42 +59,76 @@ class EmailService
             'is_extra_lauggage' => $extraLaugage,
             'coupon_discount' => $bookingDetails->coupon_discount,
         ];
+        
+        $emailContent = EmailContentSetting::where('title', 'booking-confirmation')->first();
 
-        $emailAddresses = [$user->email];
-
-        Mail::to($emailAddresses)->send(new BookingConfirmationMail($data));
+        $emailAddresses = [$bookingDetails->email];
+        Mail::to($emailAddresses)->send(new BookingConfirmationMail($data, $emailContent));
         
         // In EmailSetting all the emails are stored that will receive the booking-confirmation email
         $emailSetting = EmailSetting::where('receiving_emails', 'like', '%booking-confirmation%')->get();
+        $emailContentAdmin = EmailContentSetting::where('title', 'booking-confirmation-admin')->first();
         if ($emailSetting->count() > 0) {
             foreach ($emailSetting as $email) {
                 $dataForAdmin = $data;
                 $dataForAdmin['adminName'] = $email->user_name;
                 
                 $adminEmailAddresses = $email->user_email;
-                Mail::to($adminEmailAddresses)->send(new BookingConfirmationAdminMail($dataForAdmin));
+                Mail::to($adminEmailAddresses)->send(new BookingConfirmationAdminMail($dataForAdmin, $emailContentAdmin));
             }
         }
     }
 
     public function sendBookingCancellation($user, $bookingDetails)
     {
-        $data = [
-            'userName' => $user->name,
-            'pickupLocation' => $bookingDetails->pickupLocation,
-            'dropoffLocation' => $bookingDetails->dropoffLocation,
-            'pickupDateTime' => $bookingDetails->pickupDateTime,
-            'dropoffDateTime' => $bookingDetails->dropoffDateTime,
-        ];
-
-        $emailAddresses = [$user->email];
-        // In EmailSetting all the emails are stored that will receive the booking-cancellation email
-        $emailSetting = EmailSetting::where('receiving_emails', 'like', '%booking-cancellation%')->pluck('user_email');
-        if ($emailSetting->count() > 0) {
-            $emailAddresses = array_merge($emailAddresses, $emailSetting->toArray());
+        $extraLaugage = "";
+        if($bookingDetails->is_extra_lauggage == 1) {
+            $extraLaugage = "6";
         }
+        $data = [
+            'bookingId' => $bookingDetails->bookingId,
+            'userName' => $bookingDetails->name,
+            'serviceType' => $bookingDetails->serviceType,
+            'pickupLocation' => $bookingDetails->pickupLocation,
+            'via_locations' => $bookingDetails->via_locations,
+            'dropoffLocation' => $bookingDetails->dropoffLocation,
+            'dateAndTime' => $bookingDetails->dateAndTime,
+            'is_return' => $bookingDetails->is_return,
+            'return_dateAndTime' => $bookingDetails->return_dateAndTime,
+            'name' => $bookingDetails->name,
+            'telephone' => $bookingDetails->telephone,
+            'email' => $bookingDetails->email,
+            'no_of_passenger' => $bookingDetails->no_of_passenger,
+            'is_childseat' => $bookingDetails->is_childseat,
+            'is_meet_greet' => $bookingDetails->is_meet_greet,
+            'no_suit_case' => $bookingDetails->no_suit_case,
+            'no_of_laugage' => $bookingDetails->no_of_laugage,
+            'summary' => $bookingDetails->summary,
+            'other_name' => $bookingDetails->other_name,
+            'other_phone_number' => $bookingDetails->other_phone_number,
+            'other_email' => $bookingDetails->other_email,
+            'fleet_price' => $bookingDetails->fleet_price,
+            'is_extra_lauggage' => $extraLaugage,
+            'coupon_discount' => $bookingDetails->coupon_discount,
+        ];
+        
+        $emailContent = EmailContentSetting::where('title', 'booking-cancellation')->first();
+        
+        $emailAddresses = [$user->email];
+        Mail::to($emailAddresses)->send(new BookingCancellationMail($data, $emailContent));
 
-        Mail::to($emailAddresses)->send(new BookingCancellationMail($data));
+        // In EmailSetting all the emails are stored that will receive the booking-cancellation email
+        $emailSetting = EmailSetting::where('receiving_emails', 'like', '%booking-cancellation%')->get();
+        $emailContentAdmin = EmailContentSetting::where('title', 'booking-cancellation-admin')->first();
+        if ($emailSetting->count() > 0) {
+            foreach ($emailSetting as $email) {
+                $dataForAdmin = $data;
+                $dataForAdmin['adminName'] = $email->user_name;
+                
+                $adminEmailAddresses = $email->user_email;
+                Mail::to($adminEmailAddresses)->send(new BookingCancellationAdminMail($dataForAdmin, $emailContentAdmin));
+            }
+        }
     }
 
     public function sendDriverAssign($driver, $bookingDetails)
@@ -124,8 +160,9 @@ class EmailService
             'other_email' => $bookingDetails->other_email,
             'is_extra_lauggage' => $extraLaugage,
         ];
-
-        Mail::to($driver->email)->send(new DriverAssignMail($data));
+        
+        $emailContent = EmailContentSetting::where('title', 'driver-assign')->first();
+        Mail::to($driver->email)->send(new DriverAssignMail($data, $emailContent));
     }
 
     public function sendBookingReminder($user, $bookingDetails)
@@ -172,18 +209,20 @@ class EmailService
             'bookingId' => $feedbackLink->bookingId,
         ];
 
+        $emailContent = EmailContentSetting::where('title', 'refund-request')->first();
         $emailAddresses = [$user->email];
-        Mail::to($emailAddresses)->send(new RefundMail($data));
+        Mail::to($emailAddresses)->send(new RefundMail($data, $emailContent));
         
         // In EmailSetting all the emails are stored that will receive the refund-request email
         $emailSetting = EmailSetting::where('receiving_emails', 'like', '%refund-request%')->get();
+        $emailContentAdmin = EmailContentSetting::where('title', 'refund-request-admin')->first();
         if ($emailSetting->count() > 0) {
             foreach ($emailSetting as $email) {
                 $dataForAdmin = $data;
                 $dataForAdmin['adminName'] = $email->user_name;
                 
                 $adminEmailAddresses = $email->user_email;
-                Mail::to($adminEmailAddresses)->send(new RefundMailAdmin($dataForAdmin));
+                Mail::to($adminEmailAddresses)->send(new RefundMailAdmin($dataForAdmin, $emailContentAdmin));
             }
         }
     }
@@ -204,7 +243,8 @@ class EmailService
             setting('admin_email'),
         ];
 
-        Mail::to($emailAddresses)->send(new DriverWaitingEmail($data));
+        $emailContent = EmailContentSetting::where('title', 'driver-waiting')->first();
+        Mail::to($emailAddresses)->send(new DriverWaitingEmail($data, $emailContent));
     }
 
     public function sendBookingStatusEmail($bookingDetails)
@@ -220,19 +260,20 @@ class EmailService
             'status' => $bookingDetails['status'],
         ];
 
+        $emailContent = EmailContentSetting::where('title', 'booking-status-update')->first();
         $emailAddresses = [$bookingDetails['email']];
-        Mail::to($emailAddresses)->send(new BookingStatusMail($data));
-        
+        Mail::to($emailAddresses)->send(new BookingStatusMail($data, $emailContent));
         
         // In EmailSetting all the emails are stored that will receive the booking-status-change email
         $emailSetting = EmailSetting::where('receiving_emails', 'like', '%booking-status-change%')->get();
+        $emailContentAdmin = EmailContentSetting::where('title', 'booking-status-update-admin')->first();
         if ($emailSetting->count() > 0) {
             foreach ($emailSetting as $email) {
                 $dataForAdmin = $data;
                 $dataForAdmin['adminName'] = $email->user_name;
                 
                 $adminEmailAddresses = $email->user_email;
-                Mail::to($adminEmailAddresses)->send(new BookingStatusAdminMail($dataForAdmin));
+                Mail::to($adminEmailAddresses)->send(new BookingStatusAdminMail($dataForAdmin, $emailContentAdmin));
             }
         }
     }
@@ -272,18 +313,20 @@ class EmailService
             $data['amount'] = $emailData['amount'];
         }
 
+        $emailContent = EmailContentSetting::where('title', 'refund-status-update')->first();
         $emailAddresses = [$emailData['user_email']];
-        Mail::to($emailAddresses)->send(new RefundStatusMail($data));
+        Mail::to($emailAddresses)->send(new RefundStatusMail($data, $emailContent));
         
         // In EmailSetting all the emails are stored that will receive the refund-status-change email
         $emailSetting = EmailSetting::where('receiving_emails', 'like', '%refund-status-change%')->get();
+        $emailContentAdmin = EmailContentSetting::where('title', 'refund-status-update-admin')->first();
         if ($emailSetting->count() > 0) {
             foreach ($emailSetting as $email) {
                 $dataForAdmin = $data;
                 $dataForAdmin['adminName'] = $email->user_name;
                 
                 $adminEmailAddresses = $email->user_email;
-                Mail::to($adminEmailAddresses)->send(new RefundStatusAdminMail($dataForAdmin));
+                Mail::to($adminEmailAddresses)->send(new RefundStatusAdminMail($dataForAdmin, $emailContentAdmin));
             }
         }
     }
@@ -335,10 +378,13 @@ class EmailService
             'comment' => $emailData['comment'],
         ];
         
-        Mail::to(setting('admin_email'))->send(new QuoteRequest($data));
+        $emailContent = EmailContentSetting::where('title', 'quote-request')->first();
+        $emailAddresses = [$emailData['email']];
+        Mail::to($emailAddresses)->send(new QuoteRequest($data, $emailContent));
         
+        $emailContentAdmin = EmailContentSetting::where('title', 'quote-request-admin')->first();
         if(setting('admin_email')) {
-            Mail::to(setting('admin_email'))->send(new QuoteRequestAdmin($data));
+            Mail::to(setting('admin_email'))->send(new QuoteRequestAdmin($data, $emailContentAdmin));
         }
     }
 }

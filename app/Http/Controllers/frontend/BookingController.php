@@ -15,9 +15,8 @@ class BookingController extends Controller
 {
     public function getSelectServiceTax(Request $request){
         $servieId = $request->service_id;
-        dd($servieId);
         $serviceTaxes = FleetTax::where('service_id', $request->service_id)->get();
-        dd($serviceTaxes);
+       
         return response()->json($serviceTaxes);
     }
     public function index()
@@ -141,9 +140,9 @@ class BookingController extends Controller
             }
             if($role == "admin"){
                 $booking_detail = Booking::where('user_id', $user_id)->where('is_draft', 1)->where('other_email', $request->other_email)->first();
-                if($booking_detail){
-                    $booking_detail->delete();
-                }
+                // if($booking_detail){
+                //     $booking_detail->delete();
+                // }
             }
             $total_price = null;
             if($request->return == 1) {

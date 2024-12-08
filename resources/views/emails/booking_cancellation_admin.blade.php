@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refund Status Change</title>
+    <title>Booking Cancelled</title>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f4f4;">
@@ -17,17 +17,14 @@
                     </tr>
                     <tr>
                         <td style="background-color: #ef8e1c; padding: 20px; color: #ffffff;">
-                            <h3 style="text-align: center; color: #ffffff;">{{ @$emailContent->subject }}</h3>
-                            <p style="color: #ffffff;">Dear {{ $userName }},</p>
+                            <h3 style="text-align: center; color: #ffffff;">{{ @$emailContent->subject }} - [#{{ $bookingId }}]</h3>
+                            <p style="color: #ffffff;">Dear {{ $adminName }},</p>
                             <p style="color: #ffffff;">
                                 {!! @$emailContent->introductory_message !!}
                             </p>
+                            <h3 style="color: #000000;">Summary:</h3>
                             <table width="100%" cellpadding="10" cellspacing="0" border="1" bordercolor="#dddddd" style="border-collapse: collapse; color: #000000;">
                                 <tr style="background-color: #000000; color: #ffffff;">
-                                    <th style="padding: 10px; text-align: left; width: 150px;">Booking Reference</th>
-                                    <td style="padding: 10px;">#{{ $bookingId }}</td>
-                                </tr>
-                                <tr>
                                     <th style="padding: 10px; text-align: left; width: 150px;">Service Type</th>
                                     <td style="padding: 10px;">{{ $serviceType }}</td>
                                 </tr>
@@ -35,6 +32,14 @@
                                     <th style="padding: 10px; text-align: left; width: 150px;">Pickup Location</th>
                                     <td style="padding: 10px;">{{ $pickupLocation }}</td>
                                 </tr>
+                                @if(!empty($via_locations))
+                                    @foreach($via_locations as $key => $via_location)
+                                        <tr>
+                                            <th style="padding: 10px; text-align: left; width: 150px;">Via Location {{ $key + 1 }}</th>
+                                            <td style="padding: 10px;">{{ $via_location }}</td>
+                                        </tr>
+                                    @endforeach
+                                @endif
                                 <tr>
                                     <th style="padding: 10px; text-align: left; width: 150px;">Drop Location</th>
                                     <td style="padding: 10px;">{{ $dropoffLocation }}</td>
@@ -43,6 +48,16 @@
                                     <th style="padding: 10px; text-align: left; width: 150px;">Date & Time</th>
                                     <td style="padding: 10px;">{{ $dateAndTime }}</td>
                                 </tr>
+                                @if($is_return)
+                                    <tr>
+                                        <th style="padding: 10px; text-align: left; width: 150px;">Return</th>
+                                        <td style="padding: 10px;">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="padding: 10px; text-align: left; width: 150px;">Return Date & Time</th>
+                                        <td style="padding: 10px;">{{ $return_dateAndTime }}</td>
+                                    </tr>
+                                @endif
                                 <tr>
                                     <th style="padding: 10px; text-align: left; width: 150px;">Name</th>
                                     <td style="padding: 10px;">{{ $name }}</td>
@@ -99,7 +114,7 @@
                             <table width="100%" cellpadding="10" cellspacing="0" border="1" bordercolor="#dddddd" style="border-collapse: collapse; color: #000000;">
                                 <tr style="background-color: #000000; color: #ffffff;">
                                     <th style="padding: 10px; text-align: left; width: 150px;">Fleet Price</th>
-                                    <td style="padding: 10px;">£{{ $fleet_price }}</td>
+                                    <td style="padding: 10px;">£{{ $is_return ? $fleet_price * 2 : $fleet_price }}</td>
                                 </tr>
                                 <tr>
                                     <th style="padding: 10px; text-align: left; width: 150px;">Child Seat</th>
@@ -119,14 +134,10 @@
                                 </tr>
                                 <tr>
                                     <th style="padding: 10px; text-align: left; width: 150px;">Total Price</th>
-                                    <td style="padding: 10px;">£{{ $fleet_price }}</td>
+                                    <td style="padding: 10px;">£{{ $is_return ? $fleet_price * 2 : $fleet_price }}</td>
                                 </tr>
                             </table>
-                            <p style="color: #ffffff;"><strong>Note: </strong>{{ $adminMessage }}</p>
-                            @if(isset($amount))
-                                <p style="color: #ffffff;">Amount: £{{ $amount }}</p>
-                            @endif
-                            <p style="margin-bottom: 0px; padding: 0px;">
+                            <p>
                                 {!! @$emailContent->note !!}
                             </p>
                         </td>

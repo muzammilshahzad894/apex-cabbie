@@ -7,10 +7,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class BookingConfirmationMail extends Mailable
+class BookingCancellationAdminMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    
     public $data;
     public $emailContent;
 
@@ -32,8 +32,8 @@ class BookingConfirmationMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.booking_confirmation')
+        return $this->view('emails.booking_cancellation_admin')
             ->with($this->data, $this->emailContent)
-            ->subject('Booking Confirmation');
+            ->subject('Booking Cancelled');
     }
 }
