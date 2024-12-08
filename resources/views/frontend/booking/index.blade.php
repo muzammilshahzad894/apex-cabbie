@@ -2,19 +2,44 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcjCI02QAojCYEkhWCugFSjn3OLsMiEf8&libraries=places">
 </script>
+@include('frontend.booking.style-css')
 <style>
+    .progress-step.active {
+    position: relative; /* Ensure relative positioning for the pseudo-element */
+    color: white; /* Set the text color to white */
+    background: #e7d388;
+}
+
+.progress-step.active::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 40px;
+    background-color: #e7d388;
+    border-radius: 50%;
+    z-index: -1; /* Place the background behind the text */
+}
+
+    input{
+
+    }
     #map {
         overflow: unset !important;
         height: 400px;
         width: 100%;
+        overflow: hidden !important;
         border: 0;
         /* Remove border */
         padding: 0;
         margin: 0;
     }
-    .minimum_hours{
+
+    .minimum_hours {
         font-size: 12px;
-        color: orange;
+        color: #e8d693;
 
     }
 
@@ -32,12 +57,14 @@
     .pickupLocation {
         border-radius: 0px !important;
     }
-    .design_style{
+
+    .design_style {
         display: flex;
         justify-content: center;
         text-align: center;
     }
-    .description{
+
+    .description {
         font-size: 17px !important;
         font-weight: 500 !important;
     }
@@ -83,16 +110,15 @@
 
 
 @section('content')
-    <!-- Header Banner -->
-    <section class="page-title" style="background-image: url(frontend-assets/img/background/page-title1.jpg);">
-        <div class="auto-container">
-            <div class="title-outer text-center">
-                <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-md-6">
-                        <h1 class="title">Book Your Ride</h1>
-                        <p class="page-breadcrumb text-white">
-                            Reserve your cab here. We provide a reliable 24-hour cab service in Bristol and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.
-                        </p>
+<section class="page-title" style="background-image: url(frontend-assets/img/background/page-title1.jpg);">
+    <div class="auto-container">
+        <div class="title-outer text-center">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <h1 class="title">Book Your Ride</h1>
+                    <p class="page-breadcrumb text-white">
+                        Reserve your cab here. We provide a reliable 24-hour cab service in Bristol and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.
+                    </p>
                     </div>
                 </div>
             </div>
@@ -101,27 +127,20 @@
 
     <section class="post section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
             <div class="row payment_section">
                 <ul class="progress-bar_main">
-                    <li class="progress-step active" id="step1">Step 1</li>
-                    <li class="progress-step" id="step2">Step 2</li>
-                    <li class="progress-step" id="step3">Step 3</li>
-                    <li class="progress-step" id="step4">Step 4</li>
+                    <li class="progress-step active" id="step1">Tab </li>
+                    <li class="progress-step" id="step2">Tab</li>
+                    <li class="progress-step" id="step3">Tab</li>
+                    <li class="progress-step" id="step4">Tab</li>
                 </ul>
-                <div class="col-md-8">
+             
+                <div class="col-md-12">
+                    <input type="hidden" id="login_user" value="{{ $userRole }}">
                     <form action="{{ route('booking.store') }}" method="POST" id="booking-form">
                         @csrf
                         <div class="new_form step1" id="forms">
-                            <h2 class="color color_theme">Journey Details</h2>
+                            <h2 class="color color_theme">Book Your Ride</h2>
                             <div class="gap-3">
                                 @php
                                     $services = \App\Models\Service::all();
@@ -130,6 +149,7 @@
                                     $bookingServiceId = !empty($booking_detail) ? $booking_detail->service_id : '';
 
                                 @endphp
+                                <label for="services">Select Service</label>
                                 <select name="service" id="service"
                                     class="styled-input border-radius-0 mb-0 select select2" onchange="showFlightId(this);">
                                     <option value="">Select Service</option>
@@ -197,41 +217,37 @@
                                 @endphp
                                 <div>
                                     <label for="date">Date & Time:</label>
-                                    <input type="datetime-local"
-                                        class="styled-input timepicker border-radius-0 mb-0"
-                                        placeholder="Return Date"
-                                         id="date-time"
+                                    <input type="datetime-local" class="styled-input timepicker border-radius-0 mb-0"
+                                        placeholder="Return Date" id="date-time"
                                         value="{{ isset($booking_detail) ? (isset($booking_detail->booking_date) && isset($booking_detail->booking_time) ? $booking_detail->booking_date . 'T' . $booking_detail->booking_time : '') : '' }}" />
-                                        <p class="minimum_hours"></p>
+                                    <p class="minimum_hours"></p>
                                     <div id="date-time-error" class="error-message text-danger"></div>
                                 </div>
                                 <div class=" meet_greet d-flex" style="gap:10px;align-items:center"
                                     onclick="showReturn();">
-                                        <input type="checkbox" id="return" name="return" value=""
-                                        class="mb-0" @if (isset($booking_detail) && $booking_detail->is_return == 1) checked @endif>
-                                        <label for="return">Return Journey</label>
+                                    <input type="checkbox" id="return" name="return" value="" class="mb-0"
+                                        @if (isset($booking_detail) && $booking_detail->is_return == 1) checked @endif>
+                                    <label for="return">Return Journey</label>
                                 </div>
 
                                 <div id="return_location" style="display: none;margin-top:24px;">
                                     <div id="return_date">
                                         <label for="return_date">Return Date & Time:</label>
                                         <input type="datetime-local" name="return_date_time"
-                                            class="styled-input timepicker border-radius-0 mb-0"
-                                            placeholder="Return Date" id="return_date_time"
+                                            class="styled-input timepicker border-radius-0 mb-0" placeholder="Return Date"
+                                            id="return_date_time"
                                             value="{{ isset($booking_detail) ? (isset($booking_detail->return_date) && isset($booking_detail->return_time) ? $booking_detail->return_date . 'T' . $booking_detail->return_time : '') : '' }}" />
-                                            <p class="minimum_hours"></p>
+                                        <p class="minimum_hours"></p>
                                         <div id="return_date_time-error" class="error-message text-danger"></div>
                                     </div>
                                     <label for="return_pickupLocation">Return Pickup Location:</label>
-                                    <input type="text"  name="return_pickupLocation"
-                                        placeholder="" id="return_pickupLocation"
-                                        class="form-control  border-radius-0 mb-0" disabled>
+                                    <input type="text" name="return_pickupLocation" placeholder=""
+                                        id="return_pickupLocation" class="form-control  border-radius-0 mb-0" disabled>
                                     <label for="return_dropLocation">Return Dropoff Location:</label>
                                     <div id="return_dropLocations">
                                         <div class=" mb-2">
                                             <input type="text" name="return_dropLocation" disabled
-                                            id="return_dropLocation"
-                                                placeholder=""
+                                                id="return_dropLocation" placeholder=""
                                                 class="form-control border-radius-0 mb-0 ">
                                         </div>
                                     </div>
@@ -275,6 +291,10 @@
                                     name="email" placeholder="Enter Your Email"
                                     value={{ $booking_detail->email ?? '' }}>
                                 <div id="email-error" class="error-message text-danger"></div>
+                            </div>
+                            <div class="mt-2">
+                                <label for="comment">Comment (optional):</label>
+                                <textarea name="comment" id="summary" class="form-control" rows="3">{{ $booking_detail->summary ?? '' }}</textarea>
                             </div>
                             <div class="border-botom">
                                 <div class="d-flex  column_type mt-4">
@@ -372,10 +392,7 @@
 
                             @endif --}}
 
-                            <div class="mt-2">
-                                <label for="comment">Comment (optional):</label>
-                                <textarea name="comment" id="summary" class="form-control" rows="3">{{ $booking_detail->summary ?? '' }}</textarea>
-                            </div>
+                           
                         </div>
 
                         <div class="step4 new_form">
@@ -493,7 +510,7 @@
                                         <p id="summary-meet-greet"></p>
                                     </div>
                                 </div>
-                                <div  id="summary-service_texas" style="">
+                                <div id="summary-service_texas" style="">
                                 </div>
                                 <div class="d-none gap-4 " id="summary-meet-greet_price_div" style="display: none">
                                     <strong>Extra Lauggage:</strong>
@@ -566,68 +583,62 @@
                     <div id="mapMarkplaces"></div>
 
                 </div>
-                <div class="col-md-4" style="border-left: 1px solid #ccc">
-
-                    <h3 class="color color_theme">Location</h3>
-                    <div class="google-map">
+                <div class="row" style="border-left: 1px solid #ccc; margin: 0;">
+                    <!-- Left Column -->
+                    <div class="col-md-6 google-map">
+                        <h3 class="color color_theme">Location</h3>
                         {{-- <iframe id="map"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24301.0311484067!2d-2.6174498609618677!3d51.45451443765247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48719c1653d8c9a9%3A0xb47bdb0a605f0a0!2sBristol%2C%20UK!5e0!3m2!1sen!2s!4v1605382028827!5m2!1sen!2s"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe> --}}
-
-                        <div id="map"></div>
+                            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></iframe> --}}
+                            <div id="map"></div>
+                        </div>
+                
+                    <!-- Right Column -->
+                    <div class="col-md-6">
+                        <div style="padding: 10px; margin-top: 10px;">
+                            <h5 class="color">All classes include:</h5>
+                            <div class="icon_text">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Free registration</p>
+                            </div>
+                            <div class="icon_text">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Free cancellation up to 24 hours before your scheduled pick-up</p>
+                            </div>
+                            <div class="icon_text">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Enjoy complimentary 1-hour waiting time for airport pickups</p>
+                            </div>
+                            <div class="icon_text">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Luggage assistance</p>
+                            </div>
+                            <div class="icon_text">
+                                <i class="fa-solid fa-check"></i>
+                                <p>Complimentary 15 min waiting period at all other pickups</p>
+                            </div>
+                        </div>
+                       
                     </div>
-                    <div style="padding: 10px;margin-top:10px">
-                        <h5 class="color">All classes include:</h5>
-                        <div class="icon_text">
-                            <i class="fa-solid fa-check"></i>
-                            <p>
-                                Free registration
-                            </p>
-                        </div>
-                        <div class="icon_text">
-                            <i class="fa-solid fa-check"></i>
-                            <p>
-                                Free cancellation up to 24 hours before your scheduled pick-up
-                            </p>
-                        </div>
-                        <div class="icon_text">
-                            <i class="fa-solid fa-check"></i>
-                            <p>
-                                Enjoy complimentary 1 hour waiting time for airport pickups
-                            </p>
-                        </div>
-                        <div class="icon_text">
-                            <i class="fa-solid fa-check"></i>
-                            <p>
-                                Luggage assistance
-                            </p>
-                        </div>
-                        <div class="icon_text">
-                            <i class="fa-solid fa-check"></i>
-                            <p>
-                                Complimentary 15 min waiting period at all other pickups
-                            </p>
-                        </div>
-                    </div>
-                    <div style="padding: 10px;margin-top:10px">
-                        <h5 class="color">Please Note:</h5>
+                    <div style="padding: 10px; margin-top: 10px;border-top:1px solid black">
+                        <h5 class="color" style="padding-bottom:10px;display:flex;justify-content:center;width:100%;">Please Note:</h5>
                         <div class="icon_text">
                             <i class="fa-solid fa-exclamation"></i>
                             <p>
-                                Guest/laggage capacities must be abided by for safety reasons. if you are unsure select a
-                                large class as drivers may turn down service when they are exceeded.
+                                Guest/luggage capacities must be abided by for safety reasons. If you are unsure, select a larger
+                                class as drivers may turn down service when they are exceeded.
                             </p>
                         </div>
                         <div class="icon_text">
                             <i class="fa-solid fa-exclamation"></i>
                             <p>
-                                The vehicle images above are examples.You may get a different vehicle of the similar quality.
+                                The vehicle images above are examples. You may get a different vehicle of similar quality.
                             </p>
                         </div>
-
                     </div>
                 </div>
+                
             </div>
         </div>
 
@@ -655,8 +666,6 @@
         </div>
 
     </section>
-    
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const url = new URL(window.location.href);
@@ -675,10 +684,9 @@
 
 
 
+
     <script type="text/javascript">
         var login_user = @json($userLoggedIn);
-        console.log(login_user);
-
         var payment_id = '{{ request('payment_id') }}';
         var stripeKey = '{{ config('services.stripe.key') }}';
         if (!stripeKey) {
@@ -750,432 +758,225 @@
                         });
                 }
 
-        }
+            }
 
-        // if (payment_id) {
-        //     var button = document.getElementById('checkout-button');
-        //     button.addEventListener('click', function() {
-        //         PayonStripe(payment_id);
-        //     });
-        // }
+            // if (payment_id) {
+            //     var button = document.getElementById('checkout-button');
+            //     button.addEventListener('click', function() {
+            //         PayonStripe(payment_id);
+            //     });
+            // }
 
         }
+        document.getElementById('date-time').addEventListener('click', function() {
+            this.showPicker(); // Opens the native datetime picker
+        });
     </script>
+     <script src="https://js.stripe.com/v3/"></script>
+
+     <script>
+         let geocoder;
+         let distanceService;
+         let originAutocomplete;
+         let map;
+         let originPlace = null;
+         let destinationPlaces = [];
+         let distances = [];
+         let totalDistance = 0;
+         let markers = [];
+         let directionsService;
+         let directionsRenderer;
+         let infoWindow;
+         let indexcount = 0;
+ 
+         $(document).ready(function() {
+             // Initialize Google Maps centered on Sargodha, Pakistan
+             const sargodhaLocation = {
+                 lat: 51.4545,
+                 lng: -2.5879
+             };
+             map = new google.maps.Map(document.getElementById('map'), {
+                 center: sargodhaLocation,
+                 zoom: 13
+             });
+ 
+             directionsService = new google.maps.DirectionsService();
+             directionsRenderer = new google.maps.DirectionsRenderer();
+             directionsRenderer.setMap(map);
+ 
+             infoWindow = new google.maps.InfoWindow();
+ 
+             const pickupInput = document.getElementById('pickupLocation');
+             originAutocomplete = new google.maps.places.Autocomplete(pickupInput, {
+                 bounds: new google.maps.LatLngBounds(
+                     new google.maps.LatLng(49.959999, -7.572168), // South West Corner
+                     new google.maps.LatLng(58.635000, 1.681530) // North East Corner
+                 ),
+                 componentRestrictions: {
+                     country: 'uk'
+                 },
+             });
+             originAutocomplete.addListener('place_changed', handleOriginPlaceChange);
+ 
+             geocoder = new google.maps.Geocoder();
+             distanceService = new google.maps.DistanceMatrixService();
+ 
+             handleDestinationPlaceChange(indexcount);
+         });
+ 
+         function handleOriginPlaceChange() {
+             originPlace = originAutocomplete.getPlace();
+             if (!originPlace || !originPlace.geometry || !isPlaceInSargodha(originPlace)) {
+                 alert('Invalid pickup location. Please select a valid location within Sargodha.');
+                 originPlace = null; // Reset originPlace if it's invalid
+                 return;
+             }
+             addMarker(originPlace.geometry.location, originPlace.formatted_address);
+             checkAndCalculateDistances();
+         }
+ 
+         function handleDestinationPlaceChange(index) {
+             const className = `dropLocation${index}`;
+             console.log(className);
+             const input = document.querySelector(`#${className}`);
+ 
+             const autocomplete = new google.maps.places.Autocomplete(input, {
+                 bounds: new google.maps.LatLngBounds(
+                     new google.maps.LatLng(49.959999, -7.572168), // South West Corner of the UK
+                     new google.maps.LatLng(58.635000, 1.681530) // North East Corner of the UK
+                 ),
+                 componentRestrictions: {
+                     country: 'uk'
+                 },
+             });
+ 
+             autocomplete.addListener('place_changed', () => {
+                 const place = autocomplete.getPlace();
+                 if (!place || !place.geometry || !isPlaceInSargodha(place)) {
+                     alert('Invalid drop location. Please select a valid location within Sargodha.');
+                     destinationPlaces[index] = null; // Reset the invalid destination place
+                     return;
+                 }
+                 destinationPlaces[index] = place;
+                 addMarker(place.geometry.location, place.formatted_address);
+                 checkAndCalculateDistances();
+             });
+         }
+ 
+ 
+ 
+ 
+ 
+         function checkAndCalculateDistances() {
+             if (!originPlace || destinationPlaces.length === 0) {
+                 return;
+             }
+ 
+             const allPlaces = [originPlace, ...destinationPlaces].filter(place => place);
+             if (allPlaces.length < 2) {
+                 return;
+             }
+ 
+             totalDistance = 0;
+             distances = [];
+             clearMarkers();
+             for (let i = 0; i < allPlaces.length - 1; i++) {
+                 const originLatLng = allPlaces[i].geometry.location;
+                 const destinationLatLng = allPlaces[i + 1].geometry.location;
+ 
+                 addMarker(originLatLng, allPlaces[i].formatted_address);
+                 addMarker(destinationLatLng, allPlaces[i + 1].formatted_address);
+ 
+                 calculateDistance(originLatLng, destinationLatLng, i);
+             }
+ 
+             drawRoute(allPlaces);
+         }
+ 
+         function calculateDistance(origin, destination, index) {
+             distanceService.getDistanceMatrix({
+                 origins: [origin],
+                 destinations: [destination],
+                 travelMode: google.maps.TravelMode.DRIVING
+             }, (response, status) => {
+                 if (status === 'OK') {
+                     const distanceValueInMeters = response.rows[0].elements[0].distance.value;
+                     const distanceValueInMiles = distanceValueInMeters / 1609.34; // Convert meters to miles
+                     distances[index] = distanceValueInMiles;
+                     updateTotalDistance();
+                 } else {
+                     console.error('Error:', status);
+                 }
+             });
+         }
+ 
+         function updateTotalDistance() {
+             totalDistance = distances.reduce((acc, distance) => acc + distance, 0);
+             const totalDistanceInMiles = totalDistance.toFixed(2);
+             distance = totalDistanceInMiles;
+             console.log('distance is', distance);
+         }
+ 
+         function isPlaceInSargodha(place) {
+             const sargodhaBounds = new google.maps.LatLngBounds(
+                 new google.maps.LatLng(49.959999, -7.572168), // South West Corner of the UK
+                 new google.maps.LatLng(58.635000, 1.681530) // North East Corner of the UK
+             );
+             return sargodhaBounds.contains(place.geometry.location);
+         }
+ 
+         function addMarker(location, title) {
+             const marker = new google.maps.Marker({
+                 position: location,
+                 map: map,
+                 title: title
+             });
+             marker.addListener('click', () => {
+                 infoWindow.setContent(title);
+                 infoWindow.open(map, marker);
+             });
+             markers.push(marker);
+ 
+             // Adjust map viewport to fit all markers
+             const bounds = new google.maps.LatLngBounds();
+             markers.forEach(marker => {
+                 bounds.extend(marker.getPosition());
+             });
+             map.fitBounds(bounds);
+         }
+ 
+         function clearMarkers() {
+             markers.forEach(marker => marker.setMap(null));
+             markers = [];
+         }
+ 
+         function adjustMapViewport(places) {
+             const bounds = new google.maps.LatLngBounds();
+             places.forEach(place => bounds.extend(place.geometry.location));
+             map.fitBounds(bounds);
+         }
+ 
+         function drawRoute(places) {
+             const waypoints = places.slice(1, -1).map(place => ({
+                 location: place.geometry.location,
+                 stopover: true
+             }));
+             directionsService.route({
+                 origin: places[0].geometry.location,
+                 destination: places[places.length - 1].geometry.location,
+                 waypoints: waypoints,
+                 travelMode: google.maps.TravelMode.DRIVING
+             }, (response, status) => {
+                 if (status === 'OK') {
+                     directionsRenderer.setDirections(response);
+                 } else {
+                     console.error('Directions request failed due to ' + status);
+                 }
+             });
+         }
+ 
+    
+     </script>
+     @include('frontend.booking.booking-js')
 @endsection
 
-@section('scripts')
-    <script src="https://js.stripe.com/v3/"></script>
-
-    <script>
-        let geocoder;
-        let distanceService;
-        let originAutocomplete;
-        let map;
-        let originPlace = null;
-        let destinationPlaces = [];
-        let distances = [];
-        let totalDistance = 0;
-        let markers = [];
-        let directionsService;
-        let directionsRenderer;
-        let infoWindow;
-        let indexcount = 0;
-
-        $(document).ready(function() {
-            // Initialize Google Maps centered on Sargodha, Pakistan
-            const sargodhaLocation = {
-                lat: 51.4545,
-                lng: -2.5879
-            };
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: sargodhaLocation,
-                zoom: 13
-            });
-
-            directionsService = new google.maps.DirectionsService();
-            directionsRenderer = new google.maps.DirectionsRenderer();
-            directionsRenderer.setMap(map);
-
-            infoWindow = new google.maps.InfoWindow();
-
-            const pickupInput = document.getElementById('pickupLocation');
-            originAutocomplete = new google.maps.places.Autocomplete(pickupInput, {
-                bounds: new google.maps.LatLngBounds(
-                    new google.maps.LatLng(49.959999, -7.572168), // South West Corner
-                    new google.maps.LatLng(58.635000, 1.681530) // North East Corner
-                ),
-                componentRestrictions: {
-                    country: 'uk'
-                },
-            });
-            originAutocomplete.addListener('place_changed', handleOriginPlaceChange);
-
-            geocoder = new google.maps.Geocoder();
-            distanceService = new google.maps.DistanceMatrixService();
-
-            handleDestinationPlaceChange(indexcount);
-        });
-
-        function handleOriginPlaceChange() {
-            originPlace = originAutocomplete.getPlace();
-            if (!originPlace || !originPlace.geometry || !isPlaceInSargodha(originPlace)) {
-                alert('Invalid pickup location. Please select a valid location within Sargodha.');
-                originPlace = null; // Reset originPlace if it's invalid
-                return;
-            }
-            addMarker(originPlace.geometry.location, originPlace.formatted_address);
-            checkAndCalculateDistances();
-        }
-
-        function handleDestinationPlaceChange(index) {
-            const className = `dropLocation${index}`;
-            console.log(className);
-            const input = document.querySelector(`#${className}`);
-
-            const autocomplete = new google.maps.places.Autocomplete(input, {
-                bounds: new google.maps.LatLngBounds(
-                    new google.maps.LatLng(49.959999, -7.572168), // South West Corner of the UK
-                    new google.maps.LatLng(58.635000, 1.681530) // North East Corner of the UK
-                ),
-                componentRestrictions: {
-                    country: 'uk'
-                },
-            });
-
-            autocomplete.addListener('place_changed', () => {
-                const place = autocomplete.getPlace();
-                if (!place || !place.geometry || !isPlaceInSargodha(place)) {
-                    alert('Invalid drop location. Please select a valid location within Sargodha.');
-                    destinationPlaces[index] = null; // Reset the invalid destination place
-                    return;
-                }
-                destinationPlaces[index] = place;
-                addMarker(place.geometry.location, place.formatted_address);
-                checkAndCalculateDistances();
-            });
-        }
-
-        function addMore() {
-            const dropLocationsDiv = document.getElementById('via_locatoins_input');
-            const newDropLocationDiv = document.createElement('div');
-            const newIndex = indexcount + 1;
-            newDropLocationDiv.className = 'drop-location mb-2';
-            newDropLocationDiv.innerHTML = `
-                <input type="text" id="dropLocation${newIndex}" name="via_locations[]" placeholder="Enter Via location" class="form-control border-radius-0 mb-0 dropoffLocations">
-                <div id="drop-error" class="error-message text-danger"></div>
-            `;
-
-            dropLocationsDiv.appendChild(newDropLocationDiv);
-
-            handleDestinationPlaceChange(newIndex);
-            indexcount++;
-        }
-
-        function checkAndCalculateDistances() {
-            if (!originPlace || destinationPlaces.length === 0) {
-                return;
-            }
-
-            const allPlaces = [originPlace, ...destinationPlaces].filter(place => place);
-            if (allPlaces.length < 2) {
-                return;
-            }
-
-            totalDistance = 0;
-            distances = [];
-            clearMarkers();
-            for (let i = 0; i < allPlaces.length - 1; i++) {
-                const originLatLng = allPlaces[i].geometry.location;
-                const destinationLatLng = allPlaces[i + 1].geometry.location;
-
-                addMarker(originLatLng, allPlaces[i].formatted_address);
-                addMarker(destinationLatLng, allPlaces[i + 1].formatted_address);
-
-                calculateDistance(originLatLng, destinationLatLng, i);
-            }
-
-            drawRoute(allPlaces);
-        }
-
-        function calculateDistance(origin, destination, index) {
-            distanceService.getDistanceMatrix({
-                origins: [origin],
-                destinations: [destination],
-                travelMode: google.maps.TravelMode.DRIVING
-            }, (response, status) => {
-                if (status === 'OK') {
-                    const distanceValueInMeters = response.rows[0].elements[0].distance.value;
-                    const distanceValueInMiles = distanceValueInMeters / 1609.34; // Convert meters to miles
-                    distances[index] = distanceValueInMiles;
-                    updateTotalDistance();
-                } else {
-                    console.error('Error:', status);
-                }
-            });
-        }
-
-        function updateTotalDistance() {
-            totalDistance = distances.reduce((acc, distance) => acc + distance, 0);
-            const totalDistanceInMiles = totalDistance.toFixed(2);
-            distance = totalDistanceInMiles;
-            console.log('distance is', distance);
-        }
-
-        function isPlaceInSargodha(place) {
-            const sargodhaBounds = new google.maps.LatLngBounds(
-                new google.maps.LatLng(49.959999, -7.572168), // South West Corner of the UK
-                new google.maps.LatLng(58.635000, 1.681530) // North East Corner of the UK
-            );
-            return sargodhaBounds.contains(place.geometry.location);
-        }
-
-        function addMarker(location, title) {
-            const marker = new google.maps.Marker({
-                position: location,
-                map: map,
-                title: title
-            });
-            marker.addListener('click', () => {
-                infoWindow.setContent(title);
-                infoWindow.open(map, marker);
-            });
-            markers.push(marker);
-
-            // Adjust map viewport to fit all markers
-            const bounds = new google.maps.LatLngBounds();
-            markers.forEach(marker => {
-                bounds.extend(marker.getPosition());
-            });
-            map.fitBounds(bounds);
-        }
-
-        function clearMarkers() {
-            markers.forEach(marker => marker.setMap(null));
-            markers = [];
-        }
-
-        function adjustMapViewport(places) {
-            const bounds = new google.maps.LatLngBounds();
-            places.forEach(place => bounds.extend(place.geometry.location));
-            map.fitBounds(bounds);
-        }
-
-        function drawRoute(places) {
-            const waypoints = places.slice(1, -1).map(place => ({
-                location: place.geometry.location,
-                stopover: true
-            }));
-            directionsService.route({
-                origin: places[0].geometry.location,
-                destination: places[places.length - 1].geometry.location,
-                waypoints: waypoints,
-                travelMode: google.maps.TravelMode.DRIVING
-            }, (response, status) => {
-                if (status === 'OK') {
-                    directionsRenderer.setDirections(response);
-                } else {
-                    console.error('Directions request failed due to ' + status);
-                }
-            });
-        }
-    </script>
-    {{-- <script>
-        let geocoder;
-        let distanceService;
-        let originAutocomplete;
-        let map;
-        let originPlace = null;
-        let destinationPlaces = [];
-        let distances = [];
-        let totalDistance = 0;
-        let markers = [];
-        let directionsService;
-        let directionsRenderer;
-        let infoWindow;
-
-        $(document).ready(function() {
-            // Initialize Google Maps centered on Bristol, UK
-            const bristolLocation = { lat: 51.4545, lng: -2.5879 };
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: bristolLocation,
-                zoom: 13
-            });
-
-            directionsService = new google.maps.DirectionsService();
-            directionsRenderer = new google.maps.DirectionsRenderer();
-            directionsRenderer.setMap(map);
-
-            infoWindow = new google.maps.InfoWindow();
-
-            const pickupInput = document.getElementById('pickupLocation');
-            originAutocomplete = new google.maps.places.Autocomplete(pickupInput, {
-                bounds: new google.maps.LatLngBounds(
-                    new google.maps.LatLng(49.959999, -7.572168), // South West Corner
-                    new google.maps.LatLng(58.635000, 1.681530) // North East Corner
-                ),
-                componentRestrictions: { country: 'uk' },
-                types: ['geocode']
-            });
-            originAutocomplete.addListener('place_changed', handleOriginPlaceChange);
-
-            geocoder = new google.maps.Geocoder();
-            distanceService = new google.maps.DistanceMatrixService();
-
-            // Initialize the first drop location autocomplete
-            handleDestinationPlaceChange(0);
-        });
-
-        function handleOriginPlaceChange() {
-            originPlace = originAutocomplete.getPlace();
-            if (!originPlace || !originPlace.geometry || !isPlaceInUK(originPlace)) {
-                alert('Invalid pickup location. Please select a valid location within the UK.');
-                originPlace = null; // Reset originPlace if it's invalid
-                return;
-            }
-            addMarker(originPlace.geometry.location, originPlace.formatted_address);
-            checkAndCalculateDistances();
-        }
-
-        function handleDestinationPlaceChange(index) {
-            const input = document.querySelectorAll('#dropLocations input')[index];
-
-            const autocomplete = new google.maps.places.Autocomplete(input, {
-                bounds: new google.maps.LatLngBounds(
-                    new google.maps.LatLng(49.959999, -7.572168), // South West Corner of the UK
-                    new google.maps.LatLng(58.635000, 1.681530) // North East Corner of the UK
-                ),
-                componentRestrictions: { country: 'uk' },
-                types: ['geocode']
-            });
-
-            autocomplete.addListener('place_changed', () => {
-                const place = autocomplete.getPlace();
-                if (!place || !place.geometry || !isPlaceInUK(place)) {
-                    alert('Invalid drop location. Please select a valid location within the UK.');
-                    destinationPlaces[index] = null; // Reset the invalid destination place
-                    return;
-                }
-                destinationPlaces[index] = place;
-                addMarker(place.geometry.location, place.formatted_address);
-                checkAndCalculateDistances();
-            });
-        }
-
-        function addMore() {
-            const dropLocationsDiv = document.getElementById('dropLocations');
-            const newDropLocationDiv = document.createElement('div');
-            const newIndex = destinationPlaces.length;
-
-            newDropLocationDiv.className = 'drop-location mb-2';
-            newDropLocationDiv.innerHTML = `
-                <input type="text" id="dropLocation${newIndex}" name="dropLocation[]" placeholder="Enter drop location" class="form-control border-radius-0 mb-0">
-                <div id="drop-error" class="error-message text-danger"></div>
-            `;
-
-            dropLocationsDiv.appendChild(newDropLocationDiv);
-            handleDestinationPlaceChange(newIndex);
-        }
-
-        function checkAndCalculateDistances() {
-            if (!originPlace || destinationPlaces.length === 0) {
-                return;
-            }
-
-            const allPlaces = [originPlace, ...destinationPlaces].filter(place => place);
-            if (allPlaces.length < 2) {
-                return;
-            }
-
-            totalDistance = 0;
-            distances = [];
-            clearMarkers();
-            for (let i = 0; i < allPlaces.length - 1; i++) {
-                const originLatLng = allPlaces[i].geometry.location;
-                const destinationLatLng = allPlaces[i + 1].geometry.location;
-
-                addMarker(originLatLng, allPlaces[i].formatted_address);
-                addMarker(destinationLatLng, allPlaces[i + 1].formatted_address);
-
-                calculateDistance(originLatLng, destinationLatLng, i);
-            }
-
-            drawRoute(allPlaces);
-            adjustMapViewport(allPlaces); // Adjust the map to fit all markers
-        }
-
-        function calculateDistance(origin, destination, index) {
-            distanceService.getDistanceMatrix({
-                origins: [origin],
-                destinations: [destination],
-                travelMode: google.maps.TravelMode.DRIVING
-            }, (response, status) => {
-                if (status === 'OK') {
-                    const distanceValueInMeters = response.rows[0].elements[0].distance.value;
-                    const distanceValueInMiles = distanceValueInMeters / 1609.34; // Convert meters to miles
-                    distances[index] = distanceValueInMiles;
-                    updateTotalDistance();
-                } else {
-                    console.error('Error:', status);
-                }
-            });
-        }
-
-        function updateTotalDistance() {
-            totalDistance = distances.reduce((acc, distance) => acc + distance, 0);
-            const totalDistanceInMiles = totalDistance.toFixed(2);
-            console.log(`Total Distance: ${totalDistanceInMiles} miles`);
-        }
-
-        function isPlaceInUK(place) {
-            const ukBounds = new google.maps.LatLngBounds(
-                new google.maps.LatLng(49.959999, -7.572168), // South West Corner of the UK
-                new google.maps.LatLng(58.635000, 1.681530) // North East Corner of the UK
-            );
-            return ukBounds.contains(place.geometry.location);
-        }
-
-        function addMarker(location, title) {
-            const marker = new google.maps.Marker({
-                position: location,
-                map: map,
-                title: title
-            });
-            marker.addListener('click', () => {
-                infoWindow.setContent(title);
-                infoWindow.open(map, marker);
-            });
-            markers.push(marker);
-        }
-
-        function clearMarkers() {
-            markers.forEach(marker => marker.setMap(null));
-            markers = [];
-        }
-
-        function adjustMapViewport(places) {
-            const bounds = new google.maps.LatLngBounds();
-            places.forEach(place => bounds.extend(place.geometry.location));
-            map.fitBounds(bounds);
-        }
-
-        function drawRoute(places) {
-            const waypoints = places.slice(1, -1).map(place => ({ location: place.geometry.location, stopover: true }));
-            directionsService.route({
-                origin: places[0].geometry.location,
-                destination: places[places.length - 1].geometry.location,
-                waypoints: waypoints,
-                travelMode: google.maps.TravelMode.DRIVING
-            }, (response, status) => {
-                if (status === 'OK') {
-                    directionsRenderer.setDirections(response);
-                } else {
-                    console.error('Directions request failed due to ' + status);
-                }
-            });
-        }
-    </script> --}}
-
-
-    @include('frontend.booking.booking-js')
-    @include('frontend.booking.style-css')
-@endsection

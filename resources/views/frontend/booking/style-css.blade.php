@@ -1,10 +1,24 @@
 <style>
+    .form-control, .input-text{
+        height: calc(2.25rem + 10px) !important;
+    }
+    #service{
+        border: 3px solid #e2cc83 !important;
+    }
+    input{
+        border: 3px solid #e2cc83 !important;
+    }
+    button#next_btn {
+    background: #e1cc83;
+    color: white;
+    border-radius: 50px;
+}
     .footer-box {
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: white;
-        background: #f0901d;
+        background: #e7d388;
         padding: 5;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -34,14 +48,14 @@
     .discount_btn{
         color: white;
         padding: 5px 20px;
-        background: #f0901d;
+        background: #e7d388;
     }
 
     .coupon_btn {
         padding: 10px;
         font-size: 14px;
         color: white;
-        background: #f0901d;
+        background: #e7d388;
     }
 
     .modal-body {
@@ -54,12 +68,12 @@
     }
 
     .modal-header {
-        background-color: orange;
+        background-color: #e8d693;
 
     }
 
     #countdown h4 {
-        color: orange;
+        color: #e8d693;
         font-family: cursive;
     }
 
@@ -105,15 +119,17 @@
     }
 
     .color {
-        color: #f8941d;
+        color: #e7d388;
         display: inline-block;
         border-bottom: 1px solid white;
+        display: flex;
+        justify-content: center;
     }
 
     .p-6 strong {
         font-weight: bolder;
         font-size: 19px;
-        color: #f0901d;
+        color: #e7d388;
     }
 
     .footer-box p {
@@ -164,7 +180,7 @@
     }
 
     .button-1:hover {
-        background: #f0901d !important;
+        background: #e7d388 !important;
         color: white !important;
         /* font-size: 19px; */
         font-weight: 600;
@@ -290,7 +306,7 @@
     }
 
     .progress-step.active {
-        color: #f0901d;
+        color: #e7d388;
         font-size: 19px;
     }
 
@@ -307,7 +323,7 @@
         transform: translateX(-50%);
         width: 20px;
         height: 20px;
-        background-color: #f0901d;
+        background-color: #e7d388;
         border-radius: 50%;
     }
 
@@ -347,8 +363,8 @@
     }
 
     .summary strong {
-        color: orange;
-        /* Set strong tag color to orange */
+        color: #e8d693;
+        /* Set strong tag color to #e8d693 */
         min-width: 134px;
         /* Set minimum width for strong tag */
     }
@@ -362,9 +378,14 @@
 
     .icon_text i {
         color: white;
-        background: orange;
-        padding: 5px;
-        border-radius: 14px;
+        background: #e8d693;
+        height: 31px;
+        width: 31px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 
     .icon_text {
@@ -375,8 +396,8 @@
 
     /* Common styles for both input fields */
     .styled-input {
-        background: #222222;
-        color: white;
+        background: white;
+        color: black;
         border: none;
         border-radius: 21px;
         height: 45px;
@@ -387,7 +408,7 @@
     }
 
     .styled-input::placeholder {
-        color: white;
+        color: black;
     }
 
     #error_msg {
@@ -410,8 +431,8 @@
 
     /* Common styles for both input fields */
     .styled-input {
-        background: #222222;
-        color: white;
+        background: white;
+        color: black;
         border: none;
         border-radius: 21px;
         height: 45px;
@@ -528,7 +549,8 @@
 
         /* Styling the header of the date and time picker popup */
         .styled-input::-webkit-datetime-edit-fields-wrapper {
-            background-color: #222222;
+            background-color: white;
+            color: black;
             /* Background color of the popup */
         }
 
@@ -579,7 +601,7 @@
         }
 
         /* .selected-fleet {
-            border: 2px solid #f0901d;
+            border: 2px solid #e7d388;
         } */
 
         .select2 {
@@ -644,7 +666,7 @@
         }
 
         .dropdown_menus {
-            color: orange;
+            color: #e8d693;
             font-size: 20px;
             font-weight: 600;
             padding: 20px 0px 0px 0px;
