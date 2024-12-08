@@ -83,22 +83,16 @@
 
 
 @section('content')
-    <section class="banner-header section-padding bg-img" data-overlay-dark="4"
-        data-background="{{ asset('frontend-assets/img/slider/booking_img2.jpeg') }}">
-        <input type="hidden" id="login_user" value="{{ $userRole }}">
-        <div class="v-middle">
-            <div class="container">
-                <div class="row design_style">
-                    <div class="col-lg-6 col-md-12 mt-30">
-                        <div class="post-wrapper">
-                            {{-- <a href="index-2.html">
-                                <div>Home</div>
-                            </a>
-                            <div class="divider"></div>
-                            <div class="text-white"><a href="#">book online</a></div> --}}
-                        </div>
-                        <h1 style="color: orange">Book Your Ride</h1>
-                        <p class="description" style="color: white;">Reserve your cab here. We provide a reliable 24-hour cab service in Bristol and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.</p>
+    <!-- Header Banner -->
+    <section class="page-title" style="background-image: url(frontend-assets/img/background/page-title1.jpg);">
+        <div class="auto-container">
+            <div class="title-outer text-center">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="title">Book Your Ride</h1>
+                        <p class="page-breadcrumb text-white">
+                            Reserve your cab here. We provide a reliable 24-hour cab service in Bristol and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -661,6 +655,8 @@
         </div>
 
     </section>
+    
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const url = new URL(window.location.href);
@@ -676,7 +672,6 @@
             }
         });
     </script>
-
 
 
 
@@ -1179,10 +1174,6 @@
             });
         }
     </script> --}}
-
-
-
-
 
 
     @include('frontend.booking.booking-js')
