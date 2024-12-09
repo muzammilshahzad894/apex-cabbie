@@ -24,7 +24,7 @@
         background-color: #f9f9f9;
     }
     input.form-control:focus {
-        border-color: #E1CB83; /* Change border color when focused */
+        border-color: #e09239; /* Change border color when focused */
         box-shadow: none; /* Ensure no shadow is shown */
     }
     input.form-control:focus ~ .floating-label,
@@ -32,7 +32,7 @@
         top: -8px;
         left: 15px;
         font-size: 12px;
-        color: #E1CB83;
+        color: #e09239;
     }
     .floating-label {
         position: absolute;
@@ -46,7 +46,7 @@
     .btn-primary {
         padding: 10px;
         border-radius: 8px;
-        background: #E1CB83 !important;
+        background: #e09239 !important;
         border: none !important;
     }
     .btn-primary:hover {

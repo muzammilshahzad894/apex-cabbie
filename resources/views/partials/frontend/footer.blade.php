@@ -16,13 +16,13 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="mailto:info@bristolcabwise.com" class="help-section-footer d-flex">
+                    <a href="mailto:info@apexcabbie.com" class="help-section-footer d-flex">
                         <div class="icon">
                             <i class="icon lnr-icon-envelope"></i>
                         </div>
                         <div class="text">
                             <p class="m-0 p-0">Write to us?</p>
-                            <p class="m-0 p-0">info@bristolcabwise.com</p>
+                            <p class="m-0 p-0">info@apexcabbie.com</p>
                         </div>
                     </a>
                 </div>

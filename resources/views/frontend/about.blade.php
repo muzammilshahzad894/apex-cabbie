@@ -29,7 +29,7 @@ section .container {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #E1CB83;
+    border: 3px solid #e19236 ;
     transition: transform 0.3s;
 }
 
@@ -69,12 +69,12 @@ section .container {
 }
 
 .custom-btn-style {
-    border: 2px solid #E1CB83 !important;
+    border: 2px solid #e19236  !important;
     color: #000 !important;
 }
 
 .custom-btn-style:hover {
-    background-color: #E1CB83 !important;
+    background-color: #e19236  !important;
     color: #fff !important;
 }
 

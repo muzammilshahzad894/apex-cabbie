@@ -372,7 +372,7 @@
                     <i class="icon fa fa-car"></i>
                     <div class="content">
                         <h4 class="title book_process_heading">Choose a Service</h4>
-                        <div class="text">Explore Bristol Cabwise's diverse fleet and service options for a seamless and enjoyable ride.</div>
+                        <div class="text">Explore Apex Cabi diverse fleet and service options for a seamless and enjoyable ride.</div>
                     </div>
                 </div>
             </div>
@@ -382,7 +382,7 @@
                     <i class="icon far fa-smile"></i>
                     <div class="content">
                         <h4 class="title book_process_heading">Enjoy Your Ride</h4>
-                        <div class="text">Experience each journey with Bristol Cabwise, where our skilled drivers guarantee a smooth and secure ride.</div>
+                        <div class="text">Experience each journey with Apex Cabbie, where our skilled drivers guarantee a smooth and secure ride.</div>
                     </div>
                 </div>
             </div>
@@ -405,7 +405,7 @@
                                 <div class="card-body text-center">
                                     <img src="https://via.placeholder.com/80" alt="Client" class="rounded-circle mb-3">
                                     <h5 class="card-title font-weight-bold">John Doe</h5>
-                                    <p class="text-muted">"Bristol Cabwise offers fantastic service! The booking process was easy, and the ride was smooth and comfortable. Highly recommended!"</p>
+                                    <p class="text-muted">"Apex Cabbie offers fantastic service! The booking process was easy, and the ride was smooth and comfortable. Highly recommended!"</p>
                                     <div class="text-warning">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -443,7 +443,7 @@
                     <div class="row">
                         <div class="col-md-12 text-center " style="">
                             <h6>Welcome To</h6>
-                            <h1 style="font-size: 60px;" class="home_heading">Bristol Cabwise </h1>
+                            <h1 style="font-size: 60px;" class="home_heading">Apex Cabbie </h1>
                             <p class="home_p" style="max-width: 600px; margin: 0 auto; color:#ffc107;">
                                 Your premier pre-booking platform for reliable taxi services in Bristol, UK. Enjoy seamless
                                 travel from airport transfers to city tours. Book now for stress-free journeys!
@@ -467,10 +467,10 @@
                     <div class="content">
                         <div class="section-subtitle">Trusted &</div>
                         <div class="section-title">RELIABLE CAB <span>SERVICE IN BRISTOL</span> <br> AND ACROSS UK</div>
-                        <p class="mb-30">Introducing Bristol Cabwise, your one-stop solution for reliable taxi services.
-                            From airport transfers to city tours, corporate rides to in-city journeys, Bristol Cabwise
+                        <p class="mb-30">Introducing Apex Cabbie, your one-stop solution for reliable taxi services.
+                            From airport transfers to city tours, corporate rides to in-city journeys, Apex Cabbie
                             offers seamless pre-booking options at competitive rates. Experience convenience and comfort
-                            with our trusted transportation services. Book your ride with Bristol Cabwise today for a
+                            with our trusted transportation services. Book your ride with Apex Cabbie today for a
                             stress-free travel experience..</p>
                     </div>
                 </div>
@@ -614,7 +614,7 @@
                     <div class="item">
                         <div class="text">
                             <h5>Choose a Service</h5>
-                            <p>Explore Bristol Cabwise's diverse fleet and service options for a seamless and enjoyable
+                            <p>Explore Apex Cabbie's diverse fleet and service options for a seamless and enjoyable
                                 ride.</p>
                         </div>
                         <div class="numb">
@@ -644,7 +644,7 @@
                     <div class="item">
                         <div class="text">
                             <h5>Enjoy Your Ride</h5>
-                            <p>Experience each journey with Bristol Cabwise, where our skilled drivers guarantee a smooth
+                            <p>Experience each journey with Apex Cabbie, where our skilled drivers guarantee a smooth
                                 and secure ride.</p>
                         </div>
                         <div class="numb">
@@ -765,7 +765,7 @@
                             </div> <i class="fa-solid fa-quote-left"></i>
                             <div class="text">
                                 <p>Excellent service! The driver was punctual and very professional. The car was clean and
-                                    comfortable. Highly recommend Bristol Cabwise for reliable transportation!.</p>
+                                    comfortable. Highly recommend Apex Cabbie for reliable transportation!.</p>
                             </div>
                             <div class="info mt-30">
                                 <div class="img-curv">
@@ -820,7 +820,7 @@
                                 </div>
                             </div> <i class="fa-solid fa-quote-left"></i>
                             <div class="text">
-                                <p>I had a wonderful experience with Bristol Cabwise. The booking process was seamless, and
+                                <p>I had a wonderful experience with Apex Cabbie. The booking process was seamless, and
                                     the driver was courteous and helpful. Will definitely use this service again.</p>
                             </div>
                             <div class="info mt-30">

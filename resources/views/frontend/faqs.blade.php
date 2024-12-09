@@ -54,7 +54,7 @@
 
 .accordion-button:not(.collapsed) {
     color: #007bff;
-    background: #E1CB83 !important;
+    background: #e09239 !important;
 }
 
 button:focus:not(:focus-visible) {
@@ -73,7 +73,7 @@ button:focus:not(:focus-visible) {
 .accordion-button.collapsed .faq-toggle-icon {
     content: '+';
     transform: rotate(0);
-    color: #E1CB83;
+    color: #e09239;
 }
 
 .accordion-button:not(.collapsed) .faq-toggle-icon {
@@ -136,7 +136,7 @@ button:focus:not(:focus-visible) {
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                     <div class="accordion-body text-muted">
-                        You can request a refund within 30 days of purchase. Contact our support team for more details.
+                        You can cancel your booking up to 12 hours before the scheduled time to receive a full refund. Contact our support team for assistance.
                     </div>
                 </div>
             </div>

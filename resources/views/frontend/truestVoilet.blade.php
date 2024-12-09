@@ -49,7 +49,7 @@
     .testimonial-card::before {
         content: '\201C'; /* Opening quote mark */
         font-size: 100px;
-        color: #E1CB83;
+        color: #e09239;
         position: absolute;
         top: -40px;
         left: -20px;
@@ -59,7 +59,7 @@
     .testimonial-card::after {
         content: '\201D'; /* Closing quote mark */
         font-size: 100px;
-        color: #E1CB83;
+        color: #e09239;
         position: absolute;
         bottom: -40px;
         right: -20px;
@@ -89,7 +89,7 @@
         border-radius: 50%;
         object-fit: cover;
         margin-right: 20px;
-        border: 3px solid #E1CB83;
+        border: 3px solid #e09239;
     }
 
     .testimonial-author-name {
@@ -106,7 +106,7 @@
     /* Buttons */
     .btn-primary {
         padding: 12px 30px;
-        background: #E1CB83;
+        background: #e09239;
         color: #fff;
         border-radius: 30px;
         font-size: 18px;

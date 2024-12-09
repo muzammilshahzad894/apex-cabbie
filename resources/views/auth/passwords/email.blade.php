@@ -27,7 +27,7 @@
     }
 
     input.form-control:focus {
-        border-color: #E1CB83; /* Change border color when focused */
+        border-color: #e09239; /* Change border color when focused */
         box-shadow: none; /* Ensure no shadow is shown */
     }
 
@@ -36,7 +36,7 @@
         top: -8px;
         left: 15px;
         font-size: 12px;
-        color: #E1CB83;
+        color: #e09239;
     }
 
     .floating-label {
@@ -52,7 +52,7 @@
     .btn-primary {
         padding: 10px;
         border-radius: 8px;
-        background: #E1CB83 !important;
+        background: #e09239 !important;
         border: none !important;
     }
 

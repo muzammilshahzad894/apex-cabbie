@@ -87,7 +87,7 @@
                     <div class="sec-title">
                         <span class="sub-title">Need any help?</span>
                         <h2>Get in touch with us</h2>
-                        <div class="text">Lorem ipsum is simply free text available dolor sit amet consectetur notted adipisicing elit sed do eiusmod tempor incididunt simply dolore magna.</div>
+                        <div class="text">Apex Cabbie is dedicated to providing reliable, comfortable, and timely transportation services. Our professional drivers and well-maintained vehicles ensure a smooth and hassle-free journey every time.</div>
                     </div>
                     <ul class="list-unstyled contact-details__info">
                         <li class="d-block d-sm-flex align-items-sm-center ">
@@ -128,7 +128,7 @@
 <section class="map-section">
     <div class="container-fluid p-0">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093916!2d144.95373531559198!3d-37.81720974202153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577cbaaaa4e4f2c!2sVictoria%20State%20Library!5e0!3m2!1sen!2sau!4v1617157456302!5m2!1sen!2sau"
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24301.0311484067!2d-2.6174498609618677!3d51.45451443765247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48719c1653d8c9a9%3A0xb47bdb0a605f0a0!2sBristol%2C%20UK!5e0!3m2!1sen!2s!4v1605382028827!5m2!1sen!2s"
             width="100%"
             height="450"
             style="border: 0;"
