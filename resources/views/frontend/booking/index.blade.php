@@ -7,7 +7,7 @@
     .progress-step.active {
     position: relative; /* Ensure relative positioning for the pseudo-element */
     color: white; /* Set the text color to white */
-    background: #e7d388;
+    background: #ce7d1f;
 }
 
 .progress-step.active::after {
@@ -18,7 +18,7 @@
     transform: translateX(-50%);
     width: 50px;
     height: 40px;
-    background-color: #e7d388;
+    background-color: #ce7d1f;
     border-radius: 50%;
     z-index: -1; /* Place the background behind the text */
 }

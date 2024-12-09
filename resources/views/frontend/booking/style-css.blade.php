@@ -3,13 +3,13 @@
         height: calc(2.25rem + 10px) !important;
     }
     #service{
-        border: 3px solid #e2cc83 !important;
+        border: 3px solid #f5ad4f !important;
     }
     input{
-        border: 3px solid #e2cc83 !important;
+        border: 3px solid #f5ad4f !important;
     }
     button#next_btn {
-    background: #e1cc83;
+    background: #c97e1e;
     color: white;
     border-radius: 50px;
 }
@@ -18,7 +18,7 @@
         justify-content: space-between;
         align-items: center;
         color: white;
-        background: #e7d388;
+        background: #ce7d1f;
         padding: 5;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -48,14 +48,14 @@
     .discount_btn{
         color: white;
         padding: 5px 20px;
-        background: #e7d388;
+        background: #ce7d1f;
     }
 
     .coupon_btn {
         padding: 10px;
         font-size: 14px;
         color: white;
-        background: #e7d388;
+        background: #ce7d1f;
     }
 
     .modal-body {
@@ -119,7 +119,7 @@
     }
 
     .color {
-        color: #e7d388;
+        color: #ce7d1f;
         display: inline-block;
         border-bottom: 1px solid white;
         display: flex;
@@ -129,7 +129,7 @@
     .p-6 strong {
         font-weight: bolder;
         font-size: 19px;
-        color: #e7d388;
+        color: #ce7d1f;
     }
 
     .footer-box p {
@@ -180,7 +180,7 @@
     }
 
     .button-1:hover {
-        background: #e7d388 !important;
+        background: #ce7d1f !important;
         color: white !important;
         /* font-size: 19px; */
         font-weight: 600;
@@ -306,7 +306,7 @@
     }
 
     .progress-step.active {
-        color: #e7d388;
+        color: #ce7d1f;
         font-size: 19px;
     }
 
@@ -323,7 +323,7 @@
         transform: translateX(-50%);
         width: 20px;
         height: 20px;
-        background-color: #e7d388;
+        background-color: #ce7d1f;
         border-radius: 50%;
     }
 
@@ -601,7 +601,7 @@
         }
 
         /* .selected-fleet {
-            border: 2px solid #e7d388;
+            border: 2px solid #ce7d1f;
         } */
 
         .select2 {
