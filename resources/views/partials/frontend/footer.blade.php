@@ -79,31 +79,31 @@
                             <ul class="user-links two-column">
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Home</a>
+                                    <a href="{{ route('frontend.index') }}">Home</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">About</a>
+                                    <a href="{{ route('frontend.about') }}">About</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Services</a>
+                                    <a href="{{ route('frontend.services') }}">Services</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Contact</a>
+                                    <a href="{{ route('frontend.contact') }}">Contact</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Reviews</a>
+                                    <a href="{{ route('frontend.trustVoilet') }}">Reviews</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">FAQ's</a>
+                                    <a href="{{ route('frontend.faqs') }}">FAQ's</a>
                                 </li>
                                 <li>
                                     <i class="icon fa fa-angle-double-right"></i>
-                                    <a href="#">Term and Condition</a>
+                                    <a href="{{ route('frontend.termCondition') }}">Term and Condition</a>
                                 </li>
                             </ul>
                         </div>
