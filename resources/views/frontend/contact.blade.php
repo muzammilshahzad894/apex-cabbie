@@ -35,7 +35,7 @@
                     <h2>Feel free to write</h2>
                 </div>
 
-                <form id="contact_form" name="contact_form" action="{{ route('frontend.contactPost') }}" method="post">
+                <form id="contact_form" name="contact_form" action="{{ route('frontend.contactPost') }}" method="post" onsubmit="document.getElementById('submit-btn').innerHTML = 'Please wait...'; document.getElementById('submit-btn').disabled = true;">
                     @csrf
                     <!-- form message -->
                     <div class="row">
@@ -77,7 +77,7 @@
                         <textarea name="message" class="form-control required" rows="7" placeholder="Message *" required></textarea>
                     </div>
                     <div class="mb-5">
-                        <button type="submit" class="theme-btn btn-style-one mb-3 mb-xl-0" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
+                        <button type="submit" class="btn btn-primary mb-3 mb-xl-0" id="submit-btn"><span class="btn-title">Send message</span></button>
                     </div>
                 </form>
 

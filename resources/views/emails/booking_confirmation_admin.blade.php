@@ -12,7 +12,7 @@
                 <table width="600" cellpadding="20" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; margin-top: 20px;">
                     <tr>
                         <td style="background-color: #000000; padding: 10px 20px; color: #ffffff; text-align: left; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-                            <img src="{{ asset('frontend-assets/img/logo-light.png') }}" alt="logo" style="height: 70px; width: 85px;" />
+                            <img src="{{ asset('frontend-assets/img/apex-logo.png') }}" alt="logo" style="height: 70px; width: 85px;" />
                         </td>
                     </tr>
                     <tr>

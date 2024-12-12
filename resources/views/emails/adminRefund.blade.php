@@ -36,7 +36,7 @@
     <div class="container my-4">
         <div class="card">
             <div class="card-header bg-danger text-white">
-                <img src="{{ asset('frontend-assets/img/logo-light.png') }}" alt="logo"
+                <img src="{{ asset('frontend-assets/img/apex-logo.png') }}" alt="logo"
                 style="height: 40px; width: 40px;" />
             </div>
             <div class="card-body">

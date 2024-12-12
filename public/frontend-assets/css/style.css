@@ -1463,6 +1463,18 @@ Scroll To Top style
   z-index: 1;
 }
 
+.btn-primary {
+  background: var(--theme-color1);
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--theme-color-dark);
+}
+.btn-primary:disabled {
+  background: lightgray;
+  color: #000;
+}
+
 /*Btn Style One*/
 .btn-style-one {
   position: relative;
