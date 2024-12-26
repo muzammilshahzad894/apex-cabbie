@@ -15,6 +15,8 @@ use Carbon\Carbon;
 
 class PaymentController extends Controller
 {
+    protected $emailService;
+    
     public function __construct(EmailService $emailService)
     {
         $this->emailService = $emailService;
