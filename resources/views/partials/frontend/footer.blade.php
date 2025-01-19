@@ -10,7 +10,7 @@
                             <i class="icon lnr-icon-phone-handset"></i>
                         </div>
                         <div class="text">
-                            <p class="m-0 p-0">Call us?</p>
+                            <p class="m-0 p-0">Call us</p>
                             <p class="m-0 p-0">01173322782</p>
                         </div>
                     </a>
@@ -21,7 +21,7 @@
                             <i class="icon lnr-icon-envelope"></i>
                         </div>
                         <div class="text">
-                            <p class="m-0 p-0">Write to us?</p>
+                            <p class="m-0 p-0">Write to us</p>
                             <p class="m-0 p-0">info@apexcabbie.com</p>
                         </div>
                     </a>
@@ -32,7 +32,7 @@
                             <i class="icon lnr-icon-map-marker"></i>
                         </div>
                         <div class="text">
-                            <p class="m-0 p-0">Address?</p>
+                            <p class="m-0 p-0">Address</p>
                             <p class="m-0 p-0">81 Blackberry Hill Bristol Bs161df</p>
                         </div>
                     </a>

@@ -129,10 +129,10 @@
         <div class="container">
             <div class="row payment_section">
                 <ul class="progress-bar_main">
-                    <li class="progress-step active" id="step1">Tab </li>
-                    <li class="progress-step" id="step2">Tab</li>
-                    <li class="progress-step" id="step3">Tab</li>
-                    <li class="progress-step" id="step4">Tab</li>
+                    <li class="progress-step active" id="step1">Ride Info </li>
+                    <li class="progress-step" id="step2">Fleet Selection</li>
+                    <li class="progress-step" id="step3">Passenger Details</li>
+                    <li class="progress-step" id="step4">Booking Summary</li>
                 </ul>
              
                 <div class="col-md-12">

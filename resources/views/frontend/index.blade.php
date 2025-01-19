@@ -245,10 +245,10 @@
     <div class="overlay"></div>
     <div class="content-wrapper bottom-align">
         <h1 class="title">
-            <span class="highlight">Reserve your car</span>
+            <span class="highlight">Reserve Your Cab</span>
         </h1>
         <p class="text">
-            Convenient, reliable, and fast car service<br>
+            Convenient, reliable, and fast cab service<br>
             Ready to drive you to your destination.
         </p>
         <div>
@@ -362,7 +362,7 @@
                     <i class="icon fa fa-calendar-alt"></i>
                     <div class="content">
                         <h4 class="title book_process_heading">Book Online or Get a Quote</h4>
-                        <div class="text">Make your booking online or request a quote through our user-friendly website, ensuring safe payments, date protections, and customer safety.</div>
+                        <div class="text">Make your booking online or request a quote through our user-friendly website, ensuring safe payments, data protection, and customer safety.</div>
                     </div>
                 </div>
             </div>
@@ -372,7 +372,7 @@
                     <i class="icon fa fa-car"></i>
                     <div class="content">
                         <h4 class="title book_process_heading">Choose a Service</h4>
-                        <div class="text">Explore Apex Cabi diverse fleet and service options for a seamless and enjoyable ride.</div>
+                        <div class="text">Explore Apex Cabbie’s diverse fleet and service options for a seamless and enjoyable ride.</div>
                     </div>
                 </div>
             </div>

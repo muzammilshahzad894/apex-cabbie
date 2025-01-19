@@ -132,13 +132,13 @@ section .container {
             </div>
             <div class="col-lg-6">
                 <p class="mb-4">
-                    Welcome to our premier cab service, designed to cater to your transportation needs with utmost professionalism and care. Established in 2022, our family business is committed to delivering exceptional experiences for every journey.
+                    Apex Cabbie offers reliable pre-booking cab services in Bristol and across the UK, ensuring comfort, convenience, and affordability. Established in 2024 as a family-run business, we provide a range of fleets from economy to executive vehicles, maintained to the highest standards for Airport Transfers, City Transfers, Business Transfers, Private Transfers, and Event Transportation. With a user-friendly booking system and 24/7 support, we prioritize safety, efficiency, and customer satisfaction. Book your ride today and travel with confidence.
                 </p>
-                <ul class="list-unstyled">
+                <!-- <ul class="list-unstyled">
                     <li><i class="bi bi-check-circle text-primary"></i> Reliable and safe services</li>
                     <li><i class="bi bi-check-circle text-primary"></i> Luxury fleet for all occasions</li>
                     <li><i class="bi bi-check-circle text-primary"></i> 24/7 availability</li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
@@ -162,7 +162,7 @@ section .container {
                         <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" alt="{{ $service->detail_page_first_heading }}">
                     </div>
                     <!-- Service Content -->
-                    <h5 class="service-title">{{ $service->detail_page_first_heading }}</h5>
+                    <h5 class="service-title">{{ $service->name }}</h5>
                     <p class="service-description">
                         {{ Str::limit($service->detail_page_description, 100) }}
                     </p>

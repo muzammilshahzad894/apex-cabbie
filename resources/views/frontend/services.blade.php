@@ -5,6 +5,9 @@
         padding-top: 0px !important;
         padding-bottom: 0px !important;
     }
+    .service-img {
+        height: 255px !important;
+    }
 </style>
 
 @section('content')
@@ -44,7 +47,7 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('uploads/services/' . $service->image) }}" alt="Image" width="100%" />
+                                        <img src="{{ asset('uploads/services/' . $service->image) }}" alt="Image" width="100%" class="service-img" />
                                     </figure>
                                 </div>
                                 <div class="content">
