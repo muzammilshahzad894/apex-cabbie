@@ -11,7 +11,7 @@
                         </div>
                         <div class="text">
                             <p class="m-0 p-0">Call us</p>
-                            <p class="m-0 p-0">01173322782</p>
+                            <p class="m-0 p-0">0117 332 2782</p>
                         </div>
                     </a>
                 </div>

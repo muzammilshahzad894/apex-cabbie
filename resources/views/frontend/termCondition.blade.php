@@ -116,7 +116,7 @@
             <p>We reserve the right to modify the privacy policy at any time, with changes effective immediately.</p>
 
             <h2>Questions and Contacting Us</h2>
-            <p>If you have questions, please contact us via the contact page or call <strong>01173322782</strong>.</p>
+            <p>If you have questions, please contact us via the contact page or call <strong><a href="tel:01173322782">0117 332 2782</a></strong>.</p>
         </div>
     </div>
 </section>

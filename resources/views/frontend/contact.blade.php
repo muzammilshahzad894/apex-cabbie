@@ -135,7 +135,7 @@
                             </div>
                             <div class="text">
                                 <h5 class="mb-0">Call us</h5>
-                                <a href="tel:+441173322782" class="text-dark">0117 332 2782</a>
+                                <a href="tel:+01173322782" class="text-dark">0117 332 2782</a>
                             </div>
                         </li>
                         <li class="d-flex align-items-center mb-3">

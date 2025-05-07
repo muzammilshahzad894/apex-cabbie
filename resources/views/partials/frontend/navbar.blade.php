@@ -62,18 +62,16 @@
                                     </a>
                                 </div>
                             </li>
+
                             <li class="remvoe_line">
                                 <div class="help-section">
-                                    <div class="icon" onclick="toggleDropdown(event)">
-                                        <i class="lnr-icon-phone-handset"></i>
-                                    </div>
-                                    <div class="dropdown-menu" id="help-dropdown-menu">
-                                        <div class="dropdown-content">
-                                            <p class="m-0 p-0">Need help?</p>
-                                            <h5 class="m-0 p-0">01173322782</h5>
+                                    <a href="tel:01173322782" class="wrap call-link">
+                                        <div class="icon"><i class="lnr-icon-phone-handset"></i></div>
+                                        <div class="text">
+                                            <p>Need help?</p>
+                                            <h5>0117 332 2782</h5>
                                         </div>
-                                        <a href="tel:01173322782" class="call-now-btn">Call Now</a>
-                                    </div>
+                                    </a>
                                 </div>
                             </li>
                         </ul>

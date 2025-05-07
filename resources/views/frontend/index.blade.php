@@ -243,19 +243,19 @@
 </style>
 <section class="banner-section">
     <div class="overlay"></div>
-    <div class="content-wrapper bottom-align">
+    <div class="content-wrapper center-align">
+        <h6 class="welcome-text">Welcome To</h6>
         <h1 class="title">
-            <span class="highlight">Reserve Your Cab</span>
+            <span class="highlight">Apex Cabbie</span>
         </h1>
         <p class="text">
-            Convenient, reliable, and fast cab service<br>
-            Ready to drive you to your destination.
+            Your premier pre-booking platform for reliable taxi services in Bath and across the UK. Enjoy seamless travel from airport transfers to city tours. Book now for stress-free journeys!
         </p>
         <div>
-            <a href="page-taxi.html" class="custom-btn-outline">
+            <a href="{{ route('frontend.getquote') }}" class="custom-btn-outline">
                 <span class="btn-title">Get A Quote</span>
             </a>
-            <a href="page-taxi.html" class="custom-btn-outline">
+            <a href="{{ route('frontend.book-online') }}" class="custom-btn-outline">
                 <span class="btn-title">Book Online</span>
             </a>
         </div>
