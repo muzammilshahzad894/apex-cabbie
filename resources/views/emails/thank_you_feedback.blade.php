@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #000000; color: #ffffff; text-align: center; padding: 10px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
-                            <p style="font-size: 12px; margin: 0;">&copy; {{ date('Y') }} BristolCabwise Service. All rights reserved.</p>
+                            <p style="font-size: 12px; margin: 0;">&copy; {{ date('Y') }} Apex Cabbie Service. All rights reserved.</p>
                         </td>
                     </tr>
                 </table>

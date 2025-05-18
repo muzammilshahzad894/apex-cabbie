@@ -42,7 +42,7 @@
                         <div class="post-wrapper">
                         </div>
                         <h1 style="color: orange">Get A Quotation Here.</h1>
-                        <p class="description" style="color: white">Get a quotation here for our 24-hour cab service in Bristol and across the UK. Fill out the details, and our representative will contact you promptly with pricing information.</p>
+                        <p class="description" style="color: white">Get a quotation here for our 24-hour cab service in Bath and across the UK. Fill out the details, and our representative will contact you promptly with pricing information.</p>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@
                         </div>
                         <div class="text">
                             <p class="m-0 p-0">Address</p>
-                            <p class="m-0 p-0">81 Blackberry Hill Bristol Bs161df</p>
+                            <p class="m-0 p-0">81 Blackberry Hill Bath Bs161df</p>
                         </div>
                     </a>
                 </div>
@@ -146,7 +146,7 @@
         <div class="auto-container">
             <div class="inner-container">
                 <div class="copyright-text">
-                    © 2024 Apex Cabbie. All rights reserved.
+                    © {{ date('Y') }} APEX CABBIE. All rights reserved.
                 </div>
             </div>
         </div>

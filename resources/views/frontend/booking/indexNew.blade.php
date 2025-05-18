@@ -58,7 +58,7 @@
                             <div class="text-white"><a href="#">book online</a></div> --}}
                         </div>
                         <h1 style="color: orange">Book Your Ride</h1>
-                        <p class="description" style="color: white;">Reserve your cab here. We provide a reliable 24-hour cab service in Bristol and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.</p>
+                        <p class="description" style="color: white;">Reserve your cab here. We provide a reliable 24-hour cab service in Bath and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.</p>
                     </div>
                 </div>
             </div>

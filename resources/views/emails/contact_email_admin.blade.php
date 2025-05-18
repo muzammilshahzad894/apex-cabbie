@@ -48,7 +48,7 @@
                     <tr>
                         <td style="background-color: #000000; color: #ffffff; text-align: center; padding: 10px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
                             <p style="font-size: 12px; margin: 0;">Best regards</p>
-                            <p style="font-size: 12px; margin: 0;">Bristol Cabwise Admin Team</p>
+                            <p style="font-size: 12px; margin: 0;">Apex Cabbie Admin Team</p>
                         </td>
                     </tr>
                 </table>

@@ -100,28 +100,12 @@ section .container {
 </style>
 
 @section('content')
-
-<!-- Header Banner -->
-<section class="banner-header" style="background-color: #f5f5f5;">
-    <div class="container d-flex align-items-center justify-content-between">
-        <!-- Left Side: About Text -->
-        <div class="text-left">
-            <h1 class="display-4 text-dark m-0">About Us</h1>
-        </div>
-
-        <div class="text-right d-flex align-items-center">
-            <i class="fas fa-home me-2 primary-text"></i>
-            <span class="text-dark">Home</span>
-        </div>
-    </div>
-</section>
-
 <!-- About Us Section -->
 <section class="about-us py-5">
     <div class="container">
         <!-- Section Title -->
         <div class="text-center mb-4">
-            <h4 class="section-title">Pre-Booking Cab Service in Bristol and <span>Across the UK</span></h4>
+            <h4 class="section-title">Pre-Booking Cab Service in Bath and <span>Across the UK</span></h4>
             <p class="lead">Comfort, convenience, and reliability at affordable rates.</p>
         </div>
 
@@ -132,7 +116,7 @@ section .container {
             </div>
             <div class="col-lg-6">
                 <p class="mb-4">
-                    Apex Cabbie offers reliable pre-booking cab services in Bristol and across the UK, ensuring comfort, convenience, and affordability. Established in 2024 as a family-run business, we provide a range of fleets from economy to executive vehicles, maintained to the highest standards for Airport Transfers, City Transfers, Business Transfers, Private Transfers, and Event Transportation. With a user-friendly booking system and 24/7 support, we prioritize safety, efficiency, and customer satisfaction. Book your ride today and travel with confidence.
+                    Apex Cabbie offers reliable pre-booking cab services in Bath and across the UK, ensuring comfort, convenience, and affordability. Established in 2024 as a family-run business, we provide a range of fleets from economy to executive vehicles, maintained to the highest standards for Airport Transfers, City Transfers, Business Transfers, Private Transfers, and Event Transportation. With a user-friendly booking system and 24/7 support, we prioritize safety, efficiency, and customer satisfaction. Book your ride today and travel with confidence.
                 </p>
                 <!-- <ul class="list-unstyled">
                     <li><i class="bi bi-check-circle text-primary"></i> Reliable and safe services</li>

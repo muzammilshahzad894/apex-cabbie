@@ -124,7 +124,7 @@
                             </div>
                             <div class="text">
                                 <h5 class="mb-0">Our address</h5>
-                                <span class="text-muted">81 Blackberry Hill, Bristol Bs161df</span>
+                                <span class="text-muted">81 Blackberry Hill, Bath Bs161df</span>
                             </div>
                         </li>
                         <li class="d-flex align-items-center mb-3">
@@ -161,7 +161,7 @@
 <section class="map-section">
     <div class="container-fluid p-0">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24301.0311484067!2d-2.6174498609618677!3d51.45451443765247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48719c1653d8c9a9%3A0xb47bdb0a605f0a0!2sBristol%2C%20UK!5e0!3m2!1sen!2s!4v1605382028827!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24301.0311484067!2d-2.6174498609618677!3d51.45451443765247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48719c1653d8c9a9%3A0xb47bdb0a605f0a0!2sBath%2C%20UK!5e0!3m2!1sen!2s!4v1605382028827!5m2!1sen!2s"
             width="100%"
             height="450"
             style="border: 0;"
