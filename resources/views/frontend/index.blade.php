@@ -237,8 +237,13 @@
         }
     }
 
-    [data-overlay-dark]::before {
-        background: url('/frontend-assets/img/homevideo.mp4') no-repeat center center !important;
+    .services-btn a {
+        padding: 9px 74px !important;
+    }
+    
+    .services-btn a:hover {
+        background: var(--theme-color1);
+        color: #fff !important;
     }
 </style>
 <section class="banner-section">
@@ -264,47 +269,42 @@
     <button class="carousel-btn carousel-next">›</button> -->
 </section>
 
-<section class="pricing-section-four mt-5">
-    <div class="auto-container">
-        <div class="sec-title text-center">
-            <!-- <span class="sub-title">Select a plan that shouts</span> -->
-            <h2 class="letters-slide-up text-split">
-                Our Services
-            </h2>
+<section>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Services</h2>
         </div>
-        <div class="outer-box" data-aos="fade-left">
-            <div class="pricing-carousel owl-carousel owl-theme default-dots">
-                @if ($services->count() > 0)
+    
+        <div class="pricing-carousel owl-carousel owl-theme default-dots">
+            @if ($services->count() > 0)
                 @foreach ($services as $service)
-                <div class="pricing-block-four">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image">
-                                <img src="{{ asset('uploads/services/' . $service->image) }}" alt="Image" />
-                            </figure>
-                        </div>
-                        <div class="content">
-                            <div class="car-detail">
-                                <h4 class="car-name">{{ $service->name }}</h4>
-                                <div class="city">{{ $service->tag }}</div>
-                                <div class="truncate city short_description">
+                    <div class="pricing-block-four">
+                        <div class="card service-card">
+                            <img
+                                src="{{ asset('uploads/services/' . $service->image) }}"
+                                class="service-img"
+                                alt="Service Image"
+                                style="height: 200px; object-fit: cover;"
+                            />
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title service-title">{{ $service->name }}</h5>
+                                <p class="service-tag mb-2">{{ $service->tag }}</p>
+                                <p class="card-text text-truncate-3 text-muted">
                                     {{ $service->short_description }}
+                                </p>
+                                <div class="services-btn d-flex gap-2">
+                                    <a href="{{ route('frontend.carDetails', $service->id) }}" class="theme-btn btn-style-two hover-light">
+                                        <span class="btn-title">View Details</span>
+                                    </a>
+                                    <a href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}" class="theme-btn btn-style-two hover-light">
+                                        <span class="btn-title">Book Now</span>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="btn-box d-flex gap-2">
-                                <a href="{{ route('frontend.carDetails', $service->id) }}" class="theme-btn btn-style-two hover-light">
-                                    <span class="btn-title">View Details</span>
-                                </a>
-                                <a href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}" class="theme-btn btn-style-two hover-light">
-                                    <span class="btn-title">Book Now</span>
-                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
-                @endif
-            </div>
+            @endif
         </div>
     </div>
 </section>

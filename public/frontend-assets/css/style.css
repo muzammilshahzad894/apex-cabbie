@@ -1648,9 +1648,6 @@ Scroll To Top style
 .btn-style-two.hover-light:hover:after {
   background-color: var(--theme-color-dark);
 }
-.btn-style-two.hover-light:before {
-  background-color: var(--theme-color-light);
-}
 
 /*Btn Style three*/
 .btn-style-three {
@@ -20283,4 +20280,18 @@ Sidebar
 }
 .help-section .wrap .text h5 a:hover {
     color: #f5b754;
+}
+
+.service-title {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.service-tag {
+  color: var(--theme-color1);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.95em;
+  margin-bottom: 15px;
 }
