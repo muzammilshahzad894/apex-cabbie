@@ -37,10 +37,6 @@
     <div class="auto-container">
         <div class="title-outer text-center">
             <h1 class="title">Contact Us</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Contact</li>
-            </ul>
         </div>
     </div>
 </section>

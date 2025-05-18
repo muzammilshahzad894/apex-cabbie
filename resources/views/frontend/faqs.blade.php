@@ -97,26 +97,11 @@ button:focus:not(:focus-visible) {
 </style>
 
 @section('content')
-<!-- Header Banner -->
-<section class="banner-header" style="background-color: #f5f5f5;">
-    <div class="container d-flex align-items-center justify-content-between">
-        <!-- Left Side: About Text -->
-        <div class="text-left">
-            <h1 class="display-4 text-dark m-0">FAQ's</h1>
-        </div>
-
-        <div class="text-right d-flex align-items-center">
-            <i class="fas fa-home me-2 primary-text"></i>
-            <span class="text-dark">Home</span>
-        </div>
-    </div>
-</section>
 <section class="faq-section py-5">
     <div class="container">
         <!-- Section Title -->
         <div class="text-center mb-4">
-            <h2 class="fw-bold">Apex Cabbie FAQs</h2>
-            <!-- <p class="text-muted fs-5">Find answers to the most common questions below.</p> -->
+            <h1 class="section-title">Apex Cabbie <span>FAQs</span></h1>
         </div>
 
         <!-- FAQ Accordion -->
