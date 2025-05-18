@@ -236,15 +236,6 @@
             height: 100%;
         }
     }
-
-    .services-btn a {
-        padding: 9px 74px !important;
-    }
-    
-    .services-btn a:hover {
-        background: var(--theme-color1);
-        color: #fff !important;
-    }
 </style>
 <section class="banner-section">
     <div class="overlay"></div>

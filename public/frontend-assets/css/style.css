@@ -20289,3 +20289,12 @@ Sidebar
   line-height: 1.95em;
   margin-bottom: 15px;
 }
+
+.services-btn a {
+  padding: 9px 74px !important;
+}
+
+.services-btn a:hover {
+  background: var(--theme-color1);
+  color: #fff !important;
+}
