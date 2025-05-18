@@ -310,8 +310,8 @@
 </section>
 
 @if ($fleets->count() > 0)
-<section class="team-section-two pt-0 mt-5">
-    <div class="auto-container">
+<section>
+    <div class="container py-5">
         <div class="outer-box">
             <div class="sec-title text-center">
                 <h2 class="letters-slide-up text-split">Our Fleets</h2>
@@ -324,7 +324,7 @@
                             <div class="team-block-two">
                                 <div class="inner-box">
                                     <figure class="image">
-                                        <img src="{{ asset('uploads/fleets/' . $fleet->image) }}" alt="Image">
+                                        <img src="{{ asset('uploads/fleets/' . $fleet->image) }}" alt="Image" style="height: 200px; object-fit: cover;" />
                                     </figure>
                                     <div class="content">
                                         <!-- <div class="designation">{{ $fleet->name }}</div> -->
@@ -371,7 +371,7 @@
                 <div class="inner-box">
                     <i class="icon fa fa-car"></i>
                     <div class="content">
-                        <h4 class="title book_process_heading">Choose a Service</h4>
+                        <h4 class="title book_process_heading">Choose Your Vehicle</h4>
                         <div class="text">Explore Apex Cabbie’s diverse fleet and service options for a seamless and enjoyable ride.</div>
                     </div>
                 </div>
