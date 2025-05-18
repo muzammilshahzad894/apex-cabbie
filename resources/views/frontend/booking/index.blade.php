@@ -117,7 +117,7 @@
                 <div class="col-md-6">
                     <h1 class="title">Book Your Ride</h1>
                     <p class="page-breadcrumb text-white">
-                        Reserve your cab here. We provide a reliable 24-hour cab service in Bristol and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.
+                        Reserve your cab here. We provide a reliable 24-hour cab service in Bath and across the UK, featuring professional drivers and transparent pricing. Experience hassle-free booking and exceptional service.
                     </p>
                     </div>
                 </div>

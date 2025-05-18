@@ -255,7 +255,7 @@
             <a href="{{ route('frontend.getquote') }}" class="custom-btn-outline">
                 <span class="btn-title">Get A Quote</span>
             </a>
-            <a href="{{ route('frontend.book-online') }}" class="custom-btn-outline">
+            <a href="{{ route('frontend.getquote') }}" class="custom-btn-outline">
                 <span class="btn-title">Book Online</span>
             </a>
         </div>
