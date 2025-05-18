@@ -100,7 +100,9 @@ class FrontendController extends Controller
             return $redirectionResponse;
         };
         $fleet = Fleet::find($id);
-        return view('frontend.fleetDetails', compact('fleet'));
+        
+        $fleets = Fleet::all();
+        return view('frontend.fleetDetails', compact('fleet', 'fleets'));
     }
     public function faqs()
     {
