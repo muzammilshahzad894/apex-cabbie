@@ -271,7 +271,8 @@ class FrontendController extends Controller
             $redirection->redirection();
         };
             $fleets = Fleet::all();
-            return view('frontend.getquote.index', compact('fleets'));
+            $services = Service::all();
+            return view('frontend.getquote.index', compact('fleets', 'services'));
         } catch (\Exception $e) {
             Log::error('Review Post Error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Something went wrong while processing your request');
