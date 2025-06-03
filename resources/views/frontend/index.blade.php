@@ -489,7 +489,7 @@
                                 <img src="{{ asset('frontend-assets/img/clients/yell.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
                             </div>
                             <h5 class="card-title font-weight-bold">Review by MisbahS-6</h5>
-                            <p class="text-muted">"I had an excellent experience with Bristol Cabwise’s executive fleet. Booking was quick and hassle-free. On the day, a Mercedes E-Class arrived on time, offering a comfortable ride. Special thanks to the driver, Ali, for his professionalism and friendly service. Highly recommend!"</p>
+                            <p class="text-muted">"I had an excellent experience with Apex Cabbie executive fleet. Booking was quick and hassle-free. On the day, a Mercedes E-Class arrived on time, offering a comfortable ride. Special thanks to the driver, Ali, for his professionalism and friendly service. Highly recommend!"</p>
                             <div class="text-warning">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -508,7 +508,7 @@
                                 <img src="{{ asset('frontend-assets/img/clients/google.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
                             </div>
                             <h5 class="card-title font-weight-bold">Review by Sarah</h5>
-                            <p class="text-muted">"My experience was smooth and surpassed my expectations. The driver was professional and polite throughout the journey, ensuring we arrived at Heathrow with plenty of time to spare. If you’re looking for dependable, punctual, and comfortable transportation, I highly recommend Bristol Cabwise."</p>
+                            <p class="text-muted">"My experience was smooth and surpassed my expectations. The driver was professional and polite throughout the journey, ensuring we arrived at Heathrow with plenty of time to spare. If you’re looking for dependable, punctual, and comfortable transportation, I highly recommend Apex Cabbie."</p>
                             <div class="text-warning">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>

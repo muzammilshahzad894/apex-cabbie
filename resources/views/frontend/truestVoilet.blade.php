@@ -5,13 +5,48 @@
         padding-top: 0px !important;
         padding-bottom: 0px !important;
     }
-    /* Section Style */
-    .testimonials-section {
-        background-color: #f8f9fa;
-        padding: 100px 0;
+
+    .testimonials-hero {
+    background: url('https://bristolcabwise.com/frontend-assets/img/slider/review.jpeg') center center/cover no-repeat;
+    height: 85vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-start; /* Align text to the left */
+    align-items: center; /* Vertically center */
+    padding: 0 60px;
+}
+
+.testimonials-hero .overlay {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 40px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: left; /* Ensure text is aligned left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+    .testimonials-hero .title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #fff;
     }
 
-    /* Title Style */
+    .testimonials-hero .subtitle {
+        font-size: 22px;
+        line-height: 1.6;
+        color: orange;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+    }
+
     .testimonials-title {
         font-size: 40px;
         font-weight: bold;
@@ -20,7 +55,6 @@
         margin-bottom: 60px;
     }
 
-    /* Testimonials Grid */
     .testimonials-container {
         max-width: 1200px;
         margin: 0 auto;
@@ -30,7 +64,6 @@
         gap: 40px;
     }
 
-    /* Card Style */
     .testimonial-card {
         background-color: #fff;
         border-radius: 20px;
@@ -39,6 +72,10 @@
         position: relative;
         overflow: hidden;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
     }
 
     .testimonial-card:hover {
@@ -46,39 +83,22 @@
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
     }
 
-    .testimonial-card::before {
-        content: '\201C'; /* Opening quote mark */
-        font-size: 100px;
-        color: #e09239;
-        position: absolute;
-        top: -40px;
-        left: -20px;
-        opacity: 0.1;
+    .testimonial-rating {
+        color: #f5b942;
+        font-size: 20px;
+        margin-bottom: 10px;
     }
 
-    .testimonial-card::after {
-        content: '\201D'; /* Closing quote mark */
-        font-size: 100px;
-        color: #e09239;
-        position: absolute;
-        bottom: -40px;
-        right: -20px;
-        opacity: 0.1;
-    }
-
-    /* Testimonial Content */
     .testimonial-content {
         font-size: 18px;
         color: #555;
         line-height: 1.6;
         margin-bottom: 20px;
-        position: relative;
+        flex-grow: 1;
     }
 
-    /* Testimonial Author Style */
     .testimonial-author {
         display: flex;
-        justify-content: center;
         align-items: center;
         margin-top: 20px;
     }
@@ -87,7 +107,7 @@
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        object-fit: cover;
+        object-fit: contain;
         margin-right: 20px;
         border: 3px solid #e09239;
     }
@@ -103,90 +123,135 @@
         color: #777;
     }
 
-    /* Buttons */
-    .btn-primary {
-        padding: 12px 30px;
-        background: #e09239;
-        color: #fff;
-        border-radius: 30px;
-        font-size: 18px;
-        border: none;
-        transition: background 0.3s ease;
-    }
-
-    .btn-primary:hover {
-        background: #D3B26D;
-    }
-
-    /* Responsive Styles */
     @media (max-width: 768px) {
-        .testimonial-card {
-            padding: 20px;
+        .testimonials-hero {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .testimonial-content {
-            font-size: 16px;
+        .testimonials-hero .overlay {
+            text-align: center;
         }
 
-        .testimonial-author img {
-            width: 60px;
-            height: 60px;
+        .testimonials-hero .title {
+            font-size: 36px;
+        }
+
+        .testimonials-hero .subtitle {
+            font-size: 18px;
         }
     }
 </style>
 
 @section('content')
+
+<!-- Header Image with Right-Aligned Text -->
+<div class="testimonials-hero">
+    <div class="overlay">
+        <h1 class="title">Reviews</h1>
+        <p class="subtitle">Top-Rated On Trustpilot For Our<br>Punctual And Professional Cab Service.</p>
+    </div>
+</div>
+
+<!-- Testimonials Section -->
 <section class="testimonials-section">
     <div class="container">
         <h2 class="testimonials-title">What Our Clients Say</h2>
         <div class="testimonials-container">
+
             <!-- Testimonial 1 -->
             <div class="testimonial-card">
-                <p class="testimonial-content">"This company provided exceptional service and went above and beyond our expectations. Highly recommended!"</p>
+                <div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">"The driver arrived at the airport early to ensure he was there waiting for us. Great communication, very clean and sleek car (with sweets), and very friendly. Safe, efficient driving and helpful throughout. A young company that truly prioritizes customer service — what a gift after a long flight! Will definitely use again."</p>
+                </div>
                 <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client Avatar">
                     <div>
-                        <div class="testimonial-author-name">John Doe</div>
-                        <div class="testimonial-author-title">CEO, Example Corp</div>
+                        <div class="testimonial-author-name">Review by C R</div>
+                        <div class="testimonial-author-title">25 October 2024</div>
                     </div>
                 </div>
             </div>
 
             <!-- Testimonial 2 -->
             <div class="testimonial-card">
-                <p class="testimonial-content">"I was really impressed with the professionalism and results. They really know what they're doing!"</p>
+                <div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">"Fast, reliable and very friendly service. I’ve used this company on numerous occasions, they have always been on time, with great communication. Would definitely recommend!"</p>
+                </div>
                 <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client Avatar">
                     <div>
-                        <div class="testimonial-author-name">Jane Smith</div>
-                        <div class="testimonial-author-title">Marketing Director, Tech Solutions</div>
+                        <div class="testimonial-author-name">Review by Becky Hawker</div>
+                        <div class="testimonial-author-title">02 October 2024</div>
                     </div>
                 </div>
             </div>
 
             <!-- Testimonial 3 -->
             <div class="testimonial-card">
-                <p class="testimonial-content">"A game-changer! The results were immediate, and our team has never been more efficient."</p>
+                <div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">"A return journey from the airport. Cabwise were on time and in a convenient meeting place. The driver kept me informed of where he was, which meant I could be on my way home quickly."</p>
+                </div>
                 <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client Avatar">
                     <div>
-                        <div class="testimonial-author-name">Samuel Lee</div>
-                        <div class="testimonial-author-title">Founder, Innovate Inc.</div>
+                        <div class="testimonial-author-name">Review by Richard Jarvis</div>
+                        <div class="testimonial-author-title">08 November 2024</div>
                     </div>
                 </div>
             </div>
 
             <!-- Testimonial 4 -->
             <div class="testimonial-card">
-                <p class="testimonial-content">"Working with this team was a pleasure. They provided great value and helped us reach new heights!"</p>
+                <div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">Punctual, professional, and very welcoming! Have used multiple times and won’t use anyone else now."</p>
+                </div>
                 <div class="testimonial-author">
-                    <img src="https://via.placeholder.com/70" alt="Client Avatar">
+                    <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client Avatar">
                     <div>
-                        <div class="testimonial-author-name">Olivia Brown</div>
-                        <div class="testimonial-author-title">Product Manager, Digital Works</div>
+                        <div class="testimonial-author-name">Review by Jamie Cahill</div>
+                        <div class="testimonial-author-title">01 March 2025</div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+                <div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">I had an excellent experience with Apex Cabbie executive fleet. Booking was quick and hassle-free. On the day, a Mercedes E-Class arrived on time, offering a comfortable ride. Special thanks to the driver, Ali, for his professionalism and friendly service. Highly recommend!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="{{ asset('frontend-assets/img/clients/yell.jpeg') }}" alt="Client Avatar">
+                    <div>
+                        <div class="testimonial-author-name">Review by MisbahS-6</div>
+                        <div class="testimonial-author-title">03 October 2024</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 6 -->
+            <div class="testimonial-card">
+                <div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-content">My experience was smooth and surpassed my expectations. The driver was professional and polite throughout the journey, ensuring we arrived at Heathrow with plenty of time to spare. If you’re looking for dependable, punctual, and comfortable transportation, I highly recommend Apex Cabbie."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="{{ asset('frontend-assets/img/clients/google.jpeg') }}" alt="Client Avatar">
+                    <div>
+                        <div class="testimonial-author-name">Review by Sarah</div>
+                        <div class="testimonial-author-title">25 March 2025</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
