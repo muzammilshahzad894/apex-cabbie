@@ -213,13 +213,17 @@
                                 @endforeach
                             </select>
                         </div>
+                        
+                        @php
+                            $id = request('id');
+                        @endphp
                         <div class="form-group">
                             <label for="Service" class="text-uppercase">Service *</label>
                             <select id="Service" name="service" class="form-control">
                                 <option value="">Select Service</option>
                                 @foreach ($services as $service)
                                     <option value="{{ $service->id }}"
-                                        {{ old('service') == $service->id ? 'selected' : '' }}>
+                                        {{ old('service') == $service->id || ($id && $id == $service->id) ? 'selected' : '' }}>
                                         {{ $service->name }}
                                     </option>
                                 @endforeach

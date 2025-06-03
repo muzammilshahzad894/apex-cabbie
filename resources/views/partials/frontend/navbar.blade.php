@@ -55,7 +55,7 @@
                             <li class="remvoe_line">
                                 <div class="btn-box">
                                     <a 
-                                        href="{{ route('frontend.book-online') }}"
+                                        href="{{ route('frontend.getquote') }}"
                                         class="custom-btn"
                                     >
                                         <span class="btn-title">Book Now</span>

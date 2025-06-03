@@ -236,6 +236,24 @@
             height: 100%;
         }
     }
+    
+    .review-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #ffffff;
+        min-height: 486px;
+    }
+
+    .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
 </style>
 <section class="banner-section">
     <div class="overlay"></div>
@@ -287,7 +305,7 @@
                                     <a href="{{ route('frontend.carDetails', $service->id) }}" class="theme-btn btn-style-two hover-light">
                                         <span class="btn-title">View Details</span>
                                     </a>
-                                    <a href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}" class="theme-btn btn-style-two hover-light">
+                                    <a href="{{ route('frontend.getquote', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}" class="theme-btn btn-style-two hover-light">
                                         <span class="btn-title">Book Now</span>
                                     </a>
                                 </div>
@@ -381,33 +399,125 @@
     </div>
 </section>
 
-<section class="team-section-two pt-0 mt-5">
+<section class="team-section-two ">
     <div class="auto-container">
         <div class="outer-box">
             <div class="sec-title text-center">
                 <h2 class="letters-slide-up text-split">What Clients Say</h2>
             </div>
-            <div class="carousel-outer">
-                <div class="swiper team-slider">
-                    <div class="swiper-wrapper">
-                        @for ($i = 0; $i < 5; $i++)
-                            <div class="swiper-slide">
-                            <div class="card h-100">
-                                <div class="card-body text-center">
-                                    <img src="https://via.placeholder.com/80" alt="Client" class="rounded-circle mb-3">
-                                    <h5 class="card-title font-weight-bold">John Doe</h5>
-                                    <p class="text-muted">"Apex Cabbie offers fantastic service! The booking process was easy, and the ride was smooth and comfortable. Highly recommended!"</p>
-                                    <div class="text-warning">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
+            <div class="pricing-carousel owl-carousel owl-theme default-dots">                        
+                <div class="pricing-block-four">
+                    <div class="card h-100 review-card">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
                             </div>
+                            <h5 class="card-title font-weight-bold">Review by C R</h5>
+                            <p class="text-muted">"The driver arrived at the airport early to ensure he was there waiting for us. Great communication, very clean and sleek car (with sweets), and very friendly. Safe, efficient driving and helpful throughout. A young company that truly prioritizes customer service — what a gift after a long flight! Will definitely use again."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </div>
-                    @endfor
+                </div>
+                
+                <div class="pricing-block-four">
+                    <div class="card h-100 review-card">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
+                            </div>
+                            <h5 class="card-title font-weight-bold">Review by Becky Hawker</h5>
+                            <p class="text-muted">"Fast, reliable and very friendly service. I’ve used this company on numerous occasions, they have always been on time, with great communication. Would definitely recommend!"</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-block-four">
+                    <div class="card h-100 review-card">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
+                            </div>
+                            <h5 class="card-title font-weight-bold">Review by Richard Jarvis</h5>
+                            <p class="text-muted">"A return journey from the airport. Cabwise were on time and in a convenient meeting place. The driver kept me informed of where he was, which meant I could be on my way home quickly."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-block-four">
+                    <div class="card h-100 review-card">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="{{ asset('frontend-assets/img/clients/trustvoilet.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
+                            </div>
+                            <h5 class="card-title font-weight-bold">Review by Jamie Cahill</h5>
+                            <p class="text-muted">"Punctual, professional, and very welcoming! Have used multiple times and won’t use anyone else now."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-block-four">
+                    <div class="card h-100 review-card">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="{{ asset('frontend-assets/img/clients/yell.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
+                            </div>
+                            <h5 class="card-title font-weight-bold">Review by MisbahS-6</h5>
+                            <p class="text-muted">"I had an excellent experience with Bristol Cabwise’s executive fleet. Booking was quick and hassle-free. On the day, a Mercedes E-Class arrived on time, offering a comfortable ride. Special thanks to the driver, Ali, for his professionalism and friendly service. Highly recommend!"</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-block-four">
+                    <div class="card h-100 review-card">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="{{ asset('frontend-assets/img/clients/google.jpeg') }}" alt="Client" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: contain;">
+                            </div>
+                            <h5 class="card-title font-weight-bold">Review by Sarah</h5>
+                            <p class="text-muted">"My experience was smooth and surpassed my expectations. The driver was professional and polite throughout the journey, ensuring we arrived at Heathrow with plenty of time to spare. If you’re looking for dependable, punctual, and comfortable transportation, I highly recommend Bristol Cabwise."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
