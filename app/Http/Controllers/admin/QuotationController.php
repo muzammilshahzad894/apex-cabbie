@@ -17,7 +17,7 @@ class QuotationController extends Controller
     public function getquote()
     {
         try {
-            $quotations = Quotation::with('fleet')
+            $quotations = Quotation::with(['fleet', 'service'])
             ->orderBy('created_at', 'desc') // or any other column to sort by
             ->paginate(10);
             // dd($quotations)

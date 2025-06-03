@@ -22,6 +22,7 @@
                             <th>Postcode </th>
                             <th>DropOff City/town</th>
                             <th>Date & time</th>
+                            <th>Service</th>
                             <th>Fleet</th>
                             <th>Return</th>
                         </tr>
@@ -40,7 +41,13 @@
                                     <td> <div class="max-content-display">{{ $quote->dropoff_postal_code }}</div></td>
                                     <td> <div class="max-content-display">{{ $quote->dropoff_city }}</div></td>
                                     <td>{{ $quote->date_time }}</td>
-
+                                    <td>
+                                        @if($quote->service)
+                                            {{ $quote->service->name }}
+                                        @else
+                                            N/A
+                                        @endif
+                                    </td>
                                     <td>
                                         {{ $quote->fleet->name }}
                                     </td>

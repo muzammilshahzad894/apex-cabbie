@@ -52,8 +52,13 @@
                                     <td style="padding: 10px;">{{ $dropoffPostalCode }}</td>
                                 </tr>
                                 @php
+                                    $serviceDetails = App\Models\Service::where('id', $serviceId)->first();
                                     $fleetDetails = App\Models\Fleet::where('id', $fleetId)->first();
                                 @endphp
+                                <tr>
+                                    <th style="padding: 10px; text-align: left; width: 150px;">Service</th>
+                                    <td style="padding: 10px;">{{ @$serviceDetails->name }}</td>
+                                </tr>
                                 <tr>
                                     <th style="padding: 10px; text-align: left; width: 150px;">Fleet</th>
                                     <td style="padding: 10px;">{{ @$fleetDetails->name }}</td>

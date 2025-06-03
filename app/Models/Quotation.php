@@ -14,4 +14,9 @@ class Quotation extends Model
     {
         return $this->belongsTo(Fleet::class, 'fleet_id');
     }
+    
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
+    }
 }

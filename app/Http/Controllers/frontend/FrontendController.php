@@ -287,6 +287,7 @@ class FrontendController extends Controller
                 'dropoff' => 'required',
                 'date' => 'required|date',
                 'fleet_id' => 'required',
+                'service_id' => 'required',
                 'fullname' => 'required',
                 'email' => 'required|email',
                 'phone' => 'required',
@@ -310,6 +311,7 @@ class FrontendController extends Controller
             $booking->dropoff = $request->dropoff;
             $booking->date_time = $pickup;
             $booking->fleet_id = intval($request->fleet_id);
+            $booking->service_id = intval($request->service_id);
             $booking->fullname = $request->fullname;
             $booking->email = $request->email;
             $booking->phone = $request->phone;
@@ -328,6 +330,7 @@ class FrontendController extends Controller
                 'dropoff' => $request->dropoff,
                 'dateTime' => $pickup,
                 'fleetId' => $request->fleet_id,
+                'serviceId' => $request->service_id,
                 'userName' => $request->fullname,
                 'email' => $request->email,
                 'phone' => $request->phone,
@@ -339,9 +342,14 @@ class FrontendController extends Controller
                 'comment' => $request->comment,
             ];
             
-            $this->emailService->sendQuoteRequest($bookingDetails);
+            try {
+                $this->emailService->sendQuoteRequest($bookingDetails);
+            } catch (\Exception $e) {
+                dd($e->getMessage());
+                Log::error('Email Sending Error: ' . $e->getMessage());
+            }
             
-            return redirect()->back()->with('success', 'Quote sent successfully');
+            return redirect()->back()->with('success', 'We have received your quote request. Our team will get back to you shortly.');
         } catch (\Exception $e) {
             Log::error('Quote Post Error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Something went wrong while processing your request');

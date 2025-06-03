@@ -31,13 +31,13 @@
                             <li class="{{ request()->routeIs('frontend.trustVoilet') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.trustVoilet') }}">Reviews</a>
                             </li>
-                            @guest
+                            <!-- @guest
                                 <li class="{{ request()->routeIs('frontend.login') ||  request()->routeIs('frontend.signup') ? 'current' : '' }}">
                                     <a href="/login">Login</a>
                                 </li>
-                            @endguest
+                            @endguest -->
 
-                            @auth
+                            <!-- @auth
                             <li class="dropdown">
                                 <a href="#">{{ Auth::user()->name }}</a>
                                 <ul>
@@ -51,7 +51,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            @endauth
+                            @endauth -->
                             <li class="remvoe_line">
                                 <div class="btn-box">
                                     <a 

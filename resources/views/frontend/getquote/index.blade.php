@@ -55,6 +55,11 @@
         font-weight: bold;
         border-radius: 5px;
     }
+    
+    .btn-submit:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 
     .sidebar-features i {
         color: #e99a41;
@@ -180,7 +185,7 @@
             <div class="row payment_section">
                 <div class="col-md-8">
                     <h3 style="color: #e99a41;">Get a Quote</h3>
-                    <form action="{{ route('frontend.getquotePost') }}" method="POST">
+                    <form action="{{ route('frontend.getquotePost') }}" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled = true; this.querySelector('button[type=submit]').innerHTML = 'Submitting...';">
                         @csrf
 
                         <div class="form-group">
@@ -219,11 +224,11 @@
                         @endphp
                         <div class="form-group">
                             <label for="Service" class="text-uppercase">Service *</label>
-                            <select id="Service" name="service" class="form-control">
+                            <select id="Service" name="service_id" class="form-control">
                                 <option value="">Select Service</option>
                                 @foreach ($services as $service)
                                     <option value="{{ $service->id }}"
-                                        {{ old('service') == $service->id || ($id && $id == $service->id) ? 'selected' : '' }}>
+                                        {{ old('service_id') == $service->id || ($id && $id == $service->id) ? 'selected' : '' }}>
                                         {{ $service->name }}
                                     </option>
                                 @endforeach

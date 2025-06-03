@@ -367,6 +367,7 @@ class EmailService
             'dropoff' => $emailData['dropoff'],
             'dateTime' => $emailData['dateTime'],
             'fleetId' => $emailData['fleetId'],
+            'serviceId' => $emailData['serviceId'],
             'userName' => $emailData['userName'],
             'email' => $emailData['email'],
             'phone' => $emailData['phone'],
