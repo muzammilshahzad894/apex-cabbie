@@ -24,9 +24,9 @@ class SettingRequest extends FormRequest
     public function rules()
     {
         return [
-            'min_booking_hours' => 'required',
-            'parking_charges' => 'required',
-            'extra_luggage_charges' => 'required',
+            // 'min_booking_hours' => 'required',
+            // 'parking_charges' => 'required',
+            // 'extra_luggage_charges' => 'required',
             'admin_email' => 'required|email',
         ];
     }

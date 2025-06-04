@@ -31,7 +31,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="{{ request()->routeIs('admin.booking') ? 'mm-active' : '' }}">
+                <!-- <li class="{{ request()->routeIs('admin.booking') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.booking') }}" class="" aria-expanded="false">
                         <i class="fa fa-user"></i>
                         <span class="nav-text">Booking by Admin</span>
@@ -55,7 +55,7 @@
                         <i class="fa fa-undo"></i>
                         <span class="nav-text">Refunds</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="{{ request()->routeIs('admin.getquote') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.getquote') }}" class="" aria-expanded="false">
                         <i class="fa fa-envelope"></i>
@@ -69,8 +69,8 @@
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="{{ route('admin.custom-email.index') }}">Custom Email</a></li>
-                        <li><a href="{{ route('admin.email-settings.index') }}">Email Settings</a></li>
-                        <li><a href="{{ route('admin.email-content-settings.index') }}">Content Settings</a></li>
+                        <!-- <li><a href="{{ route('admin.email-settings.index') }}">Email Settings</a></li>
+                        <li><a href="{{ route('admin.email-content-settings.index') }}">Content Settings</a></li> -->
                     </ul>
                 </li>
                 <li class="{{ request()->routeIs('admin.settings.index') ? 'mm-active' : '' }}">

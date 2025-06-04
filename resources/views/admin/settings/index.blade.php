@@ -14,7 +14,7 @@
                         <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="mb-3 col-md-6">
+                                <!-- <div class="mb-3 col-md-6">
                                     <div class="d-flex align-items-center">
                                         <label class="form-label mb-0">Minimum Booking Hours <span class="text-danger">*</span></label>
                                         <i class="fa fa-info-circle ms-1" data-toggle="tooltip" data-placement="top" title="User can't book ride before given hours"></i>
@@ -49,7 +49,7 @@
                                     @error('extra_luggage_charges')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-                                </div>
+                                </div> -->
                                 <div class="mb-3 col-md-6">
                                     <div class="d-flex align-items-center">
                                         <label class="form-label mb-0">Admin Email <span class="text-danger">*</span></label>
