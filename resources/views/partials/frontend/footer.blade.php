@@ -33,7 +33,7 @@
                         </div>
                         <div class="text">
                             <p class="m-0 p-0">Address</p>
-                            <p class="m-0 p-0">81 Blackberry Hill Bath Bs161df</p>
+                            <p class="m-0 p-0">Bath, UK</p>
                         </div>
                     </a>
                 </div>

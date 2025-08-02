@@ -120,7 +120,7 @@
                             </div>
                             <div class="text">
                                 <h5 class="mb-0">Our address</h5>
-                                <span class="text-muted">81 Blackberry Hill, Bath Bs161df</span>
+                                <span class="text-muted">Bath, UK</span>
                             </div>
                         </li>
                         <li class="d-flex align-items-center mb-3">
