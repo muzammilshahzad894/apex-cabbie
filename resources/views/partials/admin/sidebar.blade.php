@@ -23,9 +23,9 @@
                         <li class="{{ request()->routeIs('admin.drivers.index') || request()->routeIs('admin.drivers.create') ? 'mm-active' : '' }} || request()->routeIs('admin.drivers.edit')">
                             <a href="{{ route('admin.drivers.index') }}">Drivers</a>
                         </li>
-                        <li class="{{ request()->routeIs('admin.block-dates.index') || request()->routeIs('admin.block-dates.index') ? 'mm-active' : '' }} || request()->routeIs('admin.block-dates.edit')">
+                        <!-- <li class="{{ request()->routeIs('admin.block-dates.index') || request()->routeIs('admin.block-dates.index') ? 'mm-active' : '' }} || request()->routeIs('admin.block-dates.edit')">
                             <a href="{{ route('admin.block-dates.index') }}">Block Dates</a>
-                        </li>
+                        </li> -->
                         <li class="{{ request()->routeIs('admin.coupons.index') || request()->routeIs('admin.coupons.create') ? 'mm-active' : '' }} || request()->routeIs('admin.coupons.edit')">
                             <a href="{{ route('admin.coupons.index') }}">Coupon</a>
                         </li>
