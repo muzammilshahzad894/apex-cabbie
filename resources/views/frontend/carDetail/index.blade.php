@@ -101,7 +101,7 @@
                                         <a href="{{ route('frontend.carDetails', $service->id) }}" class="theme-btn btn-style-two hover-light">
                                             <span class="btn-title">View Details</span>
                                         </a>
-                                        <a href="{{ route('frontend.book-online', ['id' => $service->id, 'name' => str_replace(' ', '-', $service->name)]) }}" class="theme-btn btn-style-two hover-light">
+                                        <a href="{{ route('frontend.getquote') }}" class="theme-btn btn-style-two hover-light">
                                             <span class="btn-title">Book Now</span>
                                         </a>
                                     </div>
